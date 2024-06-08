@@ -10,7 +10,7 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <section
       id='home'
-      className='md:flex md:justify-between md:items-center md:h-full gap-16 py-10'
+      className='md:flex md:justify-between md:items-center md:mt-8 gap-16 py-10'
     >
       {/* IMAGE SECTION  */}
       <div className='md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32'>
@@ -21,7 +21,7 @@ const Landing = ({ setSelectedPage }) => {
         )}
       </div>
       {/* MAIN SECTION  */}
-      <div className='z-30 basis-2/5 mt-12 md:mt-32'>
+      <div className='z-30 basis-2/5 mt-6 md:mt-32'>
         {/* SOCIAL MEDIA ICONS  */}
         <motion.div
           className='flex mt-5 justify-center md:justify-start'
@@ -51,12 +51,12 @@ const Landing = ({ setSelectedPage }) => {
           <p className='text-6xl font-poppins z-10 text-center md:text-start'>
             Yane Ully
           </p>
-          <p className='mt-10 mb-7 text-sm text-center md:text-start'>
+          <p className='mt-4 text-md text-center md:text-start'>
             UI Developer & Product Designer
           </p>
-          <p className='mt-10 mb-7 text-sm text-center md:text-start'>
-            Im creative UI developer based in Lisbon, and Im very passionate and
-            dedicated to my work
+          <p className='mt-4 mb-7 text-sm text-center md:text-start'>
+            An UI Developer and Product designer chilling in Lisbon, where the
+            sun is warm and the pastéis de nata are unbeatable.
           </p>
         </motion.div>
 

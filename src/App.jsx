@@ -1,6 +1,8 @@
 import Navbar from './scenes/Navbar';
 import DotGroup from './scenes/DotGroup';
 import Landing from './scenes/Landing';
+import About from './scenes/About';
+import Skills from './scenes/Skills';
 import { useEffect, useState } from 'react';
 import useMediaQuery from './hooks/useMediaQuery';
 import './App.css';
@@ -35,6 +37,9 @@ function App() {
           />
         )}
         <Landing setSelectedPage={setSelectedPage} />
+        <About />
+
+        <Skills />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const SocialMediaIcons = () => {
         target='_blank'
         rel='noreferrer'
       >
-        linkedin
+        <box-icon type='logo' name='linkedin'></box-icon>
       </a>
 
       <a
