@@ -1,45 +1,16 @@
-import Navbar from './scenes/Navbar';
-import DotGroup from './scenes/DotGroup';
-import Landing from './scenes/Landing';
-import About from './scenes/About';
-import Skills from './scenes/Skills';
-import { useEffect, useState } from 'react';
-import useMediaQuery from './hooks/useMediaQuery';
+import { Routes, Route } from 'react-router-dom';
+import HamburgerMenu from './components/HamburgerMenu';
+import LandingPage from './pages/LandingPage';
 import './App.css';
 
 function App() {
-  // where in navigation we are
-  const [selectedPage, setSelectedPage] = useState('home');
-  const [isTopOfPage, setIsTopOfPage] = useState(true);
-  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) setIsTopOfPage(true);
-      if (window.scrollY !== 0) setIsTopOfPage(false);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className='app bg-light-green'>
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <div className='w-5/6 mx-auto md:h-full'>
-        {isAboveMediumScreens && (
-          <DotGroup
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-          />
-        )}
-        <Landing setSelectedPage={setSelectedPage} />
-        <About />
-
-        <Skills />
+    <div>
+      <HamburgerMenu />
+      <div>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+        </Routes>
       </div>
     </div>
   );
