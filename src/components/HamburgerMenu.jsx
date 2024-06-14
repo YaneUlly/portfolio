@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Flex, Box, IconButton } from '@chakra-ui/react';
+import { Flex, Box, IconButton, Text } from '@chakra-ui/react';
 import 'boxicons';
 
 const HamburgerMenu = () => {
@@ -73,9 +73,11 @@ const HamburgerMenu = () => {
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <Box as='li' fontSize='5rem' padding='0.1rem'>
-                  Home
-                </Box>
+                <Link to='/'>
+                  <Text fontSize='5rem' padding='0.1rem'>
+                    Home
+                  </Text>
+                </Link>
               </motion.div>
               <motion.div
                 initial='hidden'
