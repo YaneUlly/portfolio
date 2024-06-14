@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import './styles/HamburgerMenu.css';
+import { Flex, Box, IconButton } from '@chakra-ui/react';
 import 'boxicons';
 
 const HamburgerMenu = () => {
@@ -12,75 +12,117 @@ const HamburgerMenu = () => {
   };
 
   return (
-    <div>
-      <button className='menu-button' onClick={toggleMenu}>
-        <box-icon name='menu' size='60px'></box-icon>
-      </button>
+    <Box>
+      <IconButton
+        icon={<box-icon name='menu' size='60px' />}
+        onClick={toggleMenu}
+        color='white'
+        background='none'
+        _hover={{ background: 'none' }}
+        aria-label='Open Menu'
+      />
 
       {/* Menu */}
       {isOpen && (
-        <div className='overlay'>
-          <div className='menu'>
-            <button className='close-button' onClick={toggleMenu}>
-              <box-icon name='x' size='60px'></box-icon>
-            </button>
+        <Flex
+          position='fixed'
+          top='0'
+          left='0'
+          width='100%'
+          height='100%'
+          backgroundColor='white'
+          justifyContent='flex-start'
+          zIndex='50'
+        >
+          <Flex
+            width='100%'
+            height='100%'
+            backgroundColor='white'
+            color='black'
+            paddingLeft='2rem'
+            direction='column'
+            alignItems='flex-start'
+            justifyContent='center'
+          >
+            <IconButton
+              icon={<box-icon name='x' size='60px' />}
+              onClick={toggleMenu}
+              position='absolute'
+              top='1rem'
+              right='1rem'
+              color='black'
+              background='none'
+              _hover={{ background: 'none' }}
+              aria-label='Close Menu'
+            />
 
-            <ul>
+            <Box
+              as='ul'
+              padding='1rem'
+              textAlign='left'
+              display='flex'
+              flexDirection='column'
+              alignItems='flex-start'
+            >
               <motion.div
                 initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5 }}
+                animate='visible'
                 variants={{
                   hidden: { opacity: 0, y: 50 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                transition={{ duration: 0.5 }}
               >
-                <li>Home</li>
+                <Box as='li' fontSize='5rem' padding='0.1rem'>
+                  Home
+                </Box>
               </motion.div>
               <motion.div
                 initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
+                animate='visible'
                 variants={{
                   hidden: { opacity: 0, y: 50 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
               >
                 <Link to='/about'>
-                  <li>About</li>
+                  <Box as='li' fontSize='5rem' padding='0.1rem'>
+                    About
+                  </Box>
                 </Link>
               </motion.div>
               <motion.div
                 initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
+                animate='visible'
                 variants={{
                   hidden: { opacity: 0, y: 50 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
               >
-                <li>Portfolio</li>
+                <Box as='li' fontSize='5rem' padding='0.1rem'>
+                  Portfolio
+                </Box>
               </motion.div>
               <motion.div
                 initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
+                animate='visible'
                 variants={{
                   hidden: { opacity: 0, y: 50 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
               >
-                <li>Contact</li>
+                <Box as='li' fontSize='5rem' padding='0.1rem'>
+                  Contact
+                </Box>
               </motion.div>
-            </ul>
-          </div>
-        </div>
+            </Box>
+          </Flex>
+        </Flex>
       )}
-    </div>
+    </Box>
   );
 };
 
