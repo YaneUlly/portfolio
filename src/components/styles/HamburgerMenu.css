@@ -1,0 +1,51 @@
+.menu-button {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 50;
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.menu ul {
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu li {
+  padding: 0.1rem;
+  font-size: 5rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  color: black;
+  cursor: pointer;
+}
