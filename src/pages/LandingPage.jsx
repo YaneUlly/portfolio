@@ -8,7 +8,7 @@ function LandingPage() {
       minHeight={{ md: '50vh', lg: '80vh' }}
       width='100%'
       mt={{ md: '8rem', lg: '0' }}
-      marginBottom={{ base: '8rem', md: '16rem', lg: '4rem' }}
+      marginBottom={{ base: '8rem', md: '16rem', lg: '3rem' }}
       display='flex'
       flexDirection={{ base: 'column', lg: 'row' }}
       alignItems='center'
@@ -74,6 +74,10 @@ function LandingPage() {
           p='2rem 4.5rem'
           cursor='pointer'
           mb='1rem'
+          _hover={{
+            bgColor: '#5783AB',
+            color: '#FFFFFF',
+          }}
         >
           Ux/Ui Design Work
         </Button>
@@ -82,6 +86,10 @@ function LandingPage() {
           borderColor='black'
           p='2rem 4.5rem'
           cursor='pointer'
+          _hover={{
+            bgColor: '#E7CE35',
+            color: '#FFFFFF',
+          }}
         >
           Web Development Work
         </Button>

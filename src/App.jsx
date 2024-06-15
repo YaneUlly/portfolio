@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/about' element={<About />} />
+          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </Flex>
       <Box as='footer' width='100%'>

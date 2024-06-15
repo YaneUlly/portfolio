@@ -1,14 +1,24 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Flex, Box, IconButton, Text } from '@chakra-ui/react';
 import 'boxicons';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  // handle the home option, because the menu it's a overlay
+  const handleMenuClick = () => {
+    setIsOpen(false);
+
+    // if ((location.pathname = path)) {
+    //   window.location.reload();
+    // }
   };
 
   return (
@@ -73,8 +83,13 @@ const HamburgerMenu = () => {
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <Link to='/'>
-                  <Text fontSize='5rem' padding='0.1rem'>
+                <Link to='/' onClick={() => handleMenuClick('/')}>
+                  <Text
+                    fontSize='5rem'
+                    padding='0.1rem'
+                    color='#CCCCCC'
+                    _hover={{ color: '#101010' }}
+                  >
                     Home
                   </Text>
                 </Link>
@@ -88,8 +103,14 @@ const HamburgerMenu = () => {
                 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                <Link to='/about'>
-                  <Box as='li' fontSize='5rem' padding='0.1rem'>
+                <Link to='/about' onClick={() => handleMenuClick('/about')}>
+                  <Box
+                    as='li'
+                    fontSize='5rem'
+                    padding='0.1rem'
+                    color='#CCCCCC'
+                    _hover={{ color: '#101010' }}
+                  >
                     About
                   </Box>
                 </Link>
@@ -103,9 +124,20 @@ const HamburgerMenu = () => {
                 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-                <Box as='li' fontSize='5rem' padding='0.1rem'>
-                  Portfolio
-                </Box>
+                <Link
+                  to='/portfolio'
+                  onClick={() => handleMenuClick('/portfolio')}
+                >
+                  <Box
+                    as='li'
+                    fontSize='5rem'
+                    padding='0.1rem'
+                    color='#CCCCCC'
+                    _hover={{ color: '#101010' }}
+                  >
+                    Portfolio
+                  </Box>
+                </Link>
               </motion.div>
               <motion.div
                 initial='hidden'
@@ -116,9 +148,17 @@ const HamburgerMenu = () => {
                 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
-                <Box as='li' fontSize='5rem' padding='0.1rem'>
-                  Contact
-                </Box>
+                <Link to='/contact' onClick={() => handleMenuClick('/contact')}>
+                  <Box
+                    as='li'
+                    fontSize='5rem'
+                    padding='0.1rem'
+                    color='#CCCCCC'
+                    _hover={{ color: '#101010' }}
+                  >
+                    Contact
+                  </Box>
+                </Link>
               </motion.div>
             </Box>
           </Flex>

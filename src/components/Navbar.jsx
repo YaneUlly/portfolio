@@ -12,6 +12,7 @@ function Navbar() {
       color='white'
       p='0.5rem'
       width='100%'
+      mt='1.5rem'
     >
       <Box as='span' ml='1rem'>
         <box-icon name='moon' size='30px'></box-icon>
