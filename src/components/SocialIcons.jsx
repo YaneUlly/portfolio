@@ -42,7 +42,7 @@ function SocialIcons() {
         </Box>
       </Link>
 
-      <Link href='mailto:yaneully@gmail.com' isExternal>
+      <Link href='mailto:blrv.rjadm@gmail.com' isExternal>
         <Box
           as='span'
           onMouseEnter={handleMouseEnter}

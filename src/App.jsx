@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
+import FabricaProject from './pages/uxuiprojects/FábricaProject';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -19,6 +20,10 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           <Route path='/about' element={<About />} />
           <Route path='/portfolio' element={<Portfolio />} />
+          <Route
+            path='/portfolio/uxuidesign/fabricaproject'
+            element={<FabricaProject />}
+          />
           <Route path='/contact' element={<Contact />} />
         </Routes>
       </Flex>
