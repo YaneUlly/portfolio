@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
 import ReasonOne from '../../assets/uxuiprojects/ReasonOne.png';
 import ReasonTwo from '../../assets/uxuiprojects/ReasonTwo.png';
@@ -9,12 +10,42 @@ import CanvaMVP from '../../assets/uxuiprojects/CanvaMVP.jpg';
 import MVPBuild from '../../assets/uxuiprojects/MVPBuild.png';
 import MockupFabrica from '../../assets/uxuiprojects/MockupFabrica.png';
 import AllScreensFabrica from '../../assets/uxuiprojects/AllScreensFabrica.png';
-import { Flex, Text, Box, Image, Button } from '@chakra-ui/react';
+import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
 
 function FábricaProject() {
+  const [activeSection, setActiveSection] = useState('');
+
+  const sections = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'problem', label: 'Problem' },
+    { id: 'objective', label: 'Objective' },
+    { id: 'research', label: 'Research' },
+    { id: 'design', label: 'Design' },
+    { id: 'results', label: 'Results' },
+  ];
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+    let currentSection = '';
+    sections.forEach(section => {
+      const element = document.getElementById(section.id);
+      if (element && element.offsetTop <= scrollPosition) {
+        currentSection = section.id;
+      }
+    });
+    setActiveSection(currentSection);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div>
       <Breadcrumb
@@ -58,17 +89,26 @@ function FábricaProject() {
             fontWeight='600'
             fontSize='1.2rem'
           >
-            <ListItem>Overview</ListItem>
-            <ListItem>Problem</ListItem>
-            <ListItem>Ojective</ListItem>
-            <ListItem>Research</ListItem>
-            <ListItem>Design</ListItem>
-            <ListItem>Results</ListItem>
+            {sections.map(section => (
+              <ListItem key={section.id}>
+                <Link
+                  href={`#${section.id}`}
+                  _hover={{ color: '#E7CE35' }}
+                  style={{
+                    color: activeSection === section.id ? '#E7CE35' : '',
+                    textDecoration:
+                      activeSection === section.id ? 'underline' : 'none',
+                  }}
+                >
+                  {section.label}
+                </Link>
+              </ListItem>
+            ))}
           </UnorderedList>
         </Box>
 
         <Box m='2rem 12rem 1.5rem 0' flex='2'>
-          <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
             Overview
           </Text>
           <Text mb='0.8rem'>
@@ -117,12 +157,28 @@ function FábricaProject() {
             </Table>
           </TableContainer>
 
-          <Button>Visit website</Button>
+          <Link href='https://fabricacoffeeroasters.com/' isExternal>
+            <Button
+              variant='outline'
+              borderWidth='0.1rem'
+              borderColor='black'
+              mt='2rem'
+              p='2rem 2rem'
+              cursor='pointer'
+              mb='1rem'
+              _hover={{
+                bgColor: '#101010',
+                color: '#FFFFFF',
+              }}
+            >
+              Visit website
+            </Button>
+          </Link>
         </Box>
       </Flex>
 
       <Box p='2rem 10rem 1.5rem 8rem'>
-        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
           Problem
         </Text>
         <Text mb='0.8rem'>
@@ -145,8 +201,8 @@ function FábricaProject() {
           </strong>
           .
         </Text>
-        <Box bg='tomato' w='100%' p={4} color='white'>
-          <Text>
+        <Box bg='rgba(220, 90, 53, 0.7)' w='100%' p={4}>
+          <Text color='black'>
             <strong>
               Lack of guidance and assistance for customers making purchases on
               the E-commerce platform, in contrast to the in-person experience
@@ -157,7 +213,7 @@ function FábricaProject() {
       </Box>
 
       <Box p='2rem 10rem 1.5rem 8rem'>
-        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
           Objective
         </Text>
         <Text mb='0.8rem'>
@@ -192,7 +248,7 @@ function FábricaProject() {
       </Box>
 
       <Box p='2rem 10rem 1.5rem 8rem'>
-        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
           Research
         </Text>
         <Text fontSize='1.5rem' mb='0.8rem'>
@@ -277,20 +333,21 @@ function FábricaProject() {
             help customers successfully make their coffee purchases and be
             satisfied with their choices in the end.
           </Text>
-          <Box bg='blue' w='100%' p={4} color='white'>
-            <Text mb='0.8rem'>
-              We found that{' '}
+          <Box bg='rgba(145, 187, 148, 0.7)' w='100%' p={4}>
+            <Text mb='0.8rem' color='black'>
+              1. We found that{' '}
               <strong>
                 the major pain point for users is the lack of knowledge
                 regarding technical terms
               </strong>{' '}
               such as grinding, roasting, and coffee profile.
             </Text>
-            <Text mb='0.8rem'>
-              A significant number of people initiate their coffee search by
+            <Text mb='0.8rem' color='black'>
+              2. A significant number of people initiate their coffee search by
               exploring extraction methods and flavor profiles.
             </Text>
-            <Text mb='0.8rem'>
+            <Text mb='0.8rem' color='black'>
+              3.{' '}
               <strong>
                 Our target audience is not specifically limited to beginners
               </strong>{' '}
@@ -388,7 +445,7 @@ function FábricaProject() {
       </Box>
 
       <Box p='2rem 10rem 1.5rem 8rem'>
-        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
           Design
         </Text>
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
@@ -486,7 +543,7 @@ function FábricaProject() {
       </Box>
 
       <Box p='2rem 10rem 1.5rem 8rem'>
-        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
           Results
         </Text>
         <Text mb='0.8rem'>
@@ -495,42 +552,54 @@ function FábricaProject() {
           observations revealed that:
         </Text>
 
-        <Flex flexDirection='row' gap='12' margin='2rem 5rem'>
-          <Box margin='4rem 1rem 2rem 2rem'>
+        <Flex flexDirection='row' margin='2rem 5rem 5rem 2rem' gap='2rem'>
+          <Box padding='4rem 1rem 2rem 2rem' flex='1' textAlign='left'>
             <Text fontSize='1.5rem' fontWeight='500'>
               90%
             </Text>
             <Text>Of completion rate.</Text>
           </Box>
 
-          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
-            <Box margin='4rem 1rem 2rem 2rem'>
-              <Text fontSize='1.5rem' fontWeight='500'>
-                3%
-              </Text>
-              <Text>abandonment rate on the first page of the quiz</Text>
-            </Box>
+          <Box
+            borderLeft='1px'
+            borderColor='#cccccc'
+            padding='4rem 1rem 2rem 2rem'
+            flex='1'
+            textAlign='left'
+          >
+            <Text fontSize='1.5rem' fontWeight='500'>
+              3%
+            </Text>
+            <Text>abandonment rate on the first page of the quiz</Text>
           </Box>
 
-          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
-            <Box margin='4rem 1rem 2rem 2rem'>
-              <Text fontSize='1.5rem' fontWeight='500'>
-                30%
-              </Text>
-              <Text>
-                of users interact in the final page, meaning that they click on
-                the product or add the product to their cart;
-              </Text>
-            </Box>
+          <Box
+            borderLeft='1px'
+            borderColor='#cccccc'
+            padding='4rem 1rem 2rem 2rem'
+            flex='1'
+            textAlign='left'
+          >
+            <Text fontSize='1.5rem' fontWeight='500'>
+              30%
+            </Text>
+            <Text>
+              of users interact in the final page, meaning that they click on
+              the product or add the product to their cart;
+            </Text>
           </Box>
 
-          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
-            <Box margin='4rem 1rem 2rem 2rem'>
-              <Text fontSize='1.5rem' fontWeight='500'>
-                40€
-              </Text>
-              <Text>euros the average cart value</Text>
-            </Box>
+          <Box
+            borderLeft='1px'
+            borderColor='#cccccc'
+            padding='4rem 1rem 2rem 2rem'
+            flex='1'
+            textAlign='left'
+          >
+            <Text fontSize='1.5rem' fontWeight='500'>
+              40€
+            </Text>
+            <Text>the average cart value</Text>
           </Box>
         </Flex>
       </Box>
