@@ -5,6 +5,10 @@ import ReasonThree from '../../assets/uxuiprojects/ReasonThree.png';
 import PersonaOne from '../../assets/uxuiprojects/PersonaOne.png';
 import PersonaTwo from '../../assets/uxuiprojects/PersonaTwo.png';
 import UserJourney from '../../assets/uxuiprojects/UserJourney.jpg';
+import CanvaMVP from '../../assets/uxuiprojects/CanvaMVP.jpg';
+import MVPBuild from '../../assets/uxuiprojects/MVPBuild.png';
+import MockupFabrica from '../../assets/uxuiprojects/MockupFabrica.png';
+import AllScreensFabrica from '../../assets/uxuiprojects/AllScreensFabrica.png';
 import { Flex, Text, Box, Image, Button } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -339,18 +343,20 @@ function FábricaProject() {
         <Text mb='0.8rem'>Pain points:</Text>
 
         <Flex flexDirection='row' gap='12' margin='2rem 5rem'>
-          <Box border='1px' borderColor='black' borderRadius='5px'>
-            <Box margin='4rem 2rem 2rem 2rem'>
-              <box-icon name='confused'></box-icon>
-              <Text>
-                Uncertainty in finding and understanding flavor profiles.
-              </Text>
-            </Box>
+          <Box margin='4rem 1rem 2rem 2rem'>
+            <Text fontSize='1.5rem' fontWeight='500'>
+              1.
+            </Text>
+            <Text>
+              Uncertainty in finding and understanding flavor profiles.
+            </Text>
           </Box>
 
-          <Box border='1px' borderColor='black' borderRadius='5px'>
-            <Box margin='4rem 2rem 2rem 2rem'>
-              <box-icon name='confused'></box-icon>
+          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
+            <Box margin='4rem 1rem 2rem 2rem'>
+              <Text fontSize='1.5rem' fontWeight='500'>
+                2.
+              </Text>
               <Text>
                 Knowing if a particular coffee pairs well with the home brewing
                 method.
@@ -358,9 +364,11 @@ function FábricaProject() {
             </Box>
           </Box>
 
-          <Box border='1px' borderColor='black' borderRadius='5px'>
-            <Box margin='4rem 2rem 2rem 2rem'>
-              <box-icon name='confused'></box-icon>
+          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
+            <Box margin='4rem 1rem 2rem 2rem'>
+              <Text fontSize='1.5rem' fontWeight='500'>
+                3.
+              </Text>
               <Text>
                 Selecting the correct grind for the coffee and the home brewing
                 method.
@@ -368,19 +376,25 @@ function FábricaProject() {
             </Box>
           </Box>
 
-          <Box border='1px' borderColor='black' borderRadius='5px'>
-            <Box margin='4rem 2rem 2rem 2rem'>
-              <box-icon name='confused'></box-icon>
+          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
+            <Box margin='4rem 1rem 2rem 2rem'>
+              <Text fontSize='1.5rem' fontWeight='500'>
+                4.
+              </Text>
               <Text>Understanding how to properly prepare coffee at home.</Text>
             </Box>
           </Box>
         </Flex>
       </Box>
 
-      <section>
-        <h1>Desing</h1>
-        <h3>MVP</h3>
-        <p>
+      <Box p='2rem 10rem 1.5rem 8rem'>
+        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+          Design
+        </Text>
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          MVP
+        </Text>
+        <Text mb='0.8rem'>
           To identify the features to include in our product, I initiated{' '}
           <strong>Benchmarking</strong> by studying three companies that have a
           Coffee Quiz feature. The objective was to{' '}
@@ -388,34 +402,48 @@ function FábricaProject() {
           determine which ones would be most beneficial for enhancing our
           customers experience, and <strong>identify aspects to avoid</strong>{' '}
           that may not align with our target audience.
-        </p>
-        <p>
+        </Text>
+        <Text mb='0.8rem'>
           With the creation of Personas, User Journeys, and the conducted
           Benchmarking, we can now explore which features our quiz should
           include, addressing the necessary subjects in a more playful,
           familiar, and intuitive manner for our users.
-        </p>
-        <p>
+        </Text>
+        <Text mb='0.8rem'>
           With a pull of questions based on what we had learned, we were able to{' '}
           <strong>validate</strong> the extremely necessary functionalities that
           we need to know from the customer and that must be included in our
           quiz:
-        </p>
-        <ul>
-          <li>Brewing method;</li>
-          <li>Flavors they identify with the most;</li>
-          <li>How they like to consume their coffee at home.</li>
-        </ul>
+        </Text>
+        <UnorderedList mb='1.2rem'>
+          <ListItem>Brewing method;</ListItem>
+          <ListItem>Flavors they identify with the most;</ListItem>
+          <ListItem>How they like to consume their coffee at home.</ListItem>
+        </UnorderedList>
 
-        <h3>Canvas MVP</h3>
-        <p>
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Canvas MVP
+        </Text>
+        <Text mb='0.8rem'>
           To align our product with business expectations, we opted to create an
           MVP Canvas before commencing the actual MVP development process.
-        </p>
-        <img />
+        </Text>
 
-        <h3>MVP</h3>
-        <p>
+        <Box
+          marginBottom='2rem'
+          marginTop='2rem'
+          marginLeft='10rem'
+          display='flex'
+          justifyContent='center'
+          maxWidth='60%'
+        >
+          <img src={CanvaMVP} />
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          MVP
+        </Text>
+        <Text mb='0.8rem'>
           After identifying all the coffees based on their origins, flavors, and
           methods, we began planning the questions, steps, and options for our
           quiz. Several changes were made in the MVP construction, such as
@@ -427,9 +455,20 @@ function FábricaProject() {
           realized that the coffees from Fábrica exhibit specific flavors:
           Floral, Sweet, Nutty, and Fruity, so we removed the Caramel and
           Chocolate flavors.
-        </p>
-        <img />
-        <p>
+        </Text>
+
+        <Box
+          marginBottom='1rem'
+          marginTop='2rem'
+          marginLeft='6rem'
+          display='flex'
+          justifyContent='center'
+          maxWidth='80%'
+        >
+          <img src={MVPBuild} />
+        </Box>
+
+        <Text mb='0.8rem'>
           <strong>
             We utilized the Quiz application available on WordPress to build the
             MVP
@@ -437,29 +476,64 @@ function FábricaProject() {
           , and the platform employs a points-based methodology in the Quiz
           system. As users choose their preferences, points are tallied, leading
           to a specific product recommendation based on the accumulated score.
-        </p>
+        </Text>
 
-        <h3>UI</h3>
-        <img />
-      </section>
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Final UI
+        </Text>
+        <img src={MockupFabrica} />
+        <img src={AllScreensFabrica} />
+      </Box>
 
-      <section>
-        <h1>Results</h1>
-        <p>
+      <Box p='2rem 10rem 1.5rem 8rem'>
+        <Text fontSize='2rem' fontWeight='600' mb='1rem'>
+          Results
+        </Text>
+        <Text mb='0.8rem'>
           Following the deployment of the Quiz Feature, we conducted an analysis
           using the built-in metrics system provided by the application. Our
           observations revealed that:
-        </p>
-        <ul>
-          <li>The Quiz had a completion rate of 90%;</li>
-          <li>3% abandonment rate on the first page of the quiz;</li>
-          <li>
-            30% of users interact in the final page, meaning that they click on
-            the product or add the product to their cart;
-          </li>
-          <li>40 euros the average cart value.</li>
-        </ul>
-      </section>
+        </Text>
+
+        <Flex flexDirection='row' gap='12' margin='2rem 5rem'>
+          <Box margin='4rem 1rem 2rem 2rem'>
+            <Text fontSize='1.5rem' fontWeight='500'>
+              90%
+            </Text>
+            <Text>Of completion rate.</Text>
+          </Box>
+
+          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
+            <Box margin='4rem 1rem 2rem 2rem'>
+              <Text fontSize='1.5rem' fontWeight='500'>
+                3%
+              </Text>
+              <Text>abandonment rate on the first page of the quiz</Text>
+            </Box>
+          </Box>
+
+          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
+            <Box margin='4rem 1rem 2rem 2rem'>
+              <Text fontSize='1.5rem' fontWeight='500'>
+                30%
+              </Text>
+              <Text>
+                of users interact in the final page, meaning that they click on
+                the product or add the product to their cart;
+              </Text>
+            </Box>
+          </Box>
+
+          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
+            <Box margin='4rem 1rem 2rem 2rem'>
+              <Text fontSize='1.5rem' fontWeight='500'>
+                40€
+              </Text>
+              <Text>euros the average cart value</Text>
+            </Box>
+          </Box>
+        </Flex>
+      </Box>
     </div>
   );
 }
