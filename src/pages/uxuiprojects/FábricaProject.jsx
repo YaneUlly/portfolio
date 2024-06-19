@@ -76,7 +76,7 @@ function FábricaProject() {
       </Text>
 
       <Text m='0 0 4rem 2rem'>
-        A Quiz feature for Fábrica Coffee Roasters Ecommerce Landing Page
+        A Quiz feature for Fábrica Coffee Roasters Ecommerce Landing Page.
       </Text>
 
       <Image src={Fabrica} alt='fabrica-logo' width='80%' ml='8rem' />
