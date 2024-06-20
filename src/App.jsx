@@ -6,6 +6,7 @@ import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import FabricaProject from './pages/uxuiprojects/FábricaProject';
 import MillenniumProject from './pages/uxuiprojects/MillenniumProject';
+import ChocloProject from './pages/uxuiprojects/ChocloProject';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -28,6 +29,10 @@ function App() {
           <Route
             path='/portfolio/uxuidesign/millenniumproject'
             element={<MillenniumProject />}
+          />
+          <Route
+            path='/portfolio/uxuidesign/chocloproject'
+            element={<ChocloProject />}
           />
           <Route path='/contact' element={<Contact />} />
         </Routes>
