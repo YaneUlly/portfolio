@@ -5,6 +5,10 @@ import InvestorsTwo from '../../assets/uxuiprojects/InvestorsTwo.jpg';
 import InvestorsThree from '../../assets/uxuiprojects/InvestorsThree.jpg';
 import SWOTSantander from '../../assets/uxuiprojects/SWOTSantander.jpg';
 import SWOTNovobanco from '../../assets/uxuiprojects/SWOTNovobanco.jpg';
+import StoryboardMillennium from '../../assets/uxuiprojects/StoryboardMillennium.png';
+import WireframeMillennium from '../../assets/uxuiprojects/WireframeMillennium.jpg';
+import StyleGuideMillennium from '../../assets/uxuiprojects/StyleGuideMillennium.png';
+import MillenniumFinalUI from '../../assets/uxuiprojects/MillenniumFinalUI.png';
 import { Flex, Text, Box, Image, Button, Link, Thead } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -255,55 +259,61 @@ function MillenniumProject() {
           <img src={InvestorsTwo} />
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem'>
-          User Interviews
-        </Text>
-        <Text mb='0.8rem'>
-          After developing my provisional personas, and before proceeding to the
-          next research steps, I crafted a script interview, with a screener to
-          ensure that I only engaged with individuals meeting my research
-          criteria and subsequently, I conducted{' '}
-          <strong>street interviews</strong>.
-        </Text>
-        <Text mb='0.8rem'>
-          <strong>Interview Insights:</strong>
-        </Text>
-        <UnorderedList mb='1.2rem'>
-          <ListItem>
-            <strong> My assumption was validated.</strong> Many of the people
-            try to study by themselves and consume a lot of materials about
-            investments.
-          </ListItem>
-          <ListItem>
-            I also gained additional intelligence about{' '}
-            <strong>people that already invest</strong> and continuous to look
-            for materials about investments and news on the market.
-          </ListItem>
-          <ListItem>
-            <strong>95% of my participants</strong> would appreciate to use a
-            platform with all they need to know about investments.
-          </ListItem>
-          <ListItem>
-            It also highlighted for me that{' '}
-            <strong>people prioritize financial security above all else</strong>
-            , and that this can have a{' '}
-            <strong>significant impact on their mental well-being</strong>.
-          </ListItem>
-        </UnorderedList>
+        <Box display='flex' flexDirection='row' gap='2rem'>
+          <Box display='flex' flexDirection='column'>
+            <Text fontSize='1.5rem' mb='0.8rem'>
+              User Interviews
+            </Text>
+            <Text mb='0.8rem'>
+              After developing my provisional personas, and before proceeding to
+              the next research steps, I crafted a script interview, with a
+              screener to ensure that I only engaged with individuals meeting my
+              research criteria and subsequently, I conducted{' '}
+              <strong>street interviews</strong>.
+            </Text>
+            <Text mb='0.8rem'>
+              <strong>Interview Insights:</strong>
+            </Text>
+            <UnorderedList mb='1.2rem'>
+              <ListItem>
+                <strong> My assumption was validated.</strong> Many of the
+                people try to study by themselves and consume a lot of materials
+                about investments.
+              </ListItem>
+              <ListItem>
+                I also gained additional intelligence about{' '}
+                <strong>people that already invest</strong> and continuous to
+                look for materials about investments and news on the market.
+              </ListItem>
+              <ListItem>
+                <strong>95% of my participants</strong> would appreciate to use
+                a platform with all they need to know about investments.
+              </ListItem>
+              <ListItem>
+                It also highlighted for me that{' '}
+                <strong>
+                  people prioritize financial security above all else
+                </strong>
+                , and that this can have a{' '}
+                <strong>significant impact on their mental well-being</strong>.
+              </ListItem>
+            </UnorderedList>
 
-        <Text mb='0.8rem'>
-          With that I saw the need of one more persona that corresponds with the
-          additional intelligence that I gain during the interviews.
-        </Text>
+            <Text mb='0.8rem'>
+              With that I saw the need of one more persona that corresponds with
+              the additional intelligence that I gain during the interviews.
+            </Text>
+          </Box>
 
-        <Box
-          maxWidth='60%'
-          display='flex'
-          flexDirection='column'
-          gap='10px'
-          marginTop='2rem'
-        >
-          <img src={InvestorsThree} />
+          <Box
+            maxWidth='60%'
+            display='flex'
+            flexDirection='column'
+            gap='10px'
+            marginTop='2rem'
+          >
+            <img src={InvestorsThree} />
+          </Box>
         </Box>
 
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
@@ -338,6 +348,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     PROS
@@ -348,6 +359,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     CONS
@@ -358,6 +370,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     EXPLORE
@@ -372,6 +385,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     Novobanco offers an option for{' '}
@@ -383,6 +397,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     Both banks provide a{' '}
@@ -397,6 +412,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     To make a more{' '}
@@ -413,6 +429,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     Santander created a{' '}
@@ -427,6 +444,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     <strong>
@@ -440,6 +458,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     For those who are starting to learn about a specific topic,
@@ -456,6 +475,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     The step by step on the Novobanco page is a good option to{' '}
@@ -468,6 +488,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     The Santander page{' '}
@@ -480,6 +501,7 @@ function MillenniumProject() {
                       maxWidth: '200px',
                       whiteSpace: 'normal',
                       wordWrap: 'break-word',
+                      borderColor: 'gray.300',
                     }}
                   >
                     There are several ways in which we can{' '}
@@ -506,7 +528,7 @@ function MillenniumProject() {
 
         <Box display='flex' flexDirection='row' gap='5rem'>
           <Box>
-            <Text mb='0.8rem' fontWeight='500'>
+            <Text mb='0.8rem' fontWeight='700'>
               Santander
             </Text>
             <Text mb='0.8rem'>
@@ -521,7 +543,7 @@ function MillenniumProject() {
           </Box>
 
           <Box>
-            <Text mb='0.8rem' fontWeight='500'>
+            <Text mb='0.8rem' fontWeight='700'>
               Novobanco
             </Text>
             <Text mb='0.8rem'>
@@ -533,6 +555,478 @@ function MillenniumProject() {
               <img src={SWOTNovobanco} />
             </Box>
           </Box>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Identify Key Features
+        </Text>
+        <Text mb='0.8rem'>
+          I have chosen to utilize the insightful questions posed in{' '}
+          <strong>UX Strategy by Jaime Levy</strong> to guide my exploration and
+          uncover the essential features necessary for my project. By leveraging
+          the{' '}
+          <strong>
+            knowledge gained from customer interviews and conducting a thorough
+            competitive analysis of potential competitors
+          </strong>
+          , I am applying a well-informed approach to inform my decision-making
+          process.
+        </Text>
+
+        <Box overflowX='auto' mt='1.5rem'>
+          <TableContainer>
+            <Table variant='simple' size='sm'>
+              <Thead>
+                <Tr>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    #
+                  </Th>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Feature Name
+                  </Th>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Functionality Details
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    1
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Gallery Articles
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Materials ranging from beginner-level to advanced.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    2
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Search and Filter tool
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    An easy way so you can search and filter all the materials
+                    that you want.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    3
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    FAQ & Ask Center
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Area for the users to read frequently asked questions and
+                    post a question if they can not find the answer.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    4
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Registration/ Create Account
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Ability for those users that want to create an account with
+                    just an email address (to be verified) and password.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    5
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Real-time Alerts
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Alerts about their investments, or news materials that were
+                    posted.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    6
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Community
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Once that you register you also have a part at the community
+                    to exchange knowledge.
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
+          Millennium for Investors - Key Features
+        </Text>
+
+        <Box maxWidth='800px'>
+          <UnorderedList mb='1.2rem'>
+            <ListItem mb='0.8rem'>
+              A <strong>Quiz</strong> as a first step so you can know what type
+              investor you are, learn more about your taste for investing and
+              what type investment suits you.
+            </ListItem>
+            <ListItem mb='0.8rem'>
+              A <strong>Gallery Articles</strong> a range of certified materials
+              that you can use for your learning and have greater credibility in
+              your study.
+            </ListItem>
+            <ListItem mb='0.8rem'>
+              <strong>Community</strong> here you have the opportunity to not
+              only share your valuable knowledge but also stay consistently
+              updated with the latest market news and much more.
+            </ListItem>
+          </UnorderedList>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Storyboard
+        </Text>
+        <Text mb='0.8rem'>
+          At that phase, I utilized the{' '}
+          <strong>key features to construct a narrative</strong>
+          from the user point of view in my storyboard. This effectively
+          illustrated the benefits customers could derive from my solution.
+          Then,{' '}
+          <strong>
+            I leveraged this storyboard as a foundation to develop a prototype
+          </strong>
+          , which was utilized for conducting experiments.
+        </Text>
+
+        <Box maxWidth='110%' marginTop='1rem' marginBottom='2rem'>
+          <img src={StoryboardMillennium} />
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          User Journey
+        </Text>
+        <Text mb='0.8rem'>
+          Describing the User Journey through the website, with that in mind, I
+          had a clear understanding that I could focous on the landing page
+          screen to create and prototype, so I started my wireframe process.
+        </Text>
+
+        <Flex flexDirection='row' margin='2rem 5rem 2rem 2rem' gap='2rem'>
+          <Box padding='4rem 1rem 2rem 2rem' flex='1' textAlign='left'>
+            <Text fontSize='1.2rem' fontWeight='500' mb='0.8rem'>
+              1. <strong>Home:</strong>
+            </Text>
+            <Text>
+              User opens the Millennium webpage, looks for the investments
+              options and find the CTA for beginners.
+            </Text>
+          </Box>
+
+          <Box
+            borderLeft='1px'
+            borderColor='#cccccc'
+            padding='4rem 1rem 2rem 2rem'
+            flex='1'
+            textAlign='left'
+          >
+            <Text fontSize='1.2rem' fontWeight='500' mb='0.8rem'>
+              2. <strong>Landing Page Overview:</strong>
+            </Text>
+            <Text>
+              User opens the landing page for Millennium investment community,
+              he finds the types of investments on the menu, the quiz option,
+              the materials, search tool, registration option, FAQ and Prompt
+              Assistance.{' '}
+            </Text>
+          </Box>
+
+          <Box
+            borderLeft='1px'
+            borderColor='#cccccc'
+            padding='4rem 1rem 2rem 2rem'
+            flex='1'
+            textAlign='left'
+          >
+            <Text fontSize='1.2rem' fontWeight='500' mb='0.8rem'>
+              3. <strong>Subscription:</strong>
+            </Text>
+            <Text>
+              He decides to subscribe and be part of the community, he puts his
+              database and have new investor area. Now he have access to more
+              materials, he can consolidate all his investments in one place,
+              now the status of his investment, real time alerts, community
+              forum and study list.
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+
+      <Box p='1rem 10rem 1.5rem 8rem'>
+        <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
+          Design
+        </Text>
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Wireframe
+        </Text>
+        <Text mb='0.8rem'>
+          Before beginning the wireframe creation process, I made the decision
+          to sketch out the layout. This approach allowed me to visualize how we
+          can effectively separate and organize the different subjects, placing
+          each of them in their appropriate positions.
+        </Text>
+        <Text mb='0.8rem'>
+          This is the <strong>first three blocks</strong> for our landing page,
+          I decided to organize the content in this way:
+        </Text>
+        <UnorderedList mb='1.2rem'>
+          <ListItem mb='0.8rem'>
+            <strong>Quiz:</strong> when the user arrive in our page and also
+            still dont know how to start, he can take the quiz and have a little
+            guidance to where he can start from.
+          </ListItem>
+          <ListItem mb='0.8rem'>
+            <strong>Investment by your goals:</strong> if the user doesnt want
+            to take the quiz, he can choose to start by his goals of investment.
+          </ListItem>
+          <ListItem mb='0.8rem'>
+            <strong>Level of knowledge:</strong> if he doesnt want to take the
+            quiz and dont have any specific goal for investment, he can choose
+            his level of knowledge.{' '}
+          </ListItem>
+        </UnorderedList>
+
+        <Box
+          marginBottom='2rem'
+          marginTop='2rem'
+          marginLeft='15rem'
+          display='flex'
+          justifyContent='center'
+          maxWidth='50%'
+        >
+          <img src={WireframeMillennium} alt='wireframe-millennium' />
+        </Box>
+
+        <Text mb='0.8rem'>For the rest of the Lading Page we have:</Text>
+        <UnorderedList mb='1.2rem'>
+          <ListItem>The newest content.</ListItem>
+          <ListItem>
+            The CTA for signing to our community and have more advantages of our
+            service.
+          </ListItem>
+          <ListItem>
+            The Footer with info to contact our support and also other infos
+            like social media pages.
+          </ListItem>
+        </UnorderedList>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Style Guide
+        </Text>
+        <Text mb='0.8rem'>
+          In this project, I strategically employed the visual components listed
+          below. I employed the brand designated colors while striving for a
+          faithful representation of its visual design.
+        </Text>
+
+        <Box
+          marginBottom='2rem'
+          marginTop='2rem'
+          marginLeft='15rem'
+          display='flex'
+          justifyContent='center'
+          maxWidth='50%'
+        >
+          <img src={StyleGuideMillennium} />
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Final UI
+        </Text>
+
+        <Box
+          marginBottom='2rem'
+          marginTop='2rem'
+          marginLeft='15rem'
+          display='flex'
+          justifyContent='center'
+          maxWidth='50%'
+        >
+          <img src={MillenniumFinalUI} />
         </Box>
       </Box>
     </div>
