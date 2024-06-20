@@ -1,9 +1,23 @@
 import ChocloWebsite from '../../assets/uxuiprojects/ChocloWebsite.png';
+import PersonaChocloOne from '../../assets/uxuiprojects/PersonaChocloOne.jpg';
+import PersonaChocloTwo from '../../assets/uxuiprojects/PersonaChocloTwo.jpg';
+import PersonaChocloThree from '../../assets/uxuiprojects/PersonaChocloThree.jpg';
+import UserJourneyChocloOne from '../../assets/uxuiprojects/UserJourneyChocloOne.jpg';
+import UserJourneyChocloTwo from '../../assets/uxuiprojects/UserJourneyChocloTwo.jpg';
+import UserJourneyChocloThree from '../../assets/uxuiprojects/UserJourneyChocloThree.jpg';
 import { useState, useEffect } from 'react';
 import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
-import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
+import {
+  Table,
+  Tbody,
+  Tr,
+  Td,
+  Th,
+  Thead,
+  TableContainer,
+} from '@chakra-ui/react';
 
 function ChocloProject() {
   const [activeSection, setActiveSection] = useState('');
@@ -284,6 +298,855 @@ function ChocloProject() {
             and extract valuable insights
           </strong>{' '}
           to inform the development of Choclo own Landing Page.
+        </Text>
+
+        <Box overflowX='auto' mt='1.5rem'>
+          <TableContainer>
+            <Table variant='simple' size='sm'>
+              <Thead>
+                <Tr>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Explore
+                  </Th>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Avoid
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Medals or other prizes highlights.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Use of Uppercase texts
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Visible actions.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    No CTA or CTA without contrast.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Homepage with only essentials options to choose from.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Not so much info about the company.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Contact and info are easily found.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Open new tab or browser when someone click on a content.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Breadcrumbs.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Ask unnecessary and complex questions in a form.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Scannable texts.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Repeated Information.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Use of real people images for more credibility.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Use of unrelated image and no real people images.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Consistent Navigation.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Dont use FAQ.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Transparent Pricing.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Not responsive website.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Provide value for users registering in a form.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Bugs and Errors.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Use of Icons.
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Place all the content in just one page.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    {''}
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Use a lot whitespace.
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Customer Discovery
+        </Text>
+        <Text mb='0.8rem'>
+          I have elected to conduct a pair of <strong>interviews</strong> to
+          validate our problem statement, contribute to persona creation, and
+          kickstart our ideation process.
+        </Text>
+        <Text mb='0.8rem'>
+          The initial interview will involve <strong>Choclo staff</strong>,
+          while the second will be directed towards our target audience:{' '}
+          <strong>individuals who dine out.</strong>
+        </Text>
+
+        <Text mb='0.8rem' fontWeight='600'>
+          What it is our goal?
+        </Text>
+        <Box
+          bg='rgba(145, 187, 148, 0.7)'
+          w='100%'
+          p={4}
+          display='flex'
+          flexDirection='row'
+          gap='1rem'
+        >
+          <box-icon name='bulb' size='md'></box-icon>
+          <Text color='black'>
+            We aim to learn more about our customers and gain an understanding
+            of the information that holds significance for them when deciding on
+            a dining destination. Furthermore, we are interested in identifying
+            any challenges they may have encountered while seeking
+            restaurant-related information.
+          </Text>
+        </Box>
+
+        <Box display='flex' flexDirection='row' gap='3rem' mt='2rem' mb='2rem'>
+          <Box>
+            <Text mb='0.8rem' fontWeight='600'>
+              Staff Interview insights:
+            </Text>
+            <UnorderedList mb='1.2rem'>
+              <ListItem mb='0.8rem'>
+                Social media plays a significant role in raising awareness about
+                Choclo, along with the influence of reviews, recommendations,
+                and various online groups.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                The majority of Choclo clientele consists of Latin customers,
+                with a substantial community of English speakers and individuals
+                from diverse nationalities following suit.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                A significant portion of their customer base has specific
+                requests regarding allergens and other food preferences.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                Online photos and the content people post have a profound
+                influence on their decision-making process.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                There are no recurring complaints or concerns about the public,
+                the only one that they have noticed its about the reservations.
+              </ListItem>
+              <ListItem>
+                Also the feedback and suggestions are not relevant.
+              </ListItem>
+            </UnorderedList>
+          </Box>
+
+          <Box>
+            <Text mb='0.8rem' fontWeight='600'>
+              Public answers analysis:
+            </Text>
+            <UnorderedList mb='1.2rem'>
+              <ListItem mb='0.8rem'>
+                The most utilized platform by our users to discover new places
+                is Instagram, and they also make use of Google Reviews for the
+                same purpose.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                The most important information includes the menu, prices,
+                reviews, dish photos, and location.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                We can also see that conveying the restaurant history and its
+                cuisine adds value to the location and also influences the user
+                decision-making process.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                Despite a large portion of the audience stating that they dont
+                often leave reviews, virtually all of them also rely on reviews
+                to make decisions.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                We observed that many users turn to the website when they cant
+                find the necessary information on Instagram or Google.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                We observed that many users turn to the website when they cant
+                find the necessary information on Instagram or Google.
+              </ListItem>
+            </UnorderedList>
+          </Box>
+        </Box>
+
+        <Text mb='0.8rem'>
+          This can serve as a useful guide for structuring the{' '}
+          <strong>website information architecture</strong> and prioritizing the
+          information that holds the most relevance for users when making
+          decisions. Adding some reviews in Choclo Landing Page, will bring more
+          reasons to the public rely on them. Using the website as a backup
+          resource that provides greater credibility to users. This emphasizes
+          the significance of an intuitive and comprehensive design to better
+          cater to user needs.
+        </Text>
+
+        <Text fontSize='1.5rem' mb='0.8rem'>
+          Personas
+        </Text>
+        <Box
+          maxWidth='50%'
+          display='flex'
+          flexDirection='row'
+          gap='10px'
+          justifyContent='center'
+          alignItems='center'
+          marginLeft='5rem'
+          marginTop='2rem'
+        >
+          <img src={PersonaChocloOne} />
+          <img src={PersonaChocloTwo} />
+          <img src={PersonaChocloThree} />
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          User Journey
+        </Text>
+        <Box
+          maxWidth='100%'
+          display='flex'
+          flexDirection='column'
+          gap='10px'
+          justifyContent='center'
+          alignItems='center'
+          marginTop='2rem'
+        >
+          <img src={UserJourneyChocloOne} />
+          <img src={UserJourneyChocloTwo} />
+          <img src={UserJourneyChocloThree} />
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Definition
+        </Text>
+        <Text mb='0.8rem'>
+          As we begin to outline our key features and architectural information,
+          it is time to reframe our primary objective in a more robust manner,
+          taking into account all the insights we have gathered through our
+          discovery process.
+        </Text>
+        <Box
+          bg='rgba(145, 187, 148, 0.7)'
+          w='100%'
+          p={4}
+          display='flex'
+          flexDirection='row'
+          gap='1rem'
+        >
+          <box-icon name='bulb' size='md'></box-icon>
+          <Text color='black'>
+            We aim to redo Choclo Landing Page in a manner that offers our
+            customers comprehensive information to assist them in making the
+            decision to visit Choclo. This redesign will also serve as a
+            reliable resource to address any issues people may encounter while
+            seeking the information they need.
+          </Text>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Feature List
+        </Text>
+        <Text>
+          Based on the discovery that I made, we compiled a{' '}
+          <strong>feature list</strong> for Choclo Landing Page.
+        </Text>
+
+        <Box overflowX='auto' mt='1.5rem'>
+          <TableContainer>
+            <Table variant='simple' size='sm'>
+              <Thead>
+                <Tr>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    #
+                  </Th>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Feature Name
+                  </Th>
+                  <Th
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Functionality Details
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    1
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Menu
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    A detailed menu and their range of prices.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    2
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    About
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    A good storytelling about the history of Choclo, with some
+                    photos from the place, the owners, and staff.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    3
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Reservations
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    A specific page where the user could create their
+                    reservations.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    4
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Shop
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Choclo new e-commerce
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    5
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    FAQ
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    A FAQ with the most asked questions, and also option to get
+                    in touch with Choclo.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    6
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Contact
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Contact, Location, timetable.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    7
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Newsletter
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    A form to be part of Choclo newsletter.
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '200px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    8
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Reviews
+                  </Td>
+                  <Td
+                    sx={{
+                      p: 3,
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordWrap: 'break-word',
+                      borderColor: 'gray.300',
+                    }}
+                  >
+                    Some of the reviews from customers.
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
+          Card Sorting
+        </Text>
+        <Text mb='0.8rem'>
+          I have chosen to conduct a card sorting exercise, this will help us
+          determine the optimal placement for each feature on our website,
+          making it easier for users to navigate and aligning with their
+          expected feature-finding patterns. Additionally, it will allow us to
+          organize these features in a more logical manner.
         </Text>
       </Box>
     </div>
