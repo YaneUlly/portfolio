@@ -7,6 +7,7 @@ import Portfolio from './pages/Portfolio';
 import FabricaProject from './pages/uxuiprojects/FábricaProject';
 import MillenniumProject from './pages/uxuiprojects/MillenniumProject';
 import ChocloProject from './pages/uxuiprojects/ChocloProject';
+import VolleyBombProject from './pages/webdevprojects/VolleyBombProject';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -33,6 +34,10 @@ function App() {
           <Route
             path='/portfolio/uxuidesign/chocloproject'
             element={<ChocloProject />}
+          />
+          <Route
+            path='/portfolio/webdevelopment/volleybombproject'
+            element={<VolleyBombProject />}
           />
           <Route path='/contact' element={<Contact />} />
         </Routes>
