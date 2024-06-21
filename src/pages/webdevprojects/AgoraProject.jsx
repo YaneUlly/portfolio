@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import Volleybomb from '../../assets/webdevprojects/Volleybomb.png';
+import Agora from '../../assets/webdevprojects/Agora.png';
 import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
 
-function VolleyBombProject() {
+function AgoraProject() {
   const [activeSection, setActiveSection] = useState('');
 
   const sections = [
@@ -55,18 +55,20 @@ function VolleyBombProject() {
 
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink href='/portfolio/webdevelopment/volleybombproject'>
-            VolleyBomb Project
+            Agora Project
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
 
       <Text fontSize={{ base: '3rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
-        VolleyBomb Game
+        Ágora Application
       </Text>
 
-      <Text m='0 0 4rem 2rem'>A fun and dynamic game.</Text>
+      <Text m='0 0 4rem 2rem'>
+        A platform for those who loves and enjoy concerts around the world.
+      </Text>
 
-      <Image src={Volleybomb} alt='volleybomb-logo' width='80%' ml='8rem' />
+      <Image src={Agora} alt='agora-logo' width='80%' ml='8rem' />
 
       <Flex flexDirection='row'>
         <Box m='2rem 0 0 8rem' flex='1' maxWidth='300px'>
@@ -99,13 +101,20 @@ function VolleyBombProject() {
             Overview
           </Text>
           <Text mb='0.8rem'>
-            For this project, I needed to create a{' '}
+            For this study case we needed to create a{' '}
+            <strong>Single Page Application (SPA)</strong>, using{' '}
+            <strong>React</strong>, consisting of multiple views. The React
+            application should be{' '}
             <strong>
-              browser-based game using HTML, CSS, JavaScript, DOM manipulation,
-              and Object-Oriented Programming (OOP)
+              integrated with a mock backend(created by ourselves) and an
+              external API
             </strong>
-            . We could choose any game idea we wanted at the time, but it haded
-            to meet the technical requirements.
+            . It also{' '}
+            <strong>
+              should perform all CRUD (Create, Read, Update, Delete) operations
+              on that API
+            </strong>
+            .
           </Text>
 
           <TableContainer m='1.5rem 0 1rem 0'>
@@ -117,11 +126,11 @@ function VolleyBombProject() {
                 </Tr>
                 <Tr>
                   <Td>Year</Td>
-                  <Td>2023</Td>
+                  <Td>2024</Td>
                 </Tr>
                 <Tr>
                   <Td>Languages</Td>
-                  <Td>HTML, CSS, JavaScript</Td>
+                  <Td>HTML, CSS, JavaScript, React</Td>
                 </Tr>
                 <Tr>
                   <Td>Tools</Td>
@@ -132,7 +141,7 @@ function VolleyBombProject() {
           </TableContainer>
 
           <Box display='flex' flexDirection='row' gap='1.5rem'>
-            <Link href='https://volleybomb.netlify.app/' isExternal>
+            <Link href='https://agoragigs.netlify.app/' isExternal>
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
@@ -146,14 +155,11 @@ function VolleyBombProject() {
                   color: '#FFFFFF',
                 }}
               >
-                Visit game
+                Visit website
               </Button>
             </Link>
 
-            <Link
-              href='https://github.com/JuanRassa/Ironhack-Module-1-VolleyBomb-Game'
-              isExternal
-            >
+            <Link href='https://github.com/JuanRassa/Gig-Hub-Groove' isExternal>
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
@@ -179,16 +185,27 @@ function VolleyBombProject() {
           Pitch idea
         </Text>
         <Text mb='0.8rem'>
-          We wanted something dynamic and competitive that combines
-          characteristics from other games. So we created{' '}
-          <strong>Volleybomb</strong>, witch is an exciting local-multiplayer
-          game built with <strong>JavaScript, CSS and HTML</strong>, with a
-          Retro Christmas style. <strong>Main idea:</strong> Players will be
-          kicking a bomb to each other that will explode if touches the ground
-          or if its timer is over. The first player to score 5 points wins. Our
-          main inspiration for this game was the classic{' '}
-          <strong>Slime-Volley</strong>, and we want it to mix it with something
-          related to avoid the explosion of a bomb.
+          For our application, we aimed to establish{' '}
+          <strong>
+            a central hub for users to effortlessly discover concerts and
+            events, both locally and globally
+          </strong>
+          . We also envisioned a{' '}
+          <strong>
+            dedicated space for emerging artists to showcase and promote their
+            concerts or new festivals
+          </strong>
+          . To achieve this, we utilized an external database for renowned
+          artists and festivals worldwide and developed a mock database
+          specifically for independent artists, enabling CRUD operations.
+        </Text>
+        <Text mb='0.8rem'>
+          This led to the creation of the <strong>Trendy space</strong>, where
+          users can easily search for events around them and apply filters such
+          as location, artist, date, event type, and musical genre.
+          Additionally, we introduced the <strong>Independent space</strong>,
+          empowering users and new artists to create, edit, and delete their
+          events, providing a dynamic platform for emerging talent.
         </Text>
       </Box>
 
@@ -197,17 +214,11 @@ function VolleyBombProject() {
           Tech Challenge
         </Text>
         <Text mb='0.8rem'>
-          The most important technical challenge we faced was to control the
-          ball in therms of logic:
-        </Text>
-        <UnorderedList mb='1.2rem'>
-          <ListItem>The movement.</ListItem>
-          <ListItem>Direction.</ListItem>
-          <ListItem>Interaction between the ball and players.</ListItem>
-        </UnorderedList>
-        <Text mb='0.8rem'>
-          We overcame this looking into a lot of repos and videos that helped us
-          to manage the control of the ball.
+          Our primary technical challenge revolved around effectively{' '}
+          <strong>managing numerous states</strong> within our code,
+          particularly the dynamic states within forms. To address these
+          challenges, we made the decision to utilize <strong>Context</strong>,
+          even though it wasnt covered in our coursework at the moment.
         </Text>
       </Box>
 
@@ -216,12 +227,21 @@ function VolleyBombProject() {
           Mistakes
         </Text>
         <Text mb='0.8rem'>
-          The biggest mistake we made was{' '}
-          <strong>the way we approached to the logic of the ball</strong>, witch
-          led us to more confusion and mistakes with the code. Also, another
-          mistake that we made was to{' '}
-          <strong>work on an unnecessary class</strong>, but soon as we realized
-          we could manage and rearrange the code.
+          In this project, we encountered a couple of challenges. Initially, we
+          unintentionally created <strong>redundant components</strong> when
+          establishing the context for event creation and editing. Despite both
+          functionalities sharing the same underlying code with minor
+          variations, we opted to separate them into distinct components. In
+          hindsight, consolidating them into a single component would have been
+          more efficient.
+        </Text>
+        <Text mb='0.8rem'>
+          Another lesson learned was our initial use of{' '}
+          <strong>Material UI</strong>. We began with this framework but later
+          decided to defer styling until a later stage. We found that the
+          learning curve for Material UI was relatively long given our tight
+          project timeline, prompting us to seek a more straightforward styling
+          solution.
         </Text>
       </Box>
 
@@ -230,15 +250,26 @@ function VolleyBombProject() {
           Learnings
         </Text>
         <Text mb='0.8rem'>
-          After some redundant code that we made, we understood the{' '}
-          <strong>
-            importance of discover what we want to achieve first, planning it
-            and then start the code.
-          </strong>
+          To address a technical challenge, we proactively learned how to work
+          with <strong>Context</strong>, significantly improving code
+          organization and streamlining the passage of values across components
+          and pages.
+        </Text>
+        <Text mb='0.8rem'>
+          In managing user login status without a backend implementation, we
+          utilized <strong>window session storage</strong>. This decision
+          ensured essential user information was readily available for
+          operations within our application.
+        </Text>
+        <Text mb='0.8rem'>
+          Additionally, we adopted the <strong>Chakra library</strong> to
+          expedite styling. Given the project relatively short timeframe,
+          leveraging Chakra proved invaluable in achieving aesthetically
+          pleasing and efficient design.
         </Text>
       </Box>
     </div>
   );
 }
 
-export default VolleyBombProject;
+export default AgoraProject;

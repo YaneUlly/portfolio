@@ -8,6 +8,8 @@ import FabricaProject from './pages/uxuiprojects/FábricaProject';
 import MillenniumProject from './pages/uxuiprojects/MillenniumProject';
 import ChocloProject from './pages/uxuiprojects/ChocloProject';
 import VolleyBombProject from './pages/webdevprojects/VolleyBombProject';
+import AgoraProject from './pages/webdevprojects/AgoraProject';
+import AcervoProject from './pages/webdevprojects/AcervoProject';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -38,6 +40,14 @@ function App() {
           <Route
             path='/portfolio/webdevelopment/volleybombproject'
             element={<VolleyBombProject />}
+          />
+          <Route
+            path='/portfolio/webdevelopment/agoraproject'
+            element={<AgoraProject />}
+          />
+          <Route
+            path='/portfolio/webdevelopment/acervoproject'
+            element={<AcervoProject />}
           />
           <Route path='/contact' element={<Contact />} />
         </Routes>
