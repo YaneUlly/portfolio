@@ -5,6 +5,14 @@ import PersonaChocloThree from '../../assets/uxuiprojects/PersonaChocloThree.jpg
 import UserJourneyChocloOne from '../../assets/uxuiprojects/UserJourneyChocloOne.jpg';
 import UserJourneyChocloTwo from '../../assets/uxuiprojects/UserJourneyChocloTwo.jpg';
 import UserJourneyChocloThree from '../../assets/uxuiprojects/UserJourneyChocloThree.jpg';
+import CardSortingChoclo from '../../assets/uxuiprojects/CardSortingChoclo.jpg';
+import UserFlowChoclo from '../../assets/uxuiprojects/UserFlowChoclo.jpg';
+import ChocloSketchOne from '../../assets/uxuiprojects/ChocloSketchOne.jpg';
+import ChocloSketchTwo from '../../assets/uxuiprojects/ChocloSketchTwo.jpg';
+import StyleGuideChoclo from '../../assets/uxuiprojects/StyleGuideChoclo.png';
+import BeforeAfterChocloOne from '../../assets/uxuiprojects/BeforeAfterChocloOne.png';
+import BeforeAfterChocloTwo from '../../assets/uxuiprojects/BeforeAfterChocloTwo.png';
+import BeforeAfterChocloThree from '../../assets/uxuiprojects/BeforeAfterChocloThree.png';
 import { useState, useEffect } from 'react';
 import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
@@ -219,60 +227,69 @@ function ChocloProject() {
         <Text fontSize='1.5rem' mb='0.8rem'>
           Intro
         </Text>
-        <Text mb='0.8rem'>
-          I started the research by analyzing a variety of sources, including{' '}
-          <strong>customer reviews</strong>, <strong>comments</strong>, and the{' '}
-          <strong>submission forms available on their website</strong>,{' '}
-          <strong>
-            with the goal of identifying any potential Pain Points{' '}
-          </strong>
-          that we could address to enhance the website.
-        </Text>
-        <Text mb='0.8rem'>
-          A closer examination of their service-related reviews and comments has
-          revealed the following insights:
-        </Text>
-        <UnorderedList mb='1.2rem'>
-          <ListItem mb='0.8rem'>
-            Their <strong>customer base is notably diverse</strong>,
-            encompassing individuals who communicate primarily in Spanish,
-            English, and Portuguese.
-          </ListItem>
-          <ListItem mb='0.8rem'>
-            Some{' '}
-            <strong>
-              customers encounter challenges when seeking specific details
-            </strong>{' '}
-            related to reservations, operating hours, delivery options, and
-            voucher usage.
-          </ListItem>
-        </UnorderedList>
-        <Text mb='0.8rem'>
-          After analyzing the comments, the next step was to analyze the Choclo
-          current Landing Page, this enabled me to{' '}
-          <strong>harmonize the company visual identity</strong> while also{' '}
-          <strong>identifying any additional Pain Points</strong> that require
-          attention and resolution.
-        </Text>
-        <Text mb='0.8rem'>In conclusion:</Text>
-        <UnorderedList mb='1.2rem'>
-          <ListItem mb='0.8rem'>
-            The page lacks <strong>Consistency</strong> (buttons with different
-            colors, backgrounds, text styles, etc.).
-          </ListItem>
-          <ListItem mb='0.8rem'>
-            Minimize <strong>user cognitive load</strong>: excessive use of
-            visual elements, strong colors, bold text, etc.
-          </ListItem>
-          <ListItem mb='0.8rem'>
-            This brings us to <strong>Visual Hierarchy</strong> and{' '}
-            <strong>Information Architecture</strong>: the importance of
-            contrast and arrangement of elements on the page.
-          </ListItem>
-          <ListItem mb='0.8rem'>Spelling errors.</ListItem>
-        </UnorderedList>
 
-        <Text fontSize='1.5rem' mb='0.8rem'>
+        <Box display='flex' flexDirection='row' gap='2rem'>
+          <Box>
+            <Text mb='0.8rem'>
+              I started the research by analyzing a variety of sources,
+              including <strong>customer reviews</strong>,{' '}
+              <strong>comments</strong>, and the{' '}
+              <strong>submission forms available on their website</strong>,{' '}
+              <strong>
+                with the goal of identifying any potential Pain Points{' '}
+              </strong>
+              that we could address to enhance the website.
+            </Text>
+            <Text mb='0.8rem'>
+              A closer examination of their service-related reviews and comments
+              has revealed the following insights:
+            </Text>
+            <UnorderedList mb='1.2rem'>
+              <ListItem mb='0.8rem'>
+                Their <strong>customer base is notably diverse</strong>,
+                encompassing individuals who communicate primarily in Spanish,
+                English, and Portuguese.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                Some{' '}
+                <strong>
+                  customers encounter challenges when seeking specific details
+                </strong>{' '}
+                related to reservations, operating hours, delivery options, and
+                voucher usage.
+              </ListItem>
+            </UnorderedList>
+          </Box>
+
+          <Box>
+            <Text mb='0.8rem'>
+              After analyzing the comments, the next step was to analyze the
+              Choclo current Landing Page, this enabled me to{' '}
+              <strong>harmonize the company visual identity</strong> while also{' '}
+              <strong>identifying any additional Pain Points</strong> that
+              require attention and resolution.
+            </Text>
+            <Text mb='0.8rem'>In conclusion:</Text>
+            <UnorderedList mb='1.2rem'>
+              <ListItem mb='0.8rem'>
+                The page lacks <strong>Consistency</strong> (buttons with
+                different colors, backgrounds, text styles, etc.).
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                Minimize <strong>user cognitive load</strong>: excessive use of
+                visual elements, strong colors, bold text, etc.
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                This brings us to <strong>Visual Hierarchy</strong> and{' '}
+                <strong>Information Architecture</strong>: the importance of
+                contrast and arrangement of elements on the page.
+              </ListItem>
+              <ListItem mb='0.8rem'>Spelling errors.</ListItem>
+            </UnorderedList>
+          </Box>
+        </Box>
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
           Benchmarking
         </Text>
         <Text mb='0.8rem'>
@@ -300,7 +317,7 @@ function ChocloProject() {
           to inform the development of Choclo own Landing Page.
         </Text>
 
-        <Box overflowX='auto' mt='1.5rem'>
+        <Box overflowX='auto' mt='1.5rem' mb='2rem'>
           <TableContainer>
             <Table variant='simple' size='sm'>
               <Thead>
@@ -739,22 +756,35 @@ function ChocloProject() {
           cater to user needs.
         </Text>
 
-        <Text fontSize='1.5rem' mb='0.8rem'>
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
           Personas
         </Text>
         <Box
-          maxWidth='50%'
+          maxWidth='100%'
           display='flex'
           flexDirection='row'
-          gap='10px'
-          justifyContent='center'
-          alignItems='center'
-          marginLeft='5rem'
-          marginTop='2rem'
+          gap='2rem'
+          overflowX='auto'
+          marginTop='1.5rem'
         >
-          <img src={PersonaChocloOne} />
-          <img src={PersonaChocloTwo} />
-          <img src={PersonaChocloThree} />
+          <Box flex='0 0 auto' width='500px'>
+            <img
+              src={PersonaChocloOne}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+          <Box flex='0 0 auto' width='500px'>
+            <img
+              src={PersonaChocloTwo}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+          <Box flex='0 0 auto' width='500px'>
+            <img
+              src={PersonaChocloThree}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
         </Box>
 
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
@@ -763,15 +793,29 @@ function ChocloProject() {
         <Box
           maxWidth='100%'
           display='flex'
-          flexDirection='column'
-          gap='10px'
-          justifyContent='center'
-          alignItems='center'
-          marginTop='2rem'
+          flexDirection='row'
+          gap='2rem'
+          overflowX='auto'
+          marginTop='1.5rem'
         >
-          <img src={UserJourneyChocloOne} />
-          <img src={UserJourneyChocloTwo} />
-          <img src={UserJourneyChocloThree} />
+          <Box flex='0 0 auto' width='800px'>
+            <img
+              src={UserJourneyChocloOne}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+          <Box flex='0 0 auto' width='800px'>
+            <img
+              src={UserJourneyChocloTwo}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+          <Box flex='0 0 auto' width='800px'>
+            <img
+              src={UserJourneyChocloThree}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
         </Box>
 
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
@@ -1138,16 +1182,206 @@ function ChocloProject() {
           </TableContainer>
         </Box>
 
+        <Box display='flex' flexDirection='row' gap='2rem'>
+          <Box display='flex' flexDirection='column'>
+            <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
+              Card Sorting
+            </Text>
+            <Text mb='0.8rem'>
+              I have chosen to conduct a card sorting exercise, this will{' '}
+              <strong>
+                help us determine the optimal placement for each feature on our
+                website
+              </strong>
+              , making it easier for users to navigate and aligning with their
+              expected feature-finding patterns. Additionally,{' '}
+              <strong>
+                it will allow us to organize these features in a more logical
+                manner
+              </strong>
+              .
+            </Text>
+
+            <Text mb='0.8rem'>What we want to discover?</Text>
+            <UnorderedList mb='1.2rem'>
+              <ListItem mb='0.8rem'>
+                Where should we display some features?
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                Should we create a new category just for location?
+              </ListItem>
+              <ListItem mb='0.8rem'>
+                There is a need of a new category, besides the ones we offer?
+              </ListItem>
+            </UnorderedList>
+            <Text mb='0.8rem'>
+              So our categories and features would be like this:
+            </Text>
+          </Box>
+
+          <Box
+            maxWidth='40%'
+            display='flex'
+            flexDirection='column'
+            gap='10px'
+            marginTop='5.5rem'
+          >
+            <img src={CardSortingChoclo} />
+          </Box>
+        </Box>
+
+        <Box
+          bg='rgba(145, 187, 148, 0.7)'
+          w='100%'
+          p={4}
+          display='flex'
+          flexDirection='row'
+          gap='1rem'
+          mt='2rem'
+        >
+          <box-icon name='bulb' size='md'></box-icon>
+          <Text color='black'>
+            When we compared the final result with our initial hypothesis, we
+            observed that the newsletter form, press releases, and timetable
+            could be more appropriately categorized elsewhere. On the other
+            hand, our assumption about the vouchers feature was confirmed as
+            accurate.
+          </Text>
+        </Box>
+
         <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
-          Card Sorting
+          User Flow
         </Text>
         <Text mb='0.8rem'>
-          I have chosen to conduct a card sorting exercise, this will help us
-          determine the optimal placement for each feature on our website,
-          making it easier for users to navigate and aligning with their
-          expected feature-finding patterns. Additionally, it will allow us to
-          organize these features in a more logical manner.
+          This will serve as our user flow, guiding them seamlessly from their
+          initial entry point through a series of well-defined steps, ultimately
+          leading to a successful outcome and their final action.
         </Text>
+
+        <Box maxWidth='100%' marginTop='2rem'>
+          <img src={UserFlowChoclo} />
+        </Box>
+      </Box>
+
+      <Box p='1rem 10rem 1.5rem 8rem'>
+        <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
+          Final UI
+        </Text>
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Sketches and Style Guide
+        </Text>
+        <Text mb='0.8rem'>
+          Since Choclo uses Wix Studio for their website, we adhered to their
+          design options in building the site. With a predefined vision, we
+          created initial sketches and proceeded to develop the final user
+          interface accordingly.
+        </Text>
+
+        <Box
+          maxWidth='100%'
+          display='flex'
+          flexDirection='row'
+          gap='1rem'
+          marginTop='1.5rem'
+          overflowX='auto'
+          padding='1rem'
+        >
+          <Box flex='0 0 auto' width='500px'>
+            <img
+              src={ChocloSketchOne}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+          <Box flex='0 0 auto' width='500px'>
+            <img
+              src={ChocloSketchTwo}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+          <Box flex='0 0 auto' width='500px'>
+            <img
+              src={StyleGuideChoclo}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </Box>
+        </Box>
+
+        {/* <Box
+          display='flex'
+          flexDirection='row'
+          gap='2rem'
+          maxWidth='50%'
+          marginTop='2rem'
+        >
+          <img src={ChocloSketchOne} />
+          <img src={ChocloSketchTwo} />
+          <img src={StyleGuideChoclo} />
+        </Box> */}
+
+        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+          Final MVP
+        </Text>
+        <Text mb='0.8rem'>
+          Since I was tasked with creating the pages on the Wix platform
+          independently, I opted for a mid-level prototype. This allowed me to
+          present Choclo CEO with a preview of the styles and layouts planned
+          for the pages.
+        </Text>
+
+        <Box display='flex' flexDirection='row' gap='2rem' mb='2rem'>
+          <Box display='flex' flexDirection='column'>
+            <Text mt='1.5rem' fontWeight='600'>
+              1. Better call to action and more informations about Choclo
+            </Text>
+            <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
+              <img src={BeforeAfterChocloOne} />
+            </Box>
+
+            <Text mt='1.5rem' fontWeight='600'>
+              2. More consistent and cleaner interface
+            </Text>
+            <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
+              <img src={BeforeAfterChocloTwo} />
+            </Box>
+          </Box>
+
+          <Box display='flex' flexDirection='column'>
+            <Text mt='1.5rem' fontWeight='600'>
+              3. Texts easier to read and informations easy to find
+            </Text>
+            <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
+              <img src={BeforeAfterChocloThree} />
+            </Box>
+            <Text mb='0.8rem' mt='1rem' pr='5rem'>
+              Following the successful completion of our Minimum Viable Product
+              (MVP), we embarked on refining the user interface (UI) within the
+              platform utilized by our company, <strong>Wix Studio</strong>.
+              This endeavor allowed us to enhance the overall design of the
+              final UI, ensuring a seamless and visually compelling experience
+              for our users.
+            </Text>
+            <Link
+              href='https://www.figma.com/proto/f1kR3sihs8aU4eb6neKrYs/Choclo-Website?type=design&node-id=0-1&viewport=321%2C164%2C0.04&t=T0RCpkVVPIPs3wRx-0&scaling=scale-down&starting-point-node-id=54%3A200'
+              isExternal
+            >
+              <Button
+                variant='outline'
+                borderWidth='0.1rem'
+                borderColor='black'
+                mt='1rem'
+                p='1.5rem 1.5rem'
+                cursor='pointer'
+                mb='1rem'
+                _hover={{
+                  bgColor: '#101010',
+                  color: '#FFFFFF',
+                }}
+              >
+                Visit prototype
+              </Button>
+            </Link>
+          </Box>
+        </Box>
       </Box>
     </div>
   );
