@@ -1,64 +1,89 @@
-import React from 'react';
-import { useState, Link } from 'react';
+import { useState } from 'react';
 import ProfilePhoto from '../assets/profile_portfolio.jpeg';
-import { Flex, Text, Box, Button, Image } from '@chakra-ui/react';
+import Acervo from '../assets/webdevprojects/Acervo.png';
+import VolleyBomb from '../assets/webdevprojects/Volleybomb.png';
+import Choclo from '../assets/uxuiprojects/ChocloWebsite.png';
+import Millennium from '../assets/uxuiprojects/Millenium.png';
+import Agora from '../assets/webdevprojects/Agora.png';
+import Fabrica from '../assets/uxuiprojects/Fabrica.png';
+import { Flex, Text, Box, Button, Image, Link } from '@chakra-ui/react';
 
 function About() {
   const [selectedOption, setSelectedOption] = useState('All');
 
-  // const projects = {
-  //   All: [
-  //     {
-  //       id: 1,
-  //       name: 'Project 1',
-  //       type: 'All',
-  //       imageUrl: '/src/assets/profile_portfolio.jpeg',
-  //       link: '/src/pages/Portfolio.jsx',
-  //     },
-  //     {
-  //       id: 2,
-  //       name: 'Project 2',
-  //       type: 'All',
-  //       imageUrl: '/src/assets/profile_portfolio.jpeg',
-  //       link: '/src/pages/Portfolio.jsx',
-  //     },
-  //   ],
-  //   'Ux/Ui Design': [
-  //     {
-  //       id: 1,
-  //       name: 'Ux/Ui Project 1',
-  //       type: 'Ux/Ui Design',
-  //       imageUrl: '/src/assets/profile_portfolio.jpeg',
-  //       link: '/src/pages/Portfolio.jsx',
-  //     },
-  //     {
-  //       id: 2,
-  //       name: 'Ux/Ui Project 2',
-  //       type: 'Ux/Ui Design',
-  //       imageUrl: '/src/assets/profile_portfolio.jpeg',
-  //       link: '/src/pages/Portfolio.jsx',
-  //     },
-  //   ],
-  //   'Web Development': [
-  //     {
-  //       id: 1,
-  //       name: 'Web Project 1',
-  //       type: 'Web Development',
-  //       imageUrl: '/src/assets/profile_portfolio.jpeg',
-  //       link: '/src/pages/Portfolio.jsx',
-  //     },
-  //     {
-  //       id: 2,
-  //       name: 'Web Project 2',
-  //       type: 'Web Development',
-  //       imageUrl: '/src/assets/profile_portfolio.jpeg',
-  //       link: '/src/pages/Portfolio.jsx',
-  //     },
-  //   ],
-  // };
-
   const handleOptionClick = option => {
     setSelectedOption(option);
+  };
+
+  const renderProjects = () => {
+    switch (selectedOption) {
+      case 'Ux/Ui Design':
+        return (
+          <Box display='flex' flexDirection='row' gap='2rem' width='60rem'>
+            <Link href='/portfolio/uxuidesign/chocloproject'>
+              <Box>
+                <Image src={Choclo} alt='Choclo Project' />
+                <Text mt='1rem' fontWeight='600'>
+                  Choclo Project
+                </Text>
+              </Box>
+            </Link>
+
+            <Link href='/portfolio/uxuidesign/millenniumproject'>
+              <Box>
+                <Image src={Millennium} alt='Millennium Project' />
+                <Text mt='1rem' fontWeight='600'>
+                  Millennium Project
+                </Text>
+              </Box>
+            </Link>
+          </Box>
+        );
+      case 'Web Development':
+        return (
+          <Box display='flex' flexDirection='row' gap='2rem' width='60rem'>
+            <Link href='/portfolio/webdevelopment/acervoproject'>
+              <Box>
+                <Image src={Acervo} alt='Acervo Project' />
+                <Text mt='1rem' fontWeight='600'>
+                  Acervo Project
+                </Text>
+              </Box>
+            </Link>
+
+            <Link href='/portfolio/webdevelopment/volleybombproject'>
+              <Box>
+                <Image src={VolleyBomb} alt='Volleybomb Project' />
+                <Text mt='1rem' fontWeight='600'>
+                  Volleybomb Project
+                </Text>
+              </Box>
+            </Link>
+          </Box>
+        );
+      default:
+        return (
+          <Box display='flex' flexDirection='row' gap='2rem' width='60rem'>
+            <Link href='/portfolio/webdevelopment/agoraproject'>
+              <Box>
+                <Image src={Agora} alt='Agora Project' />
+                <Text mt='1rem' fontWeight='600'>
+                  Agora Project
+                </Text>
+              </Box>
+            </Link>
+
+            <Link href='/portfolio/uxuidesing/fabricaproject'>
+              <Box>
+                <Image src={Fabrica} alt='Fabrica Project' />
+                <Text mt='1rem' fontWeight='600'>
+                  Fabrica Project
+                </Text>
+              </Box>
+            </Link>
+          </Box>
+        );
+    }
   };
 
   return (
@@ -208,17 +233,9 @@ function About() {
             </Text>
           ))}
         </Flex>
-
-        {/* <Box>
-          {projects[selectedOption].map(project => (
-            <Box key={project.id} mb='1rem'>
-              <Link to='/src/pages/Portfolio.jsx'>
-                <img src={ProfilePhoto} alt={project.name} />
-                <Text>{project.name}</Text>
-              </Link>
-            </Box>
-          ))}
-        </Box> */}
+        <Flex justifyContent='center' gap='8' m='3rem 0 8rem 0'>
+          {renderProjects()}
+        </Flex>
       </section>
     </div>
   );
