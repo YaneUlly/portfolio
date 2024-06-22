@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProfilePhoto from '../assets/profile_portfolio.jpeg';
+import AvatarPhoto from '../assets/avatar-photo.jpeg';
 import Acervo from '../assets/webdevprojects/Acervo.png';
 import VolleyBomb from '../assets/webdevprojects/Volleybomb.png';
 import Choclo from '../assets/uxuiprojects/ChocloWebsite.png';
@@ -7,6 +8,7 @@ import Millennium from '../assets/uxuiprojects/Millenium.png';
 import Agora from '../assets/webdevprojects/Agora.png';
 import Fabrica from '../assets/uxuiprojects/Fabrica.png';
 import { Flex, Text, Box, Button, Image, Link } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 function About() {
   const [selectedOption, setSelectedOption] = useState('All');
@@ -19,7 +21,12 @@ function About() {
     switch (selectedOption) {
       case 'Ux/Ui Design':
         return (
-          <Box display='flex' flexDirection='row' gap='2rem' width='60rem'>
+          <Box
+            display='flex'
+            flexDirection={{ base: 'column', lg: 'row' }}
+            gap='2rem'
+            width={{ lg: '60rem' }}
+          >
             <Link href='/portfolio/uxuidesign/chocloproject'>
               <Box>
                 <Image src={Choclo} alt='Choclo Project' />
@@ -41,7 +48,12 @@ function About() {
         );
       case 'Web Development':
         return (
-          <Box display='flex' flexDirection='row' gap='2rem' width='60rem'>
+          <Box
+            display='flex'
+            flexDirection={{ base: 'column', lg: 'row' }}
+            gap='2rem'
+            width='60rem'
+          >
             <Link href='/portfolio/webdevelopment/acervoproject'>
               <Box>
                 <Image src={Acervo} alt='Acervo Project' />
@@ -63,7 +75,12 @@ function About() {
         );
       default:
         return (
-          <Box display='flex' flexDirection='row' gap='2rem' width='60rem'>
+          <Box
+            display='flex'
+            flexDirection={{ base: 'column', lg: 'row' }}
+            gap='2rem'
+            width='60rem'
+          >
             <Link href='/portfolio/webdevelopment/agoraproject'>
               <Box>
                 <Image src={Agora} alt='Agora Project' />
@@ -88,14 +105,76 @@ function About() {
 
   return (
     <div>
-      <Flex flexDirection='row' justifyContent='space-around'>
-        <Box margin='5rem 8rem 5rem 5rem'>
-          <Text fontSize={{ base: '4.8rem', lg: '5rem' }} color='#cccccc'>
-            Hey there,
-          </Text>
-          <Text fontSize={{ base: '3rem', md: '3.8rem' }} fontWeight='600'>
-            I'm Yane.
-          </Text>
+      <Flex
+        flexDirection={{ base: 'column', lg: 'row' }}
+        justifyContent='space-around'
+      >
+        <Box
+          margin={{
+            base: '3rem 1.5rem 3rem 1.5rem',
+            lg: '5rem 8rem 5rem 5rem',
+          }}
+        >
+          <Flex
+            flexDirection={{ base: 'row', lg: 'column' }}
+            alignItems={{ base: 'center', lg: 'flex-start' }}
+            gap={{ base: '2rem', lg: '0' }}
+          >
+            <motion.div
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              <Box display={{ base: 'flex', lg: 'none' }}>
+                <Image
+                  src={AvatarPhoto}
+                  alt='yane-photo-profile'
+                  borderRadius='full'
+                  boxSize={{ base: '90px', md: '100px' }}
+                />
+              </Box>
+            </motion.div>
+
+            <Box>
+              <motion.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
+                <Text fontSize={{ base: '2rem', lg: '5rem' }} color='#cccccc'>
+                  Hey there,
+                </Text>
+              </motion.div>
+
+              <motion.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
+                <Text
+                  fontSize={{ base: '2.5rem', lg: '3.8rem' }}
+                  fontWeight='600'
+                >
+                  I'm Yane.
+                </Text>
+              </motion.div>
+            </Box>
+          </Flex>
 
           <Box mt='2rem'>
             <Text paddingRight='2rem'>
@@ -154,16 +233,29 @@ function About() {
             </Button>
           </Box>
         </Box>
-        <Box marginTop='6rem' maxWidth='90%' marginRight='3rem'>
+        <Box
+          display={{ base: 'none', lg: 'flex' }}
+          marginTop='6rem'
+          maxWidth='90%'
+          marginRight='3rem'
+        >
           <Image src={ProfilePhoto}></Image>
         </Box>
       </Flex>
 
-      <Text fontSize={{ base: '4.8rem', lg: '3rem' }} mt='2rem' ml='5rem'>
+      <Text
+        fontSize={{ base: '1.8rem', lg: '3rem' }}
+        mt={{ base: '1rem', lg: '2rem' }}
+        ml={{ base: '1rem', lg: '5rem' }}
+      >
         i can help you with..
       </Text>
 
-      <Flex flexDirection='row' gap='12' margin='2rem 5rem'>
+      <Flex
+        flexDirection={{ base: 'column', lg: 'row' }}
+        gap={{ base: '5', lg: '12' }}
+        margin={{ base: '2rem 1rem', lg: '2rem 5rem' }}
+      >
         <Box border='1px' borderColor='black' borderRadius='5px'>
           <Box margin='4rem 2rem 2rem 2rem'>
             <box-icon name='pen'></box-icon>
@@ -205,14 +297,17 @@ function About() {
       </Flex>
 
       <Text
-        fontSize={{ base: '4.8rem', lg: '3rem' }}
-        mt='8rem'
-        ml='5rem'
+        fontSize={{ base: '1.8rem', lg: '3rem' }}
+        mt={{ base: '4rem', lg: '8rem' }}
+        ml={{ base: '1rem', lg: '5rem' }}
         color='#cccccc'
       >
         come take a look at
       </Text>
-      <Text fontSize={{ base: '4.8rem', lg: '3rem' }} ml='5rem'>
+      <Text
+        fontSize={{ base: '2.8rem', lg: '3rem' }}
+        ml={{ base: '1rem', lg: '5rem' }}
+      >
         my work here...
       </Text>
 
@@ -233,7 +328,11 @@ function About() {
             </Text>
           ))}
         </Flex>
-        <Flex justifyContent='center' gap='8' m='3rem 0 8rem 0'>
+        <Flex
+          justifyContent='center'
+          gap='8'
+          m={{ base: '0 1rem 3rem 1rem', lg: '3rem 0 8rem 0' }}
+        >
           {renderProjects()}
         </Flex>
       </section>
