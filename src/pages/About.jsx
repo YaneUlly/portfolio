@@ -23,7 +23,7 @@ function About() {
         return (
           <Box
             display='flex'
-            flexDirection={{ base: 'column', lg: 'row' }}
+            flexDirection={{ base: 'column', md: 'row' }}
             gap='2rem'
             width={{ lg: '60rem' }}
           >
@@ -50,7 +50,7 @@ function About() {
         return (
           <Box
             display='flex'
-            flexDirection={{ base: 'column', lg: 'row' }}
+            flexDirection={{ base: 'column', md: 'row' }}
             gap='2rem'
             width='60rem'
           >
@@ -77,7 +77,7 @@ function About() {
         return (
           <Box
             display='flex'
-            flexDirection={{ base: 'column', lg: 'row' }}
+            flexDirection={{ base: 'column', md: 'row' }}
             gap='2rem'
             width='60rem'
           >
@@ -135,7 +135,7 @@ function About() {
                   src={AvatarPhoto}
                   alt='yane-photo-profile'
                   borderRadius='full'
-                  boxSize={{ base: '90px', md: '100px' }}
+                  boxSize={{ base: '90px', md: '150px' }}
                 />
               </Box>
             </motion.div>
@@ -151,7 +151,10 @@ function About() {
                   visible: { opacity: 1, x: 0 },
                 }}
               >
-                <Text fontSize={{ base: '2rem', lg: '5rem' }} color='#cccccc'>
+                <Text
+                  fontSize={{ base: '2.5rem', md: '3.5rem', lg: '5rem' }}
+                  color='#cccccc'
+                >
                   Hey there,
                 </Text>
               </motion.div>
@@ -167,7 +170,7 @@ function About() {
                 }}
               >
                 <Text
-                  fontSize={{ base: '2.5rem', lg: '3.8rem' }}
+                  fontSize={{ base: '2rem', md: '3rem', lg: '3.8rem' }}
                   fontWeight='600'
                 >
                   I'm Yane.
@@ -237,6 +240,7 @@ function About() {
           display={{ base: 'none', lg: 'flex' }}
           marginTop='6rem'
           maxWidth='90%'
+          height='max-content'
           marginRight='3rem'
         >
           <Image src={ProfilePhoto}></Image>
@@ -252,7 +256,7 @@ function About() {
       </Text>
 
       <Flex
-        flexDirection={{ base: 'column', lg: 'row' }}
+        flexDirection={{ base: 'column', md: 'row' }}
         gap={{ base: '5', lg: '12' }}
         margin={{ base: '2rem 1rem', lg: '2rem 5rem' }}
       >
@@ -312,7 +316,7 @@ function About() {
       </Text>
 
       <section>
-        <Flex justifyContent='center' gap='8' m='3rem 0'>
+        <Flex justifyContent='center' gap={{ base: '4', lg: '8' }} m='3rem 0'>
           {['All', 'Ux/Ui Design', 'Web Development'].map(option => (
             <Text
               key={option}

@@ -4,17 +4,24 @@ import { FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react';
 function Contact() {
   return (
     <div>
-      <Flex gap='5rem' justifyContent='center' mt='10rem' mb='10rem'>
+      <Flex
+        flexDirection={{ base: 'column', xl: 'row' }}
+        gap={{ base: '3rem', lg: '5rem' }}
+        justifyContent='center'
+        mt={{ base: '5rem', md: '10rem' }}
+        ml={{ base: '1rem', xl: '0' }}
+        mb={{ base: '12rem', md: '10rem' }}
+      >
         <Box>
-          <Text fontSize={{ base: '4.8rem', lg: '5rem' }} color='#cccccc'>
+          <Text fontSize={{ base: '3.8rem', md: '5rem' }} color='#cccccc'>
             say hi :),
           </Text>
-          <Text fontSize={{ base: '3rem', md: '3.8rem' }} fontWeight='600'>
+          <Text fontSize={{ base: '2rem', md: '3.8rem' }} fontWeight='600'>
             i'd love to hear from you.
           </Text>
         </Box>
 
-        <Box width='25rem'>
+        <Box width={{ base: '20rem', md: '25rem' }}>
           <FormControl isRequired>
             <FormLabel>Name:</FormLabel>
             <Input type='text' placeholder='Name' borderColor='#0B0B03'></Input>
@@ -46,7 +53,7 @@ function Contact() {
             borderWidth='0.1rem'
             borderColor='black'
             mt='2rem'
-            p='2rem 2rem'
+            p='2rem 4rem'
             cursor='pointer'
             mb='1rem'
             _hover={{
