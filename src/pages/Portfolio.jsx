@@ -18,7 +18,12 @@ function Portfolio() {
     switch (selectedOption) {
       case 'Ux/Ui Design':
         return (
-          <Box display='flex' flexDirection='row' gap='2rem' width='80rem'>
+          <Box
+            display='flex'
+            flexDirection={{ base: 'column', xl: 'row' }}
+            gap='2rem'
+            width='80rem'
+          >
             <Link href='/portfolio/uxuidesign/chocloproject'>
               <Box>
                 <Image src={Choclo} alt='Choclo Project' />
@@ -49,7 +54,12 @@ function Portfolio() {
         );
       case 'Web Development':
         return (
-          <Box display='flex' flexDirection='row' gap='2rem' width='80rem'>
+          <Box
+            display='flex'
+            flexDirection={{ base: 'column', xl: 'row' }}
+            gap='2rem'
+            width='80rem'
+          >
             <Link href='/portfolio/webdevelopment/acervoproject'>
               <Box>
                 <Image src={Acervo} alt='Acervo Project' />
@@ -80,7 +90,12 @@ function Portfolio() {
         );
       default:
         return (
-          <Box display='flex' flexDirection='column' gap='2rem' width='60rem'>
+          <Box
+            display='flex'
+            flexDirection={{ base: 'column', xl: 'row' }}
+            gap='2rem'
+            width='60rem'
+          >
             <Flex flexDirection='row' gap='2rem'>
               <Link href='/portfolio/webdevelopment/acervoproject'>
                 <Box>
@@ -146,21 +161,37 @@ function Portfolio() {
   };
   return (
     <div>
-      <Box margin='5rem 8rem 5rem 5rem'>
-        <Text fontSize={{ base: '4.8rem', lg: '3.8rem' }} color='#cccccc'>
+      <Box
+        margin={{
+          base: '3rem 1rem 3rem 1rem',
+          lg: '3rem 2rem 3rem 2rem',
+          xl: '5rem 8rem 5rem 5rem',
+        }}
+      >
+        <Text fontSize={{ base: '1.8rem', lg: '3.8rem' }} color='#cccccc'>
           come take a look into
         </Text>
-        <Text fontSize={{ base: '3rem', md: '5rem' }} fontWeight='600'>
+        <Text fontSize={{ base: '2.2rem', md: '5rem' }} fontWeight='600'>
           my work here...
         </Text>
-        <Text paddingRight='37rem'>
+        <Text
+          mt={{ base: '1rem', lg: '0' }}
+          paddingRight={{ base: '0', lg: '37rem' }}
+        >
           Below, you will find a selection of my projects and experiences,
           including commissioned work and some projects completed during my
           courses.
         </Text>
       </Box>
 
-      <Flex justifyContent='center' gap='8' m='8rem 0 4rem 0'>
+      <Flex
+        justifyContent='center'
+        gap={{ base: '4', lg: '8' }}
+        m={{
+          base: '2rem 0 2rem 0',
+          lg: '8rem 0 4rem 0',
+        }}
+      >
         {['All', 'Ux/Ui Design', 'Web Development'].map(option => (
           <Text
             key={option}
@@ -176,18 +207,35 @@ function Portfolio() {
           </Text>
         ))}
       </Flex>
-      <Flex justifyContent='center' gap='8' m='3rem 0 8rem 0'>
+      <Flex
+        justifyContent='center'
+        gap='8'
+        m={{
+          base: '3rem 1rem 3rem 1rem',
+          lg: '3rem 2rem 4rem 2rem',
+          xl: '3rem 0 8rem 0',
+        }}
+      >
         {renderProjects()}
       </Flex>
 
-      <Box margin='5rem 8rem 5rem 5rem'>
-        <Text fontSize={{ base: '4.8rem', lg: '2rem' }} color='#cccccc'>
+      <Box
+        margin={{
+          base: '5rem 1rem 3rem 1rem',
+          lg: '5rem 2rem 3rem 2rem',
+          xl: '5rem 8rem 5rem 5rem',
+        }}
+      >
+        <Text fontSize={{ base: '1.8rem', lg: '2rem' }} color='#cccccc'>
           inspired by my work?
         </Text>
-        <Text fontSize={{ base: '3rem', md: '3.8rem' }} fontWeight='600'>
+        <Text fontSize={{ base: '2.2rem', md: '3.8rem' }} fontWeight='600'>
           come say hi :)
         </Text>
-        <Text paddingRight='37rem'>
+        <Text
+          mt={{ base: '1rem', lg: '0' }}
+          paddingRight={{ base: '0', lg: '37rem' }}
+        >
           If you think my skills and projects align with what you are looking
           for, I would love to hear from you. Let's connect and discuss how I
           can contribute to your team.
