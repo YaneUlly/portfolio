@@ -13,6 +13,8 @@ import StyleGuideChoclo from '../../assets/uxuiprojects/StyleGuideChoclo.png';
 import BeforeAfterChocloOne from '../../assets/uxuiprojects/BeforeAfterChocloOne.png';
 import BeforeAfterChocloTwo from '../../assets/uxuiprojects/BeforeAfterChocloTwo.png';
 import BeforeAfterChocloThree from '../../assets/uxuiprojects/BeforeAfterChocloThree.png';
+import Millennium from '../../assets/uxuiprojects/Millenium.png';
+import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
 import { useState, useEffect } from 'react';
 import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
@@ -70,12 +72,6 @@ function ChocloProject() {
           <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
         </BreadcrumbItem>
 
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio/uxuidesign'>
-            UxUi Design Work
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink href='/portfolio/uxuidesign/chocloproject'>
             Choclo Project
@@ -83,19 +79,41 @@ function ChocloProject() {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Text fontSize={{ base: '3rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
+      <Text
+        fontSize={{ base: '2.8rem', md: '3.8rem' }}
+        m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+      >
         Choclo Website
       </Text>
 
-      <Text m='0 0 4rem 2rem'>A new website for Choclo restaurant</Text>
+      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+        A new website for Choclo restaurant
+      </Text>
 
-      <Image src={ChocloWebsite} alt='choclo-logo' width='80%' ml='8rem' />
+      <Image
+        src={ChocloWebsite}
+        alt='choclo-logo'
+        width={{ base: '90%', xl: '80%' }}
+        ml={{ base: '1rem', xl: '8rem' }}
+      />
 
-      <Flex flexDirection='row'>
-        <Box m='2rem 0 0 8rem' flex='1' maxWidth='300px'>
+      <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+        <Box
+          m={{ base: '2rem 0 0 0', xl: '2rem 0 0 8rem' }}
+          flex={{ xl: '1' }}
+          maxWidth={{ base: '100%', xl: '300px' }}
+          display={{ base: 'flex', xl: 'block' }}
+          flexDirection={{ base: 'row' }}
+        >
           <UnorderedList
+            display={{ base: 'flex', xl: 'block' }}
+            flexDirection={{ base: 'row', xl: 'column' }}
+            justifyContent={{ base: 'flex-start', md: 'none' }}
+            overflowX={{ base: 'auto', xl: 'visible' }}
+            gap={{ base: '1rem' }}
+            pb={{ base: '0.8rem' }}
             styleType='none'
-            spacing='3'
+            spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
           >
@@ -117,7 +135,10 @@ function ChocloProject() {
           </UnorderedList>
         </Box>
 
-        <Box m='2rem 12rem 1.5rem 0' flex='2'>
+        <Box
+          m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
+          flex={{ xl: '2' }}
+        >
           <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
             Overview
           </Text>
@@ -140,7 +161,11 @@ function ChocloProject() {
             their website company and also create an e-commerce platform.
           </Text>
 
-          <TableContainer m='1.5rem 0 1rem 0'>
+          <TableContainer
+            m={{ xl: '1.5rem 0 1rem 0' }}
+            whiteSpace={{ base: 'nowrap', xl: 'normal' }}
+            wordWrap='break-word'
+          >
             <Table variant='simple' size='sm'>
               <Tbody>
                 <Tr>
@@ -186,8 +211,10 @@ function ChocloProject() {
         </Box>
       </Flex>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
-        <Text id='problem' fontSize='2rem' fontWeight='600'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
+        <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
           Problem
         </Text>
         .
@@ -203,7 +230,9 @@ function ChocloProject() {
         </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
           Objective
         </Text>
@@ -220,7 +249,9 @@ function ChocloProject() {
         </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
           Research
         </Text>
@@ -228,7 +259,11 @@ function ChocloProject() {
           Intro
         </Text>
 
-        <Box display='flex' flexDirection='row' gap='2rem'>
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: '1.5rem', md: '2rem' }}
+        >
           <Box>
             <Text mb='0.8rem'>
               I started the research by analyzing a variety of sources,
@@ -675,7 +710,13 @@ function ChocloProject() {
           </Text>
         </Box>
 
-        <Box display='flex' flexDirection='row' gap='3rem' mt='2rem' mb='2rem'>
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: '1.5rem', md: '3rem' }}
+          mt='2rem'
+          mb='2rem'
+        >
           <Box>
             <Text mb='0.8rem' fontWeight='600'>
               Staff Interview insights:
@@ -760,28 +801,31 @@ function ChocloProject() {
           Personas
         </Text>
         <Box
-          maxWidth='100%'
+          maxWidth={{ base: '90%', md: '70%', xl: '90%' }}
           display='flex'
           flexDirection='row'
           gap='2rem'
           overflowX='auto'
           marginTop='1.5rem'
         >
-          <Box flex='0 0 auto' width='500px'>
+          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
             <img
               src={PersonaChocloOne}
+              alt='persona-choclo'
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <Box flex='0 0 auto' width='500px'>
+          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
             <img
               src={PersonaChocloTwo}
+              alt='persona-choclo'
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <Box flex='0 0 auto' width='500px'>
+          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
             <img
               src={PersonaChocloThree}
+              alt='persona-choclo'
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
@@ -791,27 +835,30 @@ function ChocloProject() {
           User Journey
         </Text>
         <Box
-          maxWidth='100%'
+          maxWidth={{ base: '90%', md: '70%', xl: '90%' }}
           display='flex'
           flexDirection='row'
           gap='2rem'
           overflowX='auto'
           marginTop='1.5rem'
         >
-          <Box flex='0 0 auto' width='800px'>
+          <Box flex='0 0 auto' width={{ base: '600px', md: '800px' }}>
             <img
+              alt='user-journey-choclo'
               src={UserJourneyChocloOne}
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <Box flex='0 0 auto' width='800px'>
+          <Box flex='0 0 auto' width={{ base: '600px', md: '800px' }}>
             <img
+              alt='user-journey-choclo'
               src={UserJourneyChocloTwo}
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <Box flex='0 0 auto' width='800px'>
+          <Box flex='0 0 auto' width={{ base: '600px', md: '800px' }}>
             <img
+              alt='user-journey-choclo'
               src={UserJourneyChocloThree}
               style={{ width: '100%', height: 'auto' }}
             />
@@ -835,7 +882,6 @@ function ChocloProject() {
           flexDirection='row'
           gap='1rem'
         >
-          <box-icon name='bulb' size='md'></box-icon>
           <Text color='black'>
             We aim to redo Choclo Landing Page in a manner that offers our
             customers comprehensive information to assist them in making the
@@ -1182,7 +1228,11 @@ function ChocloProject() {
           </TableContainer>
         </Box>
 
-        <Box display='flex' flexDirection='row' gap='2rem'>
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap='2rem'
+        >
           <Box display='flex' flexDirection='column'>
             <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
               Card Sorting
@@ -1220,13 +1270,13 @@ function ChocloProject() {
           </Box>
 
           <Box
-            maxWidth='40%'
+            maxWidth={{ base: '100%', md: '40%' }}
             display='flex'
             flexDirection='column'
             gap='10px'
-            marginTop='5.5rem'
+            marginTop={{ base: 'none', md: '5.5rem' }}
           >
-            <img src={CardSortingChoclo} />
+            <img src={CardSortingChoclo} alt='card-sorting-choclo' />
           </Box>
         </Box>
 
@@ -1239,7 +1289,6 @@ function ChocloProject() {
           gap='1rem'
           mt='2rem'
         >
-          <box-icon name='bulb' size='md'></box-icon>
           <Text color='black'>
             When we compared the final result with our initial hypothesis, we
             observed that the newsletter form, press releases, and timetable
@@ -1259,11 +1308,13 @@ function ChocloProject() {
         </Text>
 
         <Box maxWidth='100%' marginTop='2rem'>
-          <img src={UserFlowChoclo} />
+          <img src={UserFlowChoclo} alt='user-flow-choclo' />
         </Box>
       </Box>
 
-      <Box p='1rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
           Final UI
         </Text>
@@ -1286,39 +1337,30 @@ function ChocloProject() {
           overflowX='auto'
           padding='1rem'
         >
-          <Box flex='0 0 auto' width='500px'>
+          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
             <img
               src={ChocloSketchOne}
               style={{ width: '100%', height: 'auto' }}
+              alt='choclo-ui-sketch'
             />
           </Box>
-          <Box flex='0 0 auto' width='500px'>
+          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
             <img
               src={ChocloSketchTwo}
               style={{ width: '100%', height: 'auto' }}
+              alt='choclo-ui-sketch'
             />
           </Box>
-          <Box flex='0 0 auto' width='500px'>
+          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
             <img
               src={StyleGuideChoclo}
               style={{ width: '100%', height: 'auto' }}
+              alt='choclo-ui-style-guide'
             />
           </Box>
         </Box>
 
-        {/* <Box
-          display='flex'
-          flexDirection='row'
-          gap='2rem'
-          maxWidth='50%'
-          marginTop='2rem'
-        >
-          <img src={ChocloSketchOne} />
-          <img src={ChocloSketchTwo} />
-          <img src={StyleGuideChoclo} />
-        </Box> */}
-
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text fontSize='1.5rem' mb='0.8rem' mt={{ base: '1rem', md: '2rem' }}>
           Final MVP
         </Text>
         <Text mb='0.8rem'>
@@ -1328,20 +1370,31 @@ function ChocloProject() {
           for the pages.
         </Text>
 
-        <Box display='flex' flexDirection='row' gap='2rem' mb='2rem'>
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: 'none', md: '2rem' }}
+          mb='2rem'
+        >
           <Box display='flex' flexDirection='column'>
             <Text mt='1.5rem' fontWeight='600'>
               1. Better call to action and more informations about Choclo
             </Text>
             <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
-              <img src={BeforeAfterChocloOne} />
+              <img
+                src={BeforeAfterChocloOne}
+                alt='before-after-choclowebsite'
+              />
             </Box>
 
             <Text mt='1.5rem' fontWeight='600'>
               2. More consistent and cleaner interface
             </Text>
             <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
-              <img src={BeforeAfterChocloTwo} />
+              <img
+                src={BeforeAfterChocloTwo}
+                alt='before-after-choclowebsite'
+              />
             </Box>
           </Box>
 
@@ -1350,9 +1403,12 @@ function ChocloProject() {
               3. Texts easier to read and informations easy to find
             </Text>
             <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
-              <img src={BeforeAfterChocloThree} />
+              <img
+                src={BeforeAfterChocloThree}
+                alt='before-after-choclowebsite'
+              />
             </Box>
-            <Text mb='0.8rem' mt='1rem' pr='5rem'>
+            <Text mb='0.8rem' mt={{ base: '1.5rem', md: '1rem' }} pr='5rem'>
               Following the successful completion of our Minimum Viable Product
               (MVP), we embarked on refining the user interface (UI) within the
               platform utilized by our company, <strong>Wix Studio</strong>.
@@ -1382,6 +1438,45 @@ function ChocloProject() {
             </Link>
           </Box>
         </Box>
+      </Box>
+
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+        <Text
+          id='results'
+          fontSize='1.8rem'
+          fontWeight='600'
+          mb='1rem'
+          color='#cccccc'
+        >
+          more projects
+        </Text>
+        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+          while you are here?
+        </Text>
+        <Flex flexDirection={{ base: 'column', md: 'row' }}>
+          <Link href='/portfolio/uxuidesign/fabricaproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Fabrica} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Fabrica Project
+              </Text>
+            </Box>
+          </Link>
+          <Link href='/portfolio/uxuidesign/millenniumproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Millennium} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Millennium Project
+              </Text>
+            </Box>
+          </Link>
+        </Flex>
       </Box>
     </div>
   );
