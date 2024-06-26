@@ -9,6 +9,8 @@ import StoryboardMillennium from '../../assets/uxuiprojects/StoryboardMillennium
 import WireframeMillennium from '../../assets/uxuiprojects/WireframeMillennium.jpg';
 import StyleGuideMillennium from '../../assets/uxuiprojects/StyleGuideMillennium.png';
 import MillenniumFinalUI from '../../assets/uxuiprojects/MillenniumFinalUI.png';
+import Choclo from '../../assets/uxuiprojects/ChocloWebsite.png';
+import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
 import { Flex, Text, Box, Image, Button, Link, Thead } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -56,12 +58,6 @@ function MillenniumProject() {
           <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
         </BreadcrumbItem>
 
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio/uxuidesign'>
-            UxUi Design Work
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink href='/portfolio/uxuidesign/fabricaproject'>
             Millennium Project
@@ -69,21 +65,41 @@ function MillenniumProject() {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Text fontSize={{ base: '3rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
+      <Text
+        fontSize={{ base: '2.8rem', md: '3.8rem' }}
+        m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+      >
         Investment Feature
       </Text>
 
-      <Text m='0 0 4rem 2rem'>
+      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
         An investiment feature for education resources.
       </Text>
 
-      <Image src={Millennium} alt='millennium-logo' width='80%' ml='8rem' />
+      <Image
+        src={Millennium}
+        alt='millennium-logo'
+        width={{ base: '90%', xl: '80%' }}
+        ml={{ base: '1rem', xl: '8rem' }}
+      />
 
-      <Flex flexDirection='row'>
-        <Box m='2rem 0 0 8rem' flex='1' maxWidth='300px'>
+      <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+        <Box
+          m={{ base: '2rem 0 0 0', xl: '2rem 0 0 8rem' }}
+          flex={{ xl: '1' }}
+          maxWidth={{ base: '100%', xl: '300px' }}
+          display={{ base: 'flex', xl: 'block' }}
+          flexDirection={{ base: 'row' }}
+        >
           <UnorderedList
+            display={{ base: 'flex', xl: 'block' }}
+            flexDirection={{ base: 'row', xl: 'column' }}
+            justifyContent={{ base: 'flex-start', md: 'none' }}
+            overflowX={{ base: 'auto', xl: 'visible' }}
+            gap={{ base: '1rem' }}
+            pb={{ base: '0.8rem' }}
             styleType='none'
-            spacing='3'
+            spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
           >
@@ -105,7 +121,10 @@ function MillenniumProject() {
           </UnorderedList>
         </Box>
 
-        <Box m='2rem 12rem 1.5rem 0' flex='2'>
+        <Box
+          m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
+          flex={{ xl: '2' }}
+        >
           <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
             Overview
           </Text>
@@ -175,7 +194,9 @@ function MillenniumProject() {
         </Box>
       </Flex>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
           Problem
         </Text>
@@ -216,7 +237,9 @@ function MillenniumProject() {
         </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
           Objective
         </Text>
@@ -236,7 +259,9 @@ function MillenniumProject() {
         </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
           Research
         </Text>
@@ -247,19 +272,23 @@ function MillenniumProject() {
           Creating provisional personas based on my assumptions.
         </Text>
         <Box
-          maxWidth='50%'
+          maxWidth={{ base: '100%', md: '50%' }}
           display='flex'
-          flexDirection='row'
+          flexDirection={{ base: 'column', md: 'row' }}
           gap='10px'
           alignItems='center'
           marginTop='1rem'
           marginBottom='2rem'
         >
-          <img src={InvestorsOne} />
-          <img src={InvestorsTwo} />
+          <img src={InvestorsOne} alt='investor-persona-millennium' />
+          <img src={InvestorsTwo} alt='investor-persona-millennium' />
         </Box>
 
-        <Box display='flex' flexDirection='row' gap='2rem'>
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap='2rem'
+        >
           <Box display='flex' flexDirection='column'>
             <Text fontSize='1.5rem' mb='0.8rem'>
               User Interviews
@@ -306,11 +335,11 @@ function MillenniumProject() {
           </Box>
 
           <Box
-            maxWidth='60%'
+            maxWidth={{ base: '90%', md: '60%' }}
             display='flex'
             flexDirection='column'
-            gap='10px'
-            marginTop='2rem'
+            gap={{ base: 'none', md: '10px' }}
+            marginTop={{ md: '2rem' }}
           >
             <img src={InvestorsThree} />
           </Box>
@@ -526,7 +555,11 @@ function MillenniumProject() {
           </strong>
         </Text>
 
-        <Box display='flex' flexDirection='row' gap='5rem'>
+        <Box
+          display='flex'
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: '1rem', md: '5rem' }}
+        >
           <Box>
             <Text mb='0.8rem' fontWeight='700'>
               Santander
@@ -537,8 +570,8 @@ function MillenniumProject() {
               The platform is designed in a way that encourages users to become
               part of the investment community.
             </Text>
-            <Box maxWidth='80%' marginTop='2rem'>
-              <img src={SWOTSantander} />
+            <Box maxWidth='80%' marginTop={{ base: '1rem', md: '2rem' }}>
+              <img src={SWOTSantander} alt='swotanalysis-santander' />
             </Box>
           </Box>
 
@@ -551,8 +584,8 @@ function MillenniumProject() {
               investments, presented in a well-organized manner that covers a
               broad range of topics aimed at assisting a wide audience.
             </Text>
-            <Box maxWidth='80%' marginTop='4rem'>
-              <img src={SWOTNovobanco} />
+            <Box maxWidth='80%' marginTop={{ base: '1rem', md: '4rem' }}>
+              <img src={SWOTNovobanco} alt='swotanalysis-novobanco' />
             </Box>
           </Box>
         </Box>
@@ -874,7 +907,7 @@ function MillenniumProject() {
         </Text>
 
         <Box maxWidth='110%' marginTop='1rem' marginBottom='2rem'>
-          <img src={StoryboardMillennium} />
+          <img src={StoryboardMillennium} alt='storyboard' />
         </Box>
 
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
@@ -886,57 +919,55 @@ function MillenniumProject() {
           screen to create and prototype, so I started my wireframe process.
         </Text>
 
-        <Flex flexDirection='row' margin='2rem 5rem 2rem 2rem' gap='2rem'>
-          <Box padding='4rem 1rem 2rem 2rem' flex='1' textAlign='left'>
-            <Text fontSize='1.2rem' fontWeight='500' mb='0.8rem'>
-              1. <strong>Home:</strong>
-            </Text>
-            <Text>
-              User opens the Millennium webpage, looks for the investments
-              options and find the CTA for beginners.
-            </Text>
-          </Box>
-
-          <Box
-            borderLeft='1px'
-            borderColor='#cccccc'
-            padding='4rem 1rem 2rem 2rem'
-            flex='1'
-            textAlign='left'
-          >
-            <Text fontSize='1.2rem' fontWeight='500' mb='0.8rem'>
-              2. <strong>Landing Page Overview:</strong>
-            </Text>
-            <Text>
-              User opens the landing page for Millennium investment community,
-              he finds the types of investments on the menu, the quiz option,
-              the materials, search tool, registration option, FAQ and Prompt
-              Assistance.{' '}
-            </Text>
-          </Box>
-
-          <Box
-            borderLeft='1px'
-            borderColor='#cccccc'
-            padding='4rem 1rem 2rem 2rem'
-            flex='1'
-            textAlign='left'
-          >
-            <Text fontSize='1.2rem' fontWeight='500' mb='0.8rem'>
-              3. <strong>Subscription:</strong>
-            </Text>
-            <Text>
-              He decides to subscribe and be part of the community, he puts his
-              database and have new investor area. Now he have access to more
-              materials, he can consolidate all his investments in one place,
-              now the status of his investment, real time alerts, community
-              forum and study list.
-            </Text>
-          </Box>
+        <Flex
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: '0', xl: '2rem' }}
+          margin={{ base: '1rem 0', md: '0', xl: '2rem 5rem' }}
+        >
+          {[
+            {
+              number: '1.Home',
+              description:
+                'User opens the Millennium webpage, looks for the investments options and find the CTA for beginners.',
+            },
+            {
+              number: '2.Landing Page Overview:',
+              description:
+                ' User opens the landing page for Millennium investment community, he finds the types of investments on the menu, the quiz option, the materials, search tool, registration option, FAQ and Prompt Assistance.',
+            },
+            {
+              number: '3.Subscription:',
+              description:
+                'He decides to subscribe and be part of the community, he puts his database and have new investor area. Now he have access to more materials, he can consolidate all his investments in one place, now the status of his investment, real time alerts, community forum and study list.',
+            },
+          ].map((item, index) => (
+            <Box
+              key={index}
+              margin={{
+                base: '1rem',
+                md: index !== 0 ? '1rem 0 0 0' : '1rem',
+                xl: '4rem 1rem 2rem 2rem',
+              }}
+              borderBottom={{ base: '1px', md: 'none' }}
+              borderLeft={{ md: index !== 0 ? '1px' : 'none' }}
+              borderColor='#cccccc'
+              borderRadius={{ md: '5px' }}
+              p={{ base: '0 0 1rem 0', md: '1rem' }}
+              flex='1'
+              textAlign='left'
+            >
+              <Text fontSize='1.5rem' fontWeight='500'>
+                {item.number}
+              </Text>
+              <Text>{item.description}</Text>
+            </Box>
+          ))}
         </Flex>
       </Box>
 
-      <Box p='1rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
           Design
         </Text>
@@ -973,10 +1004,10 @@ function MillenniumProject() {
         <Box
           marginBottom='2rem'
           marginTop='2rem'
-          marginLeft='15rem'
+          marginLeft={{ base: '1rem', md: '15rem' }}
           display='flex'
           justifyContent='center'
-          maxWidth='50%'
+          maxWidth={{ base: '80%', md: '50%' }}
         >
           <img src={WireframeMillennium} alt='wireframe-millennium' />
         </Box>
@@ -1006,12 +1037,12 @@ function MillenniumProject() {
         <Box
           marginBottom='2rem'
           marginTop='2rem'
-          marginLeft='15rem'
+          marginLeft={{ base: '1rem', md: '15rem' }}
           display='flex'
           justifyContent='center'
-          maxWidth='50%'
+          maxWidth={{ base: '80%', md: '50%' }}
         >
-          <img src={StyleGuideMillennium} />
+          <img src={StyleGuideMillennium} alt='styleguide' />
         </Box>
 
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
@@ -1021,13 +1052,52 @@ function MillenniumProject() {
         <Box
           marginBottom='2rem'
           marginTop='2rem'
-          marginLeft='15rem'
+          marginLeft={{ base: '1rem', md: '15rem' }}
           display='flex'
           justifyContent='center'
-          maxWidth='50%'
+          maxWidth={{ base: '80%', md: '50%' }}
         >
-          <img src={MillenniumFinalUI} />
+          <img src={MillenniumFinalUI} alt='finalui' />
         </Box>
+      </Box>
+
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+        <Text
+          id='results'
+          fontSize='1.8rem'
+          fontWeight='600'
+          mb='1rem'
+          color='#cccccc'
+        >
+          more projects
+        </Text>
+        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+          while you are here?
+        </Text>
+        <Flex flexDirection={{ base: 'column', md: 'row' }}>
+          <Link href='/portfolio/uxuidesign/chocloproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Choclo} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Choclo Project
+              </Text>
+            </Box>
+          </Link>
+          <Link href='/portfolio/uxuidesign/fabricaproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Fabrica} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Fábrica Project
+              </Text>
+            </Box>
+          </Link>
+        </Flex>
       </Box>
     </div>
   );
