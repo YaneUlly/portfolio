@@ -93,6 +93,7 @@ function Portfolio() {
           <Box
             display='flex'
             flexDirection={{ base: 'column', xl: 'row' }}
+            flexWrap={{ xl: 'wrap' }}
             gap='2rem'
             width='60rem'
           >
@@ -146,7 +147,7 @@ function Portfolio() {
                 </Box>
               </Link>
 
-              <Link href='/portfolio/uxuidesing/fabricaproject'>
+              <Link href='/portfolio/uxuidesign/fabricaproject'>
                 <Box>
                   <Image src={Fabrica} alt='Fabrica Project' />
                   <Text mt='1rem' fontWeight='600'>

@@ -10,6 +10,8 @@ import CanvaMVP from '../../assets/uxuiprojects/CanvaMVP.jpg';
 import MVPBuild from '../../assets/uxuiprojects/MVPBuild.png';
 import MockupFabrica from '../../assets/uxuiprojects/MockupFabrica.png';
 import AllScreensFabrica from '../../assets/uxuiprojects/AllScreensFabrica.png';
+import Choclo from '../../assets/uxuiprojects/ChocloWebsite.png';
+import Millennium from '../../assets/uxuiprojects/Millenium.png';
 import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -52,16 +54,10 @@ function FábricaProject() {
         fontWeight='medium'
         fontSize='sm'
         color='#CCCCCC'
-        m='2rem 0 0 2rem'
+        m={{ base: '1rem 0 0 1rem', xl: '2rem 0 0 2rem' }}
       >
         <BreadcrumbItem>
           <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio/uxuidesign'>
-            UxUi Design Work
-          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
@@ -71,21 +67,41 @@ function FábricaProject() {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Text fontSize={{ base: '3rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
+      <Text
+        fontSize={{ base: '2.8rem', md: '3.8rem' }}
+        m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+      >
         Coffee Quiz
       </Text>
 
-      <Text m='0 0 4rem 2rem'>
+      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
         A Quiz feature for Fábrica Coffee Roasters Ecommerce Landing Page.
       </Text>
 
-      <Image src={Fabrica} alt='fabrica-logo' width='80%' ml='8rem' />
+      <Image
+        src={Fabrica}
+        alt='fabrica-logo'
+        width={{ base: '90%', xl: '80%' }}
+        ml={{ base: '1rem', xl: '8rem' }}
+      />
 
-      <Flex flexDirection='row'>
-        <Box m='2rem 0 0 8rem' flex='1' maxWidth='300px'>
+      <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+        <Box
+          m={{ base: '2rem 0 0 0', xl: '2rem 0 0 8rem' }}
+          flex={{ xl: '1' }}
+          maxWidth={{ base: '100%', xl: '300px' }}
+          display={{ base: 'flex', xl: 'block' }}
+          flexDirection={{ base: 'row' }}
+        >
           <UnorderedList
+            display={{ base: 'flex', xl: 'block' }}
+            flexDirection={{ base: 'row', xl: 'column' }}
+            justifyContent={{ base: 'flex-start', md: 'none' }}
+            overflowX={{ base: 'auto', xl: 'visible' }}
+            gap={{ base: '1rem' }}
+            pb={{ base: '0.8rem' }}
             styleType='none'
-            spacing='3'
+            spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
           >
@@ -107,7 +123,10 @@ function FábricaProject() {
           </UnorderedList>
         </Box>
 
-        <Box m='2rem 12rem 1.5rem 0' flex='2'>
+        <Box
+          m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
+          flex={{ xl: '2' }}
+        >
           <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
             Overview
           </Text>
@@ -134,7 +153,11 @@ function FábricaProject() {
             field.
           </Text>
 
-          <TableContainer m='1.5rem 0 1rem 0'>
+          <TableContainer
+            m={{ xl: '1.5rem 0 1rem 0' }}
+            whiteSpace={{ base: 'nowrap', xl: 'normal' }}
+            wordWrap='break-word'
+          >
             <Table variant='simple' size='sm'>
               <Tbody>
                 <Tr>
@@ -177,7 +200,9 @@ function FábricaProject() {
         </Box>
       </Flex>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
           Problem
         </Text>
@@ -212,7 +237,9 @@ function FábricaProject() {
         </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
           Objective
         </Text>
@@ -232,13 +259,12 @@ function FábricaProject() {
         </Text>
 
         <Box
-          maxWidth='80%'
+          maxWidth={{ base: '90%', md: '70%', xl: '90%' }}
           display='flex'
-          flexDirection='column'
-          gap='10px'
-          justifyContent='center'
-          alignItems='center'
-          marginLeft='5rem'
+          flexDirection='row'
+          overflowX='auto'
+          gap='2rem'
+          marginLeft={{ base: '1rem', xl: '5rem' }}
           marginTop='2rem'
         >
           <img src={ReasonOne} alt='four-questions-app' />
@@ -247,7 +273,9 @@ function FábricaProject() {
         </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
           Research
         </Text>
@@ -366,13 +394,13 @@ function FábricaProject() {
           Fábrica Coffee Roasters.
         </Text>
         <Box
-          maxWidth='80%'
+          maxWidth={{ base: '100%', md: '80%' }}
           display='flex'
           flexDirection='column'
           gap='10px'
           justifyContent='center'
           alignItems='center'
-          marginLeft='5rem'
+          marginLeft={{ xl: '5rem' }}
           marginTop='2rem'
         >
           <img src={PersonaOne} />
@@ -399,52 +427,60 @@ function FábricaProject() {
 
         <Text mb='0.8rem'>Pain points:</Text>
 
-        <Flex flexDirection='row' gap='12' margin='2rem 5rem'>
-          <Box margin='4rem 1rem 2rem 2rem'>
-            <Text fontSize='1.5rem' fontWeight='500'>
-              1.
-            </Text>
-            <Text>
-              Uncertainty in finding and understanding flavor profiles.
-            </Text>
-          </Box>
-
-          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
-            <Box margin='4rem 1rem 2rem 2rem'>
+        <Flex
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: '0', xl: '2rem' }}
+          margin={{ base: '1rem 0', md: '0', xl: '2rem 5rem' }}
+        >
+          {[
+            {
+              number: '1.',
+              description:
+                'Uncertainty in finding and understanding flavor profiles.',
+            },
+            {
+              number: '2.',
+              description:
+                'Knowing if a particular coffee pairs well with the home brewing method.',
+            },
+            {
+              number: '3.',
+              description:
+                'Selecting the correct grind for the coffee and the home brewing method.',
+            },
+            {
+              number: '4.',
+              description:
+                'Understanding how to properly prepare coffee at home.',
+            },
+          ].map((item, index) => (
+            <Box
+              key={index}
+              margin={{
+                base: '1rem',
+                md: index !== 0 ? '1rem 0 0 0' : '1rem',
+                xl: '4rem 1rem 2rem 2rem',
+              }}
+              borderBottom={{ base: '1px', md: 'none' }}
+              borderLeft={{ md: index !== 0 ? '1px' : 'none' }}
+              borderColor='#cccccc'
+              borderRadius={{ md: '5px' }}
+              p={{ base: '0 0 1rem 0', md: '1rem' }}
+              flex='1'
+              textAlign='left'
+            >
               <Text fontSize='1.5rem' fontWeight='500'>
-                2.
+                {item.number}
               </Text>
-              <Text>
-                Knowing if a particular coffee pairs well with the home brewing
-                method.
-              </Text>
+              <Text>{item.description}</Text>
             </Box>
-          </Box>
-
-          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
-            <Box margin='4rem 1rem 2rem 2rem'>
-              <Text fontSize='1.5rem' fontWeight='500'>
-                3.
-              </Text>
-              <Text>
-                Selecting the correct grind for the coffee and the home brewing
-                method.
-              </Text>
-            </Box>
-          </Box>
-
-          <Box borderLeft='1px' borderColor='#cccccc' borderRadius='5px'>
-            <Box margin='4rem 1rem 2rem 2rem'>
-              <Text fontSize='1.5rem' fontWeight='500'>
-                4.
-              </Text>
-              <Text>Understanding how to properly prepare coffee at home.</Text>
-            </Box>
-          </Box>
+          ))}
         </Flex>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
           Design
         </Text>
@@ -487,12 +523,10 @@ function FábricaProject() {
         </Text>
 
         <Box
-          marginBottom='2rem'
-          marginTop='2rem'
-          marginLeft='10rem'
+          m={{ base: '1rem', xl: '2rem 0 2rem 10rem' }}
           display='flex'
           justifyContent='center'
-          maxWidth='60%'
+          maxWidth={{ base: '90%', md: '60%' }}
         >
           <img src={CanvaMVP} />
         </Box>
@@ -515,12 +549,10 @@ function FábricaProject() {
         </Text>
 
         <Box
-          marginBottom='1rem'
-          marginTop='2rem'
-          marginLeft='6rem'
+          m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
           display='flex'
           justifyContent='center'
-          maxWidth='80%'
+          maxWidth={{ base: '90%', md: '80%' }}
         >
           <img src={MVPBuild} />
         </Box>
@@ -538,11 +570,15 @@ function FábricaProject() {
         <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
           Final UI
         </Text>
-        <img src={MockupFabrica} />
-        <img src={AllScreensFabrica} />
+        <Box maxWidth={{ base: '90%', md: '80%', xl: '100%' }}>
+          <img src={MockupFabrica} />
+          <img src={AllScreensFabrica} />
+        </Box>
       </Box>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
           Results
         </Text>
@@ -552,55 +588,79 @@ function FábricaProject() {
           observations revealed that:
         </Text>
 
-        <Flex flexDirection='row' margin='2rem 5rem 5rem 2rem' gap='2rem'>
-          <Box padding='4rem 1rem 2rem 2rem' flex='1' textAlign='left'>
-            <Text fontSize='1.5rem' fontWeight='500'>
-              90%
-            </Text>
-            <Text>Of completion rate.</Text>
-          </Box>
+        <Flex
+          flexDirection={{ base: 'column', md: 'row' }}
+          gap={{ base: '0', xl: '2' }}
+          margin={{ base: '1rem 0', xl: '2rem 5rem' }}
+        >
+          {[
+            { percentage: '90%', description: 'Of completion rate.' },
+            {
+              percentage: '3%',
+              description: 'abandonment rate on the first page of the quiz',
+            },
+            {
+              percentage: '30%',
+              description:
+                'of users interact in the final page, meaning that they click on the product or add the product to their cart;',
+            },
+            { percentage: '40€', description: 'the average cart value' },
+          ].map((item, index) => (
+            <Box
+              key={index}
+              margin={{ base: '1rem', xl: '4rem 1rem 2rem 2rem' }}
+              borderBottom={{ base: '1px', md: 'none' }}
+              borderLeft={{ md: index !== 0 ? '1px' : 'none' }}
+              borderColor='#cccccc'
+              p={{ base: '0 0 1rem 0', md: '0 1rem 0 1rem' }}
+              flex='1'
+              textAlign='left'
+            >
+              <Text fontSize='1.5rem' fontWeight='500'>
+                {item.percentage}
+              </Text>
+              <Text>{item.description}</Text>
+            </Box>
+          ))}
+        </Flex>
+      </Box>
 
-          <Box
-            borderLeft='1px'
-            borderColor='#cccccc'
-            padding='4rem 1rem 2rem 2rem'
-            flex='1'
-            textAlign='left'
-          >
-            <Text fontSize='1.5rem' fontWeight='500'>
-              3%
-            </Text>
-            <Text>abandonment rate on the first page of the quiz</Text>
-          </Box>
-
-          <Box
-            borderLeft='1px'
-            borderColor='#cccccc'
-            padding='4rem 1rem 2rem 2rem'
-            flex='1'
-            textAlign='left'
-          >
-            <Text fontSize='1.5rem' fontWeight='500'>
-              30%
-            </Text>
-            <Text>
-              of users interact in the final page, meaning that they click on
-              the product or add the product to their cart;
-            </Text>
-          </Box>
-
-          <Box
-            borderLeft='1px'
-            borderColor='#cccccc'
-            padding='4rem 1rem 2rem 2rem'
-            flex='1'
-            textAlign='left'
-          >
-            <Text fontSize='1.5rem' fontWeight='500'>
-              40€
-            </Text>
-            <Text>the average cart value</Text>
-          </Box>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+        <Text
+          id='results'
+          fontSize='1.8rem'
+          fontWeight='600'
+          mb='1rem'
+          color='#cccccc'
+        >
+          more projects
+        </Text>
+        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+          while you are here?
+        </Text>
+        <Flex flexDirection={{ base: 'column', md: 'row' }}>
+          <Link href='/portfolio/uxuidesign/chocloproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Choclo} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Choclo Project
+              </Text>
+            </Box>
+          </Link>
+          <Link href='/portfolio/uxuidesign/millenniumproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Millennium} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Millennium Project
+              </Text>
+            </Box>
+          </Link>
         </Flex>
       </Box>
     </div>
