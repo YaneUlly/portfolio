@@ -155,6 +155,7 @@ function FábricaProject() {
 
           <TableContainer
             m={{ xl: '1.5rem 0 1rem 0' }}
+            p={{ base: '0 0 1rem 0', md: '0' }}
             whiteSpace={{ base: 'nowrap', xl: 'normal' }}
             wordWrap='break-word'
           >

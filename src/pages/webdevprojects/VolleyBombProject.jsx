@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import Volleybomb from '../../assets/webdevprojects/Volleybomb.png';
+import Agora from '../../assets/webdevprojects/Agora.png';
+import Acervo from '../../assets/webdevprojects/Acervo.png';
 import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -11,7 +13,7 @@ function VolleyBombProject() {
   const sections = [
     { id: 'overview', label: 'Overview' },
     { id: 'pitch', label: 'Pitch' },
-    { id: 'challenge', label: 'Tech Challenge' },
+    { id: 'challenge', label: 'Challenge' },
     { id: 'mistakes', label: 'Mistakes' },
     { id: 'learnings', label: 'Learnings' },
   ];
@@ -41,16 +43,10 @@ function VolleyBombProject() {
         fontWeight='medium'
         fontSize='sm'
         color='#CCCCCC'
-        m='2rem 0 0 2rem'
+        m={{ base: '1rem 0 0 1rem', xl: '2rem 0 0 2rem' }}
       >
         <BreadcrumbItem>
           <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio/webdevelopment'>
-            Web Development Work
-          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
@@ -60,19 +56,38 @@ function VolleyBombProject() {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Text fontSize={{ base: '3rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
+      <Text fontSize={{ base: '2.8rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
         VolleyBomb Game
       </Text>
 
-      <Text m='0 0 4rem 2rem'>A fun and dynamic game.</Text>
+      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+        A fun and dynamic game.
+      </Text>
 
-      <Image src={Volleybomb} alt='volleybomb-logo' width='80%' ml='8rem' />
+      <Image
+        src={Volleybomb}
+        alt='volleybomb-logo'
+        width={{ base: '90%', xl: '80%' }}
+        ml={{ base: '1rem', xl: '8rem' }}
+      />
 
-      <Flex flexDirection='row'>
-        <Box m='2rem 0 0 8rem' flex='1' maxWidth='300px'>
+      <Flex flexDirection={{ base: 'column', xl: 'row' }}>
+        <Box
+          m={{ base: '2rem 0 0 0', xl: '2rem 0 0 8rem' }}
+          flex={{ xl: '1' }}
+          maxWidth={{ base: '100%', xl: '300px' }}
+          display={{ base: 'flex', xl: 'block' }}
+          flexDirection={{ base: 'row' }}
+        >
           <UnorderedList
+            display={{ base: 'flex', xl: 'block' }}
+            flexDirection={{ base: 'row', xl: 'column' }}
+            justifyContent={{ base: 'flex-start', md: 'none' }}
+            overflowX={{ base: 'auto', xl: 'visible' }}
+            gap={{ base: '1rem' }}
+            pb={{ base: '0.8rem' }}
             styleType='none'
-            spacing='3'
+            spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
           >
@@ -94,7 +109,10 @@ function VolleyBombProject() {
           </UnorderedList>
         </Box>
 
-        <Box m='2rem 12rem 1.5rem 0' flex='2'>
+        <Box
+          m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
+          flex={{ xl: '2' }}
+        >
           <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
             Overview
           </Text>
@@ -108,7 +126,12 @@ function VolleyBombProject() {
             to meet the technical requirements.
           </Text>
 
-          <TableContainer m='1.5rem 0 1rem 0'>
+          <TableContainer
+            m={{ xl: '1.5rem 0 1rem 0' }}
+            p={{ base: '0 0 1rem 0', md: '0' }}
+            whiteSpace={{ base: 'nowrap', xl: 'normal' }}
+            wordWrap='break-word'
+          >
             <Table variant='simple' size='sm'>
               <Tbody>
                 <Tr>
@@ -174,7 +197,9 @@ function VolleyBombProject() {
         </Box>
       </Flex>
 
-      <Box p='2rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='pitch' fontSize='2rem' fontWeight='600' mb='1rem'>
           Pitch idea
         </Text>
@@ -192,7 +217,9 @@ function VolleyBombProject() {
         </Text>
       </Box>
 
-      <Box p='1rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='challenge' fontSize='2rem' fontWeight='600' mb='1rem'>
           Tech Challenge
         </Text>
@@ -211,7 +238,9 @@ function VolleyBombProject() {
         </Text>
       </Box>
 
-      <Box p='1rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='mistakes' fontSize='2rem' fontWeight='600' mb='1rem'>
           Mistakes
         </Text>
@@ -225,7 +254,9 @@ function VolleyBombProject() {
         </Text>
       </Box>
 
-      <Box p='1rem 10rem 1.5rem 8rem'>
+      <Box
+        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+      >
         <Text id='learnings' fontSize='2rem' fontWeight='600' mb='1rem'>
           Learnings
         </Text>
@@ -236,6 +267,45 @@ function VolleyBombProject() {
             and then start the code.
           </strong>
         </Text>
+      </Box>
+
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+        <Text
+          id='results'
+          fontSize='1.8rem'
+          fontWeight='600'
+          mb='1rem'
+          color='#cccccc'
+        >
+          more projects
+        </Text>
+        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+          while you are here?
+        </Text>
+        <Flex flexDirection={{ base: 'column', md: 'row' }}>
+          <Link href='/portfolio/webdevelopment/acervoproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Acervo} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Acervo Project
+              </Text>
+            </Box>
+          </Link>
+          <Link href='/portfolio/webdevelopment/agoraproject'>
+            <Box
+              m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
+              maxWidth={{ base: '90%', xl: '80%' }}
+            >
+              <img src={Agora} />
+              <Text fontWeight='600' mt='0.8rem'>
+                Agora Project
+              </Text>
+            </Box>
+          </Link>
+        </Flex>
       </Box>
     </div>
   );
