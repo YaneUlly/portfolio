@@ -1,4 +1,4 @@
-import { Box, Heading, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Heading, Button, Flex, Text, Link } from '@chakra-ui/react';
 import SocialIcons from '../components/SocialIcons';
 import { motion } from 'framer-motion';
 
@@ -8,7 +8,7 @@ function LandingPage() {
       minHeight={{ md: '50vh', lg: '80vh' }}
       width='100%'
       mt={{ md: '8rem', lg: '0' }}
-      marginBottom={{ base: '8rem', md: '16rem', lg: '3rem' }}
+      marginBottom={{ base: '8rem', md: '16rem', lg: '2rem' }}
       display='flex'
       flexDirection={{ base: 'column', lg: 'row' }}
       alignItems='center'
@@ -67,32 +67,36 @@ function LandingPage() {
         </motion.div>
       </Flex>
       <Flex flexDirection='column' className='home-buttons'>
-        <Button
-          variant='outline'
-          borderWidth='0.1rem'
-          borderColor='black'
-          p='2rem 4.5rem'
-          cursor='pointer'
-          mb='1rem'
-          _hover={{
-            bgColor: '#5783AB',
-            color: '#FFFFFF',
-          }}
-        >
-          Ux/Ui Design Work
-        </Button>
-        <Button
-          borderWidth='0.1rem'
-          borderColor='black'
-          p='2rem 4.5rem'
-          cursor='pointer'
-          _hover={{
-            bgColor: '#E7CE35',
-            color: '#FFFFFF',
-          }}
-        >
-          Web Development Work
-        </Button>
+        <Link href='/portfolio'>
+          <Button
+            variant='outline'
+            borderWidth='0.1rem'
+            borderColor='black'
+            p='2rem 7rem'
+            cursor='pointer'
+            mb='1rem'
+            _hover={{
+              bgColor: '#101010',
+              color: '#FFFFFF',
+            }}
+          >
+            View work
+          </Button>
+        </Link>
+        <Link href='/contact'>
+          <Button
+            borderWidth='0.1rem'
+            borderColor='black'
+            p='2rem 7.4rem'
+            cursor='pointer'
+            _hover={{
+              bgColor: '#101010',
+              color: '#FFFFFF',
+            }}
+          >
+            Contact
+          </Button>
+        </Link>
       </Flex>
     </Box>
   );

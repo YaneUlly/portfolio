@@ -25,7 +25,7 @@ function Contact() {
         gap={{ base: '3rem', lg: '5rem' }}
         justifyContent='center'
         alignItems={{ md: 'center', xl: 'none' }}
-        mt={{ base: '5rem', md: '10rem' }}
+        mt={{ base: '5rem', md: '8rem' }}
         ml={{ base: '1rem', xl: '0' }}
         mb={{ base: '12rem', md: '10rem' }}
       >

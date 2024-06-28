@@ -16,7 +16,7 @@ import './App.css';
 
 function App() {
   return (
-    <Flex direction='column' maxHeight='100vh' width='100%'>
+    <Flex direction='column' minHeight='100vh' width='100%'>
       <Box as='header' width='100%'>
         <Navbar />
       </Box>

@@ -1,169 +1,236 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
-import { Flex, Box, IconButton, Text } from '@chakra-ui/react';
+import { motion, MotionConfig, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Flex, Box, Text } from '@chakra-ui/react';
 import 'boxicons';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // handle the home option, because the menu it's a overlay
   const handleMenuClick = () => {
     setIsOpen(false);
-
-    // if ((location.pathname = path)) {
-    //   window.location.reload();
-    // }
   };
 
   return (
     <Box>
-      <IconButton
-        icon={<box-icon name='menu' size='60px' />}
-        onClick={toggleMenu}
-        color='white'
-        background='none'
-        _hover={{ background: 'none' }}
-        aria-label='Open Menu'
-      />
-
-      {/* Menu */}
-      {isOpen && (
-        <Flex
-          position='fixed'
-          top='0'
-          left='0'
-          width='100%'
-          height='100%'
-          backgroundColor='white'
-          justifyContent='flex-start'
-          zIndex='50'
+      <MotionConfig transition={{ duration: 0.5, ease: 'easeInOut' }}>
+        <motion.button
+          initial={false}
+          onClick={toggleMenu}
+          style={{
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            cursor: 'pointer',
+            position: 'relative',
+            width: '80px',
+            height: '80px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 100,
+          }}
+          animate={isOpen ? 'open' : 'close'}
         >
+          <motion.div
+            style={{
+              position: 'absolute',
+              height: '4px',
+              width: '40px',
+              backgroundColor: 'black',
+              left: '50%',
+              top: '35%',
+              transform: 'translate(-50%, -50%)',
+            }}
+            variants={{
+              open: {
+                rotate: ['0deg', '0deg', '45deg'],
+                top: ['35%', '50%', '50%'],
+              },
+              close: {
+                rotate: ['45deg', '0deg', '0deg'],
+                top: ['50%', '50%', '35%'],
+              },
+            }}
+          />
+          <motion.div
+            style={{
+              position: 'absolute',
+              height: '4px',
+              width: '40px',
+              backgroundColor: 'black',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+            variants={{
+              open: {
+                rotate: ['0deg', '0deg', '-45deg'],
+              },
+              close: {
+                rotate: ['-45deg', '0deg', '0deg'],
+              },
+            }}
+          />
+          <motion.div
+            style={{
+              position: 'absolute',
+              height: '4px',
+              width: '20px',
+              backgroundColor: 'black',
+              left: '75%',
+              bottom: '30%',
+              transform: 'translate(-50%, 50%)',
+            }}
+            variants={{
+              open: {
+                rotate: ['0deg', '0deg', '45deg'],
+                left: '60%',
+                bottom: ['30%', '48%', '48%'],
+              },
+              close: {
+                rotate: ['45deg', '0deg', '0deg'],
+                left: '75%',
+                bottom: ['48%', '48%', '30%'],
+              },
+            }}
+          />
+        </motion.button>
+      </MotionConfig>
+
+      <AnimatePresence>
+        {isOpen && (
           <Flex
+            as={motion.div}
+            key='menu'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            position='fixed'
+            top='0'
+            left='0'
             width='100%'
             height='100%'
             backgroundColor='white'
-            color='black'
-            paddingLeft='2rem'
-            direction='column'
-            alignItems='flex-start'
-            justifyContent='center'
+            justifyContent='flex-start'
+            zIndex='50'
           >
-            <IconButton
-              icon={<box-icon name='x' size='60px' />}
-              onClick={toggleMenu}
-              position='absolute'
-              top='1rem'
-              right='1rem'
+            <Flex
+              width='100%'
+              height='100%'
+              backgroundColor='white'
               color='black'
-              background='none'
-              _hover={{ background: 'none' }}
-              aria-label='Close Menu'
-            />
-
-            <Box
-              as='ul'
-              padding='1rem'
-              textAlign='left'
-              display='flex'
-              flexDirection='column'
+              paddingLeft='2rem'
+              direction='column'
               alignItems='flex-start'
+              justifyContent='center'
             >
-              <motion.div
-                initial='hidden'
-                animate='visible'
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.5 }}
+              <Box
+                as='ul'
+                padding='1rem'
+                textAlign='left'
+                display='flex'
+                flexDirection='column'
+                alignItems='flex-start'
               >
-                <Link to='/' onClick={() => handleMenuClick('/')}>
-                  <Text
-                    fontSize='5rem'
-                    padding='0.1rem'
-                    color='#CCCCCC'
-                    _hover={{ color: '#101010' }}
-                  >
-                    Home
-                  </Text>
-                </Link>
-              </motion.div>
-              <motion.div
-                initial='hidden'
-                animate='visible'
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                <Link to='/about' onClick={() => handleMenuClick('/about')}>
-                  <Box
-                    as='li'
-                    fontSize='5rem'
-                    padding='0.1rem'
-                    color='#CCCCCC'
-                    _hover={{ color: '#101010' }}
-                  >
-                    About
-                  </Box>
-                </Link>
-              </motion.div>
-              <motion.div
-                initial='hidden'
-                animate='visible'
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-              >
-                <Link
-                  to='/portfolio'
-                  onClick={() => handleMenuClick('/portfolio')}
+                <motion.div
+                  initial='hidden'
+                  animate='visible'
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
                 >
-                  <Box
-                    as='li'
-                    fontSize='5rem'
-                    padding='0.1rem'
-                    color='#CCCCCC'
-                    _hover={{ color: '#101010' }}
+                  <Link to='/' onClick={() => handleMenuClick('/')}>
+                    <Text
+                      fontSize='5rem'
+                      padding='0.1rem'
+                      color='#CCCCCC'
+                      _hover={{ color: '#101010' }}
+                    >
+                      Home
+                    </Text>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial='hidden'
+                  animate='visible'
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  <Link to='/about' onClick={() => handleMenuClick('/about')}>
+                    <Box
+                      as='li'
+                      fontSize='5rem'
+                      padding='0.1rem'
+                      color='#CCCCCC'
+                      _hover={{ color: '#101010' }}
+                    >
+                      About
+                    </Box>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial='hidden'
+                  animate='visible'
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                >
+                  <Link
+                    to='/portfolio'
+                    onClick={() => handleMenuClick('/portfolio')}
                   >
-                    Portfolio
-                  </Box>
-                </Link>
-              </motion.div>
-              <motion.div
-                initial='hidden'
-                animate='visible'
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-              >
-                <Link to='/contact' onClick={() => handleMenuClick('/contact')}>
-                  <Box
-                    as='li'
-                    fontSize='5rem'
-                    padding='0.1rem'
-                    color='#CCCCCC'
-                    _hover={{ color: '#101010' }}
+                    <Box
+                      as='li'
+                      fontSize='5rem'
+                      padding='0.1rem'
+                      color='#CCCCCC'
+                      _hover={{ color: '#101010' }}
+                    >
+                      Portfolio
+                    </Box>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial='hidden'
+                  animate='visible'
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                >
+                  <Link
+                    to='/contact'
+                    onClick={() => handleMenuClick('/contact')}
                   >
-                    Contact
-                  </Box>
-                </Link>
-              </motion.div>
-            </Box>
+                    <Box
+                      as='li'
+                      fontSize='5rem'
+                      padding='0.1rem'
+                      color='#CCCCCC'
+                      _hover={{ color: '#101010' }}
+                    >
+                      Contact
+                    </Box>
+                  </Link>
+                </motion.div>
+              </Box>
+            </Flex>
           </Flex>
-        </Flex>
-      )}
+        )}
+      </AnimatePresence>
     </Box>
   );
 };
