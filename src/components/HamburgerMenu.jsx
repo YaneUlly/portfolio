@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { motion, MotionConfig, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, useTheme, useColorMode } from '@chakra-ui/react';
 import 'boxicons';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const theme = useTheme();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -41,7 +43,10 @@ const HamburgerMenu = () => {
               position: 'absolute',
               height: '4px',
               width: '40px',
-              backgroundColor: 'black',
+              backgroundColor:
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1,
               left: '50%',
               top: '35%',
               transform: 'translate(-50%, -50%)',
@@ -62,7 +67,10 @@ const HamburgerMenu = () => {
               position: 'absolute',
               height: '4px',
               width: '40px',
-              backgroundColor: 'black',
+              backgroundColor:
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1,
               left: '50%',
               top: '50%',
               transform: 'translate(-50%, -50%)',
@@ -81,7 +89,10 @@ const HamburgerMenu = () => {
               position: 'absolute',
               height: '4px',
               width: '20px',
-              backgroundColor: 'black',
+              backgroundColor:
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1,
               left: '75%',
               bottom: '30%',
               transform: 'translate(-50%, 50%)',
@@ -115,15 +126,27 @@ const HamburgerMenu = () => {
             left='0'
             width='100%'
             height='100%'
-            backgroundColor='white'
+            backgroundColor={
+              colorMode === 'dark'
+                ? theme.colors.dark.bg
+                : theme.colors.light.bg
+            }
             justifyContent='flex-start'
             zIndex='50'
           >
             <Flex
               width='100%'
               height='100%'
-              backgroundColor='white'
-              color='black'
+              backgroundColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg
+              }
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1
+              }
               paddingLeft='2rem'
               direction='column'
               alignItems='flex-start'
@@ -150,8 +173,17 @@ const HamburgerMenu = () => {
                     <Text
                       fontSize='5rem'
                       padding='0.1rem'
-                      color='#CCCCCC'
-                      _hover={{ color: '#101010' }}
+                      color={
+                        colorMode === 'dark'
+                          ? theme.colors.dark.text
+                          : theme.colors.light.text
+                      }
+                      _hover={{
+                        color:
+                          colorMode === 'dark'
+                            ? theme.colors.dark.h1
+                            : theme.colors.light.h1,
+                      }}
                     >
                       Home
                     </Text>
@@ -171,8 +203,17 @@ const HamburgerMenu = () => {
                       as='li'
                       fontSize='5rem'
                       padding='0.1rem'
-                      color='#CCCCCC'
-                      _hover={{ color: '#101010' }}
+                      color={
+                        colorMode === 'dark'
+                          ? theme.colors.dark.text
+                          : theme.colors.light.text
+                      }
+                      _hover={{
+                        color:
+                          colorMode === 'dark'
+                            ? theme.colors.dark.h1
+                            : theme.colors.light.h1,
+                      }}
                     >
                       About
                     </Box>
@@ -195,8 +236,17 @@ const HamburgerMenu = () => {
                       as='li'
                       fontSize='5rem'
                       padding='0.1rem'
-                      color='#CCCCCC'
-                      _hover={{ color: '#101010' }}
+                      color={
+                        colorMode === 'dark'
+                          ? theme.colors.dark.text
+                          : theme.colors.light.text
+                      }
+                      _hover={{
+                        color:
+                          colorMode === 'dark'
+                            ? theme.colors.dark.h1
+                            : theme.colors.light.h1,
+                      }}
                     >
                       Portfolio
                     </Box>
@@ -219,8 +269,17 @@ const HamburgerMenu = () => {
                       as='li'
                       fontSize='5rem'
                       padding='0.1rem'
-                      color='#CCCCCC'
-                      _hover={{ color: '#101010' }}
+                      color={
+                        colorMode === 'dark'
+                          ? theme.colors.dark.text
+                          : theme.colors.light.text
+                      }
+                      _hover={{
+                        color:
+                          colorMode === 'dark'
+                            ? theme.colors.dark.h1
+                            : theme.colors.light.h1,
+                      }}
                     >
                       Contact
                     </Box>

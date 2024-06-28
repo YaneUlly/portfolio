@@ -1,24 +1,19 @@
-import { Flex, Box, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Flex, Box, Text, useColorMode, useTheme } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
-import 'boxicons';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 function Navbar() {
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
-  };
+  const { colorMode, toggleColorMode } = useColorMode();
+  const theme = useTheme();
 
   return (
     <Flex
       as='nav'
       justify='space-between'
       align='center'
-      color={darkMode ? '#CCCCCC' : '#101010'}
+      bg={colorMode === 'dark' ? theme.colors.dark.bg : theme.colors.light.bg}
       p='0.5rem'
       width='100%'
       position='relative'
@@ -27,18 +22,30 @@ function Navbar() {
         <Flex alignItems='center'>
           <Text
             fontSize='1rem'
-            color={darkMode ? '#CCCCCC' : '#101010'}
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
             pl='1rem'
           >
             <strong>Yane Ully</strong> Portfolio.
           </Text>
-          <Box as='span' ml='0.5rem' onClick={toggleDarkMode}>
-            <box-icon name='moon' size='25px'></box-icon>
+          <Box as='span' ml='0.5rem' onClick={toggleColorMode} cursor='pointer'>
+            {colorMode === 'dark' ? (
+              <SunIcon boxSize={5} color={theme.colors.light.bg} />
+            ) : (
+              <MoonIcon boxSize={5} color={theme.colors.dark.bg} />
+            )}
           </Box>
         </Flex>
       ) : (
-        <Box as='span' ml='1rem' onClick={toggleDarkMode}>
-          <box-icon name='moon' size='30px'></box-icon>
+        <Box as='span' ml='1rem' onClick={toggleColorMode} cursor='pointer'>
+          {colorMode === 'dark' ? (
+            <SunIcon boxSize={6} color={theme.colors.light.bg} />
+          ) : (
+            <MoonIcon boxSize={6} color={theme.colors.dark.bg} />
+          )}
         </Box>
       )}
       <Box mr={'1rem'}>

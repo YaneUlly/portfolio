@@ -1,4 +1,4 @@
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex, Box, useColorMode, useTheme } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
@@ -15,8 +15,19 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
+
+  const backgroundColor =
+    colorMode === 'dark' ? theme.colors.dark.bg : theme.colors.light.bg;
+
   return (
-    <Flex direction='column' minHeight='100vh' width='100%'>
+    <Flex
+      direction='column'
+      minHeight='100vh'
+      width='100%'
+      bg={backgroundColor}
+    >
       <Box as='header' width='100%'>
         <Navbar />
       </Box>

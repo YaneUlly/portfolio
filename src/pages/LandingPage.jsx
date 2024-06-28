@@ -1,8 +1,20 @@
-import { Box, Heading, Button, Flex, Text, Link } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Button,
+  Flex,
+  Text,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import SocialIcons from '../components/SocialIcons';
 import { motion } from 'framer-motion';
 
 function LandingPage() {
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
+
   return (
     <Box
       minHeight={{ md: '50vh', lg: '80vh' }}
@@ -29,7 +41,15 @@ function LandingPage() {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <Heading fontSize={{ base: '4.8rem', lg: '6rem' }} fontWeight='600'>
+          <Heading
+            fontSize={{ base: '4.8rem', lg: '6rem' }}
+            fontWeight='600'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Yane Ully,
           </Heading>
         </motion.div>
@@ -47,7 +67,11 @@ function LandingPage() {
             as='h3'
             fontSize={{ base: '3rem', md: '3.5rem' }}
             pl='1rem'
-            color='#cccccc'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h2
+                : theme.colors.light.h2
+            }
             mb='1rem'
           >
             ui developer.
@@ -71,13 +95,23 @@ function LandingPage() {
           <Button
             variant='outline'
             borderWidth='0.1rem'
-            borderColor='black'
+            borderColor={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
             p='2rem 7rem'
             cursor='pointer'
             mb='1rem'
             _hover={{
-              bgColor: '#101010',
-              color: '#FFFFFF',
+              bgColor:
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1,
+              color:
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg,
             }}
           >
             View work
@@ -86,12 +120,27 @@ function LandingPage() {
         <Link href='/contact'>
           <Button
             borderWidth='0.1rem'
-            borderColor='black'
+            borderColor={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
             p='2rem 7.4rem'
             cursor='pointer'
+            bgColor={
+              colorMode === 'dark'
+                ? theme.colors.dark.bg
+                : theme.colors.light.bg
+            }
             _hover={{
-              bgColor: '#101010',
-              color: '#FFFFFF',
+              bgColor:
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1,
+              color:
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg,
             }}
           >
             Contact
