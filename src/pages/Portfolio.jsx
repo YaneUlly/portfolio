@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Image,
-  Link,
   useColorMode,
   useTheme,
 } from '@chakra-ui/react';
@@ -15,6 +14,7 @@ import VolleyBomb from '../assets/webdevprojects/Volleybomb.png';
 import Choclo from '../assets/uxuiprojects/ChocloWebsite.png';
 import Millennium from '../assets/uxuiprojects/Millenium.png';
 import Fabrica from '../assets/uxuiprojects/Fabrica.png';
+import { Link } from 'react-router-dom';
 
 function Portfolio() {
   const [selectedOption, setSelectedOption] = useState('All');
@@ -35,7 +35,7 @@ function Portfolio() {
             gap='2rem'
             width='80rem'
           >
-            <Link href='/portfolio/uxuidesign/chocloproject'>
+            <Link to='/portfolio/uxuidesign/chocloproject'>
               <Box>
                 <Image src={Choclo} alt='Choclo Project' />
                 <Text
@@ -52,7 +52,7 @@ function Portfolio() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/uxuidesign/millenniumproject'>
+            <Link to='/portfolio/uxuidesign/millenniumproject'>
               <Box>
                 <Image src={Millennium} alt='Millennium Project' />
                 <Text
@@ -69,7 +69,7 @@ function Portfolio() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/uxuidesign/fabricaproject'>
+            <Link to='/portfolio/uxuidesign/fabricaproject'>
               <Box>
                 <Image src={Fabrica} alt='Fabrica Project' />
                 <Text
@@ -95,7 +95,7 @@ function Portfolio() {
             gap='2rem'
             width='80rem'
           >
-            <Link href='/portfolio/webdevelopment/acervoproject'>
+            <Link to='/portfolio/webdevelopment/acervoproject'>
               <Box>
                 <Image src={Acervo} alt='Acervo Project' />
                 <Text
@@ -112,7 +112,7 @@ function Portfolio() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/webdevelopment/agoraproject'>
+            <Link to='/portfolio/webdevelopment/agoraproject'>
               <Box>
                 <Image src={Agora} alt='Agora Project' />
                 <Text
@@ -129,7 +129,7 @@ function Portfolio() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/webdevelopment/volleybombproject'>
+            <Link to='/portfolio/webdevelopment/volleybombproject'>
               <Box>
                 <Image src={VolleyBomb} alt='Volleybomb Project' />
                 <Text
@@ -157,7 +157,7 @@ function Portfolio() {
             width='60rem'
           >
             <Flex flexDirection='row' gap='2rem'>
-              <Link href='/portfolio/webdevelopment/acervoproject'>
+              <Link to='/portfolio/webdevelopment/acervoproject'>
                 <Box>
                   <Image src={Acervo} alt='Acervo Project' />
                   <Text
@@ -174,7 +174,7 @@ function Portfolio() {
                 </Box>
               </Link>
 
-              <Link href='/portfolio/uxuidesign/chocloproject'>
+              <Link to='/portfolio/uxuidesign/chocloproject'>
                 <Box>
                   <Image src={Choclo} alt='Choclo Project' />
                   <Text
@@ -193,7 +193,7 @@ function Portfolio() {
             </Flex>
 
             <Flex flexDirection='row' gap='2rem'>
-              <Link href='/portfolio/webdevelopment/agoraproject'>
+              <Link to='/portfolio/webdevelopment/agoraproject'>
                 <Box>
                   <Image src={Agora} alt='Agora Project' />
                   <Text
@@ -210,7 +210,7 @@ function Portfolio() {
                 </Box>
               </Link>
 
-              <Link href='/portfolio/uxuidesign/millenniumproject'>
+              <Link to='/portfolio/uxuidesign/millenniumproject'>
                 <Box>
                   <Image src={Millennium} alt='Millennium Project' />
                   <Text
@@ -229,7 +229,7 @@ function Portfolio() {
             </Flex>
 
             <Flex flexDirection='row' gap='2rem'>
-              <Link href='/portfolio/webdevelopment/volleybombproject'>
+              <Link to='/portfolio/webdevelopment/volleybombproject'>
                 <Box>
                   <Image src={VolleyBomb} alt='Volleybomb Project' />
                   <Text
@@ -246,7 +246,7 @@ function Portfolio() {
                 </Box>
               </Link>
 
-              <Link href='/portfolio/uxuidesign/fabricaproject'>
+              <Link to='/portfolio/uxuidesign/fabricaproject'>
                 <Box>
                   <Image src={Fabrica} alt='Fabrica Project' />
                   <Text
@@ -397,35 +397,43 @@ function Portfolio() {
           can contribute to your team.
         </Text>
 
-        <Button
-          variant='outline'
-          borderWidth='0.1rem'
-          borderColor={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-          bgColor={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-          color={
-            colorMode === 'dark' ? theme.colors.dark.bg : theme.colors.light.bg
-          }
-          mt='1rem'
-          p='1rem 2rem'
-          cursor='pointer'
-          mb='1rem'
-          _hover={{
-            bgColor:
-              colorMode === 'dark'
-                ? theme.colors.dark.bg
-                : theme.colors.light.bg,
-            color:
+        <Link to='/contact'>
+          <Button
+            variant='outline'
+            borderWidth='0.1rem'
+            borderColor={
               colorMode === 'dark'
                 ? theme.colors.dark.h1
-                : theme.colors.light.h1,
-          }}
-        >
-          Contact
-        </Button>
+                : theme.colors.light.h1
+            }
+            bgColor={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.bg
+                : theme.colors.light.bg
+            }
+            mt='1rem'
+            p='1rem 2rem'
+            cursor='pointer'
+            mb='1rem'
+            _hover={{
+              bgColor:
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg,
+              color:
+                colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1,
+            }}
+          >
+            Contact
+          </Button>
+        </Link>
       </Box>
     </div>
   );

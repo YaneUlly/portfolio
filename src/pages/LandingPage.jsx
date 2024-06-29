@@ -4,12 +4,12 @@ import {
   Button,
   Flex,
   Text,
-  Link,
   useColorMode,
   useTheme,
 } from '@chakra-ui/react';
 import SocialIcons from '../components/SocialIcons';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   const { colorMode } = useColorMode();
@@ -91,7 +91,7 @@ function LandingPage() {
         </motion.div>
       </Flex>
       <Flex flexDirection='column' className='home-buttons'>
-        <Link href='/portfolio'>
+        <Link to='/portfolio'>
           <Button
             variant='outline'
             borderWidth='0.1rem'
@@ -117,7 +117,7 @@ function LandingPage() {
             View work
           </Button>
         </Link>
-        <Link href='/contact'>
+        <Link to='/contact'>
           <Button
             borderWidth='0.1rem'
             borderColor={
