@@ -2,13 +2,25 @@ import { useState, useEffect } from 'react';
 import Volleybomb from '../../assets/webdevprojects/Volleybomb.png';
 import Agora from '../../assets/webdevprojects/Agora.png';
 import Acervo from '../../assets/webdevprojects/Acervo.png';
-import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
 
 function VolleyBombProject() {
   const [activeSection, setActiveSection] = useState('');
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const sections = [
     { id: 'overview', label: 'Overview' },
@@ -42,7 +54,11 @@ function VolleyBombProject() {
       <Breadcrumb
         fontWeight='medium'
         fontSize='sm'
-        color='#CCCCCC'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
         m={{ base: '1rem 0 0 1rem', xl: '2rem 0 0 2rem' }}
       >
         <BreadcrumbItem>
@@ -56,11 +72,24 @@ function VolleyBombProject() {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Text fontSize={{ base: '2.8rem', md: '3.8rem' }} m='3rem 0 0 2rem'>
+      <Text
+        fontSize={{ base: '2.8rem', md: '3.8rem' }}
+        m='3rem 0 0 2rem'
+        color={
+          colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+        }
+      >
         VolleyBomb Game
       </Text>
 
-      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+      <Text
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
         A fun and dynamic game.
       </Text>
 
@@ -90,6 +119,11 @@ function VolleyBombProject() {
             spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h3
+                : theme.colors.light.h3
+            }
           >
             {sections.map(section => (
               <ListItem key={section.id}>
@@ -113,10 +147,27 @@ function VolleyBombProject() {
           m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
           flex={{ xl: '2' }}
         >
-          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text
+            id='overview'
+            fontSize='2rem'
+            fontWeight='600'
+            mb='1rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Overview
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             For this project, I needed to create a{' '}
             <strong>
               browser-based game using HTML, CSS, JavaScript, DOM manipulation,
@@ -131,6 +182,11 @@ function VolleyBombProject() {
             p={{ base: '0 0 1rem 0', md: '0' }}
             whiteSpace={{ base: 'nowrap', xl: 'normal' }}
             wordWrap='break-word'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
           >
             <Table variant='simple' size='sm'>
               <Tbody>
@@ -159,14 +215,29 @@ function VolleyBombProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='2rem'
                 p='2rem 2rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit game
@@ -180,14 +251,29 @@ function VolleyBombProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='2rem'
                 p='2rem 2rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit repo
@@ -200,10 +286,25 @@ function VolleyBombProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='pitch' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='pitch'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Pitch idea
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           We wanted something dynamic and competitive that combines
           characteristics from other games. So we created{' '}
           <strong>Volleybomb</strong>, witch is an exciting local-multiplayer
@@ -220,19 +321,48 @@ function VolleyBombProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='challenge' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='challenge'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Tech Challenge
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           The most important technical challenge we faced was to control the
           ball in therms of logic:
         </Text>
-        <UnorderedList mb='1.2rem'>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem>The movement.</ListItem>
           <ListItem>Direction.</ListItem>
           <ListItem>Interaction between the ball and players.</ListItem>
         </UnorderedList>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           We overcame this looking into a lot of repos and videos that helped us
           to manage the control of the ball.
         </Text>
@@ -241,10 +371,25 @@ function VolleyBombProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='mistakes' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='mistakes'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Mistakes
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           The biggest mistake we made was{' '}
           <strong>the way we approached to the logic of the ball</strong>, witch
           led us to more confusion and mistakes with the code. Also, another
@@ -257,10 +402,25 @@ function VolleyBombProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='learnings' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='learnings'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Learnings
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           After some redundant code that we made, we understood the{' '}
           <strong>
             importance of discover what we want to achieve first, planning it
@@ -269,17 +429,27 @@ function VolleyBombProject() {
         </Text>
       </Box>
 
-      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
-          mb='1rem'
-          color='#cccccc'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='35px'
         >
           more projects
         </Text>
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
@@ -289,7 +459,15 @@ function VolleyBombProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Acervo} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Acervo Project
               </Text>
             </Box>
@@ -300,7 +478,15 @@ function VolleyBombProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Agora} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Agora Project
               </Text>
             </Box>

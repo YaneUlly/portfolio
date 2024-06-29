@@ -2,13 +2,25 @@ import { useState, useEffect } from 'react';
 import Agora from '../../assets/webdevprojects/Agora.png';
 import Acervo from '../../assets/webdevprojects/Acervo.png';
 import Volleybomb from '../../assets/webdevprojects/Volleybomb.png';
-import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
 
 function AgoraProject() {
   const [activeSection, setActiveSection] = useState('');
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const sections = [
     { id: 'overview', label: 'Overview' },
@@ -42,7 +54,11 @@ function AgoraProject() {
       <Breadcrumb
         fontWeight='medium'
         fontSize='sm'
-        color='#CCCCCC'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
         m='2rem 0 0 2rem'
       >
         <BreadcrumbItem>
@@ -59,11 +75,21 @@ function AgoraProject() {
       <Text
         fontSize={{ base: '2.8rem', md: '3.8rem' }}
         m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+        color={
+          colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+        }
       >
         Ágora Application
       </Text>
 
-      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+      <Text
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
         A platform for those who loves and enjoy concerts around the world.
       </Text>
 
@@ -93,6 +119,11 @@ function AgoraProject() {
             spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h3
+                : theme.colors.light.h3
+            }
           >
             {sections.map(section => (
               <ListItem key={section.id}>
@@ -116,10 +147,27 @@ function AgoraProject() {
           m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
           flex={{ xl: '2' }}
         >
-          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text
+            id='overview'
+            fontSize='2rem'
+            fontWeight='600'
+            mb='1rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Overview
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             For this study case we needed to create a{' '}
             <strong>Single Page Application (SPA)</strong>, using{' '}
             <strong>React</strong>, consisting of multiple views. The React
@@ -141,6 +189,11 @@ function AgoraProject() {
             p={{ base: '0 0 1rem 0', md: '0' }}
             whiteSpace={{ base: 'nowrap', xl: 'normal' }}
             wordWrap='break-word'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
           >
             <Table variant='simple' size='sm'>
               <Tbody>
@@ -169,14 +222,29 @@ function AgoraProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='2rem'
                 p='2rem 2rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit website
@@ -187,14 +255,29 @@ function AgoraProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='2rem'
                 p='2rem 2rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit repo
@@ -207,10 +290,25 @@ function AgoraProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='pitch' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='pitch'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Pitch idea
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           For our application, we aimed to establish{' '}
           <strong>
             a central hub for users to effortlessly discover concerts and
@@ -225,7 +323,14 @@ function AgoraProject() {
           artists and festivals worldwide and developed a mock database
           specifically for independent artists, enabling CRUD operations.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           This led to the creation of the <strong>Trendy space</strong>, where
           users can easily search for events around them and apply filters such
           as location, artist, date, event type, and musical genre.
@@ -238,10 +343,25 @@ function AgoraProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='challenge' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='challenge'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Tech Challenge
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Our primary technical challenge revolved around effectively{' '}
           <strong>managing numerous states</strong> within our code,
           particularly the dynamic states within forms. To address these
@@ -253,10 +373,25 @@ function AgoraProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='mistakes' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='mistakes'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Mistakes
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           In this project, we encountered a couple of challenges. Initially, we
           unintentionally created <strong>redundant components</strong> when
           establishing the context for event creation and editing. Despite both
@@ -265,7 +400,14 @@ function AgoraProject() {
           hindsight, consolidating them into a single component would have been
           more efficient.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Another lesson learned was our initial use of{' '}
           <strong>Material UI</strong>. We began with this framework but later
           decided to defer styling until a later stage. We found that the
@@ -278,22 +420,51 @@ function AgoraProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='learnings' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='learnings'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Learnings
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           To address a technical challenge, we proactively learned how to work
           with <strong>Context</strong>, significantly improving code
           organization and streamlining the passage of values across components
           and pages.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           In managing user login status without a backend implementation, we
           utilized <strong>window session storage</strong>. This decision
           ensured essential user information was readily available for
           operations within our application.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Additionally, we adopted the <strong>Chakra library</strong> to
           expedite styling. Given the project relatively short timeframe,
           leveraging Chakra proved invaluable in achieving aesthetically
@@ -301,17 +472,27 @@ function AgoraProject() {
         </Text>
       </Box>
 
-      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
-          mb='1rem'
-          color='#cccccc'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='35px'
         >
           more projects
         </Text>
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
@@ -321,7 +502,15 @@ function AgoraProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Acervo} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Acervo Project
               </Text>
             </Box>
@@ -332,7 +521,15 @@ function AgoraProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Volleybomb} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Volleybomb Project
               </Text>
             </Box>

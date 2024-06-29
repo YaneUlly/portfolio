@@ -1,4 +1,11 @@
-import { Flex, Box, Text, useColorMode, useTheme } from '@chakra-ui/react';
+import {
+  Flex,
+  Box,
+  Text,
+  useColorMode,
+  useTheme,
+  Link,
+} from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
@@ -20,17 +27,19 @@ function Navbar() {
     >
       {location.pathname !== '/' ? (
         <Flex alignItems='center'>
-          <Text
-            fontSize='1rem'
-            color={
-              colorMode === 'dark'
-                ? theme.colors.dark.text
-                : theme.colors.light.text
-            }
-            pl='1rem'
-          >
-            <strong>Yane Ully</strong> Portfolio.
-          </Text>
+          <Link href='/'>
+            <Text
+              fontSize='1rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+              pl='1rem'
+            >
+              <strong>Yane Ully</strong> Portfolio.
+            </Text>
+          </Link>
           <Box as='span' ml='0.5rem' onClick={toggleColorMode} cursor='pointer'>
             {colorMode === 'dark' ? (
               <SunIcon boxSize={5} color={theme.colors.light.bg} />

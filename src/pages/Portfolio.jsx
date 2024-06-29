@@ -1,5 +1,14 @@
 import { useState } from 'react';
-import { Flex, Text, Box, Button, Image, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Button,
+  Image,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import Acervo from '../assets/webdevprojects/Acervo.png';
 import Agora from '../assets/webdevprojects/Agora.png';
 import VolleyBomb from '../assets/webdevprojects/Volleybomb.png';
@@ -9,6 +18,8 @@ import Fabrica from '../assets/uxuiprojects/Fabrica.png';
 
 function Portfolio() {
   const [selectedOption, setSelectedOption] = useState('All');
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const handleOptionClick = option => {
     setSelectedOption(option);
@@ -27,7 +38,15 @@ function Portfolio() {
             <Link href='/portfolio/uxuidesign/chocloproject'>
               <Box>
                 <Image src={Choclo} alt='Choclo Project' />
-                <Text mt='1rem' fontWeight='600'>
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
                   Choclo Project
                 </Text>
               </Box>
@@ -36,7 +55,15 @@ function Portfolio() {
             <Link href='/portfolio/uxuidesign/millenniumproject'>
               <Box>
                 <Image src={Millennium} alt='Millennium Project' />
-                <Text mt='1rem' fontWeight='600'>
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
                   Millennium Project
                 </Text>
               </Box>
@@ -45,7 +72,15 @@ function Portfolio() {
             <Link href='/portfolio/uxuidesign/fabricaproject'>
               <Box>
                 <Image src={Fabrica} alt='Fabrica Project' />
-                <Text mt='1rem' fontWeight='600'>
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
                   Fabrica Project
                 </Text>
               </Box>
@@ -63,7 +98,15 @@ function Portfolio() {
             <Link href='/portfolio/webdevelopment/acervoproject'>
               <Box>
                 <Image src={Acervo} alt='Acervo Project' />
-                <Text mt='1rem' fontWeight='600'>
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
                   Acervo Project
                 </Text>
               </Box>
@@ -72,7 +115,15 @@ function Portfolio() {
             <Link href='/portfolio/webdevelopment/agoraproject'>
               <Box>
                 <Image src={Agora} alt='Agora Project' />
-                <Text mt='1rem' fontWeight='600'>
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
                   Agora Project
                 </Text>
               </Box>
@@ -81,7 +132,15 @@ function Portfolio() {
             <Link href='/portfolio/webdevelopment/volleybombproject'>
               <Box>
                 <Image src={VolleyBomb} alt='Volleybomb Project' />
-                <Text mt='1rem' fontWeight='600'>
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
                   Volleybomb Project
                 </Text>
               </Box>
@@ -101,7 +160,15 @@ function Portfolio() {
               <Link href='/portfolio/webdevelopment/acervoproject'>
                 <Box>
                   <Image src={Acervo} alt='Acervo Project' />
-                  <Text mt='1rem' fontWeight='600'>
+                  <Text
+                    mt='1rem'
+                    fontWeight='600'
+                    color={
+                      colorMode === 'dark'
+                        ? theme.colors.dark.text
+                        : theme.colors.light.text
+                    }
+                  >
                     Acervo Project
                   </Text>
                 </Box>
@@ -110,7 +177,15 @@ function Portfolio() {
               <Link href='/portfolio/uxuidesign/chocloproject'>
                 <Box>
                   <Image src={Choclo} alt='Choclo Project' />
-                  <Text mt='1rem' fontWeight='600'>
+                  <Text
+                    mt='1rem'
+                    fontWeight='600'
+                    color={
+                      colorMode === 'dark'
+                        ? theme.colors.dark.text
+                        : theme.colors.light.text
+                    }
+                  >
                     Choclo Project
                   </Text>
                 </Box>
@@ -121,7 +196,15 @@ function Portfolio() {
               <Link href='/portfolio/webdevelopment/agoraproject'>
                 <Box>
                   <Image src={Agora} alt='Agora Project' />
-                  <Text mt='1rem' fontWeight='600'>
+                  <Text
+                    mt='1rem'
+                    fontWeight='600'
+                    color={
+                      colorMode === 'dark'
+                        ? theme.colors.dark.text
+                        : theme.colors.light.text
+                    }
+                  >
                     Agora Project
                   </Text>
                 </Box>
@@ -130,7 +213,15 @@ function Portfolio() {
               <Link href='/portfolio/uxuidesign/millenniumproject'>
                 <Box>
                   <Image src={Millennium} alt='Millennium Project' />
-                  <Text mt='1rem' fontWeight='600'>
+                  <Text
+                    mt='1rem'
+                    fontWeight='600'
+                    color={
+                      colorMode === 'dark'
+                        ? theme.colors.dark.text
+                        : theme.colors.light.text
+                    }
+                  >
                     Millennium Project
                   </Text>
                 </Box>
@@ -141,7 +232,15 @@ function Portfolio() {
               <Link href='/portfolio/webdevelopment/volleybombproject'>
                 <Box>
                   <Image src={VolleyBomb} alt='Volleybomb Project' />
-                  <Text mt='1rem' fontWeight='600'>
+                  <Text
+                    mt='1rem'
+                    fontWeight='600'
+                    color={
+                      colorMode === 'dark'
+                        ? theme.colors.dark.text
+                        : theme.colors.light.text
+                    }
+                  >
                     Volleybomb Project
                   </Text>
                 </Box>
@@ -150,7 +249,15 @@ function Portfolio() {
               <Link href='/portfolio/uxuidesign/fabricaproject'>
                 <Box>
                   <Image src={Fabrica} alt='Fabrica Project' />
-                  <Text mt='1rem' fontWeight='600'>
+                  <Text
+                    mt='1rem'
+                    fontWeight='600'
+                    color={
+                      colorMode === 'dark'
+                        ? theme.colors.dark.text
+                        : theme.colors.light.text
+                    }
+                  >
                     Fabrica Project
                   </Text>
                 </Box>
@@ -169,15 +276,32 @@ function Portfolio() {
           xl: '5rem 8rem 5rem 5rem',
         }}
       >
-        <Text fontSize={{ base: '1.8rem', lg: '3.8rem' }} color='#cccccc'>
+        <Text
+          fontSize={{ base: '1.8rem', lg: '3.8rem' }}
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='55px'
+        >
           come take a look into
         </Text>
-        <Text fontSize={{ base: '2.2rem', md: '5rem' }} fontWeight='600'>
+        <Text
+          fontSize={{ base: '2.2rem', md: '5rem' }}
+          fontWeight='600'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           my work here...
         </Text>
         <Text
           mt={{ base: '1rem', lg: '0' }}
           paddingRight={{ base: '0', lg: '37rem' }}
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
         >
           Below, you will find a selection of my projects and experiences,
           including commissioned work and some projects completed during my
@@ -197,9 +321,23 @@ function Portfolio() {
           <Text
             key={option}
             fontSize='1.2rem'
-            color={selectedOption === option ? '#000000' : '#cccccc'}
+            color={
+              selectedOption === option
+                ? colorMode === 'dark'
+                  ? theme.colors.dark.h1
+                  : theme.colors.light.h1
+                : colorMode === 'dark'
+                ? theme.colors.dark.h2
+                : theme.colors.light.h2
+            }
             borderBottom={
-              selectedOption === option ? '2px solid black' : 'none'
+              selectedOption === option
+                ? `2px solid ${
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1
+                  }`
+                : 'none'
             }
             cursor='pointer'
             onClick={() => handleOptionClick(option)}
@@ -227,15 +365,32 @@ function Portfolio() {
           xl: '5rem 8rem 5rem 5rem',
         }}
       >
-        <Text fontSize={{ base: '1.8rem', lg: '2rem' }} color='#cccccc'>
+        <Text
+          fontSize={{ base: '1.8rem', lg: '2rem' }}
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='25px'
+        >
           inspired by my work?
         </Text>
-        <Text fontSize={{ base: '2.2rem', md: '3.8rem' }} fontWeight='600'>
+        <Text
+          fontSize={{ base: '2.2rem', md: '3.8rem' }}
+          fontWeight='600'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           come say hi :)
         </Text>
         <Text
           mt={{ base: '1rem', lg: '0' }}
           paddingRight={{ base: '0', lg: '37rem' }}
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
         >
           If you think my skills and projects align with what you are looking
           for, I would love to hear from you. Let's connect and discuss how I
@@ -245,16 +400,28 @@ function Portfolio() {
         <Button
           variant='outline'
           borderWidth='0.1rem'
-          borderColor='black'
-          bgColor='#101010'
-          color='#FFFFFF'
+          borderColor={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+          bgColor={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+          color={
+            colorMode === 'dark' ? theme.colors.dark.bg : theme.colors.light.bg
+          }
           mt='1rem'
           p='1rem 2rem'
           cursor='pointer'
           mb='1rem'
           _hover={{
-            bgColor: '#FFFFFF',
-            color: '#101010',
+            bgColor:
+              colorMode === 'dark'
+                ? theme.colors.dark.bg
+                : theme.colors.light.bg,
+            color:
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1,
           }}
         >
           Contact

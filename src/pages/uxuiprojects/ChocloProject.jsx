@@ -16,7 +16,16 @@ import BeforeAfterChocloThree from '../../assets/uxuiprojects/BeforeAfterChocloT
 import Millennium from '../../assets/uxuiprojects/Millenium.png';
 import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
 import { useState, useEffect } from 'react';
-import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import {
@@ -31,6 +40,9 @@ import {
 
 function ChocloProject() {
   const [activeSection, setActiveSection] = useState('');
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const sections = [
     { id: 'overview', label: 'Overview' },
@@ -65,7 +77,11 @@ function ChocloProject() {
       <Breadcrumb
         fontWeight='medium'
         fontSize='sm'
-        color='#CCCCCC'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
         m='2rem 0 0 2rem'
       >
         <BreadcrumbItem>
@@ -82,11 +98,21 @@ function ChocloProject() {
       <Text
         fontSize={{ base: '2.8rem', md: '3.8rem' }}
         m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+        color={
+          colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+        }
       >
         Choclo Website
       </Text>
 
-      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+      <Text
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
         A new website for Choclo restaurant
       </Text>
 
@@ -116,6 +142,11 @@ function ChocloProject() {
             spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h3
+                : theme.colors.light.h3
+            }
           >
             {sections.map(section => (
               <ListItem key={section.id}>
@@ -139,10 +170,27 @@ function ChocloProject() {
           m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
           flex={{ xl: '2' }}
         >
-          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text
+            id='overview'
+            fontSize='2rem'
+            fontWeight='600'
+            mb='1rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Overview
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             <strong>
               The main purpose of this project was to enhance the quality of
               Choclo website
@@ -154,7 +202,14 @@ function ChocloProject() {
             ensuring a responsive and user-friendly experience for mobile
             devices as well.
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             Choclo Ceviche is a <strong>Peruvian restaurant</strong> that opened
             in September 2022 in Lisbon. One of the founders came to me as{' '}
             <strong>Freelancer Product Designer</strong>, to help her improve
@@ -165,6 +220,11 @@ function ChocloProject() {
             m={{ xl: '1.5rem 0 1rem 0' }}
             whiteSpace={{ base: 'nowrap', xl: 'normal' }}
             wordWrap='break-word'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
           >
             <Table variant='simple' size='sm'>
               <Tbody>
@@ -195,14 +255,29 @@ function ChocloProject() {
             <Button
               variant='outline'
               borderWidth='0.1rem'
-              borderColor='black'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+              bgColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg
+              }
               mt='2rem'
               p='2rem 2rem'
               cursor='pointer'
               mb='1rem'
               _hover={{
-                bgColor: '#101010',
-                color: '#FFFFFF',
+                bgColor:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.h1
+                    : theme.colors.light.h1,
+                color:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg,
               }}
             >
               Visit website
@@ -214,7 +289,15 @@ function ChocloProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='problem'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Problem
         </Text>
         .
@@ -233,7 +316,15 @@ function ChocloProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='objective'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Objective
         </Text>
         <Box bg='rgba(145, 187, 148, 0.7)' w='100%' p={4}>
@@ -252,10 +343,24 @@ function ChocloProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='research'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Research
         </Text>
-        <Text fontSize='1.5rem' mb='0.8rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Intro
         </Text>
 
@@ -265,7 +370,14 @@ function ChocloProject() {
           gap={{ base: '1.5rem', md: '2rem' }}
         >
           <Box>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               I started the research by analyzing a variety of sources,
               including <strong>customer reviews</strong>,{' '}
               <strong>comments</strong>, and the{' '}
@@ -275,11 +387,25 @@ function ChocloProject() {
               </strong>
               that we could address to enhance the website.
             </Text>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               A closer examination of their service-related reviews and comments
               has revealed the following insights:
             </Text>
-            <UnorderedList mb='1.2rem'>
+            <UnorderedList
+              mb='1.2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <ListItem mb='0.8rem'>
                 Their <strong>customer base is notably diverse</strong>,
                 encompassing individuals who communicate primarily in Spanish,
@@ -297,15 +423,38 @@ function ChocloProject() {
           </Box>
 
           <Box>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               After analyzing the comments, the next step was to analyze the
               Choclo current Landing Page, this enabled me to{' '}
               <strong>harmonize the company visual identity</strong> while also{' '}
               <strong>identifying any additional Pain Points</strong> that
               require attention and resolution.
             </Text>
-            <Text mb='0.8rem'>In conclusion:</Text>
-            <UnorderedList mb='1.2rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
+              In conclusion:
+            </Text>
+            <UnorderedList
+              mb='1.2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <ListItem mb='0.8rem'>
                 The page lacks <strong>Consistency</strong> (buttons with
                 different colors, backgrounds, text styles, etc.).
@@ -324,14 +473,35 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Benchmarking
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I conducted thorough research within the catering market of Lisbon,
           targeting restaurants that:
         </Text>
-        <UnorderedList mb='1.2rem'>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem mb='0.8rem'>
             Operate within <strong>the same segment as Choclo </strong>
             (restaurants specializing in Peruvian cuisine)
@@ -343,7 +513,14 @@ function ChocloProject() {
             rates and positive customer feedback.
           </ListItem>
         </UnorderedList>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I studied{' '}
           <strong>
             how they crafted their landing pages to achieve favorable outcomes
@@ -352,7 +529,16 @@ function ChocloProject() {
           to inform the development of Choclo own Landing Page.
         </Text>
 
-        <Box overflowX='auto' mt='1.5rem' mb='2rem'>
+        <Box
+          overflowX='auto'
+          mt='1.5rem'
+          mb='2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <TableContainer>
             <Table variant='simple' size='sm'>
               <Thead>
@@ -675,21 +861,50 @@ function ChocloProject() {
           </TableContainer>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Customer Discovery
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I have elected to conduct a pair of <strong>interviews</strong> to
           validate our problem statement, contribute to persona creation, and
           kickstart our ideation process.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           The initial interview will involve <strong>Choclo staff</strong>,
           while the second will be directed towards our target audience:{' '}
           <strong>individuals who dine out.</strong>
         </Text>
 
-        <Text mb='0.8rem' fontWeight='600'>
+        <Text
+          mb='0.8rem'
+          fontWeight='600'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           What it is our goal?
         </Text>
         <Box
@@ -718,10 +933,25 @@ function ChocloProject() {
           mb='2rem'
         >
           <Box>
-            <Text mb='0.8rem' fontWeight='600'>
+            <Text
+              mb='0.8rem'
+              fontWeight='600'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Staff Interview insights:
             </Text>
-            <UnorderedList mb='1.2rem'>
+            <UnorderedList
+              mb='1.2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <ListItem mb='0.8rem'>
                 Social media plays a significant role in raising awareness about
                 Choclo, along with the influence of reviews, recommendations,
@@ -751,10 +981,25 @@ function ChocloProject() {
           </Box>
 
           <Box>
-            <Text mb='0.8rem' fontWeight='600'>
+            <Text
+              mb='0.8rem'
+              fontWeight='600'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Public answers analysis:
             </Text>
-            <UnorderedList mb='1.2rem'>
+            <UnorderedList
+              mb='1.2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <ListItem mb='0.8rem'>
                 The most utilized platform by our users to discover new places
                 is Instagram, and they also make use of Google Reviews for the
@@ -786,7 +1031,14 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           This can serve as a useful guide for structuring the{' '}
           <strong>website information architecture</strong> and prioritizing the
           information that holds the most relevance for users when making
@@ -797,7 +1049,14 @@ function ChocloProject() {
           cater to user needs.
         </Text>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Personas
         </Text>
         <Box
@@ -831,7 +1090,14 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           User Journey
         </Text>
         <Box
@@ -865,10 +1131,24 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Definition
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           As we begin to outline our key features and architectural information,
           it is time to reframe our primary objective in a more robust manner,
           taking into account all the insights we have gathered through our
@@ -891,16 +1171,35 @@ function ChocloProject() {
           </Text>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Feature List
         </Text>
-        <Text>
+        <Text
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Based on the discovery that I made, we compiled a{' '}
           <strong>feature list</strong> for Choclo Landing Page.
         </Text>
 
         <Box overflowX='auto' mt='1.5rem'>
-          <TableContainer>
+          <TableContainer
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             <Table variant='simple' size='sm'>
               <Thead>
                 <Tr>
@@ -1234,10 +1533,26 @@ function ChocloProject() {
           gap='2rem'
         >
           <Box display='flex' flexDirection='column'>
-            <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
+            <Text
+              fontSize='1.5rem'
+              mb='1.5rem'
+              mt='2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.h3
+                  : theme.colors.light.h3
+              }
+            >
               Card Sorting
             </Text>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               I have chosen to conduct a card sorting exercise, this will{' '}
               <strong>
                 help us determine the optimal placement for each feature on our
@@ -1252,8 +1567,24 @@ function ChocloProject() {
               .
             </Text>
 
-            <Text mb='0.8rem'>What we want to discover?</Text>
-            <UnorderedList mb='1.2rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
+              What we want to discover?
+            </Text>
+            <UnorderedList
+              mb='1.2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <ListItem mb='0.8rem'>
                 Where should we display some features?
               </ListItem>
@@ -1264,7 +1595,14 @@ function ChocloProject() {
                 There is a need of a new category, besides the ones we offer?
               </ListItem>
             </UnorderedList>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               So our categories and features would be like this:
             </Text>
           </Box>
@@ -1298,10 +1636,24 @@ function ChocloProject() {
           </Text>
         </Box>
 
-        <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='1.5rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           User Flow
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           This will serve as our user flow, guiding them seamlessly from their
           initial entry point through a series of well-defined steps, ultimately
           leading to a successful outcome and their final action.
@@ -1315,13 +1667,35 @@ function ChocloProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='design'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Final UI
         </Text>
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Sketches and Style Guide
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Since Choclo uses Wix Studio for their website, we adhered to their
           design options in building the site. With a predefined vision, we
           created initial sketches and proceeded to develop the final user
@@ -1360,10 +1734,24 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt={{ base: '1rem', md: '2rem' }}>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt={{ base: '1rem', md: '2rem' }}
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Final MVP
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Since I was tasked with creating the pages on the Wix platform
           independently, I opted for a mid-level prototype. This allowed me to
           present Choclo CEO with a preview of the styles and layouts planned
@@ -1377,7 +1765,15 @@ function ChocloProject() {
           mb='2rem'
         >
           <Box display='flex' flexDirection='column'>
-            <Text mt='1.5rem' fontWeight='600'>
+            <Text
+              mt='1.5rem'
+              fontWeight='600'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               1. Better call to action and more informations about Choclo
             </Text>
             <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
@@ -1387,7 +1783,15 @@ function ChocloProject() {
               />
             </Box>
 
-            <Text mt='1.5rem' fontWeight='600'>
+            <Text
+              mt='1.5rem'
+              fontWeight='600'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               2. More consistent and cleaner interface
             </Text>
             <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
@@ -1399,7 +1803,15 @@ function ChocloProject() {
           </Box>
 
           <Box display='flex' flexDirection='column'>
-            <Text mt='1.5rem' fontWeight='600'>
+            <Text
+              mt='1.5rem'
+              fontWeight='600'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               3. Texts easier to read and informations easy to find
             </Text>
             <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
@@ -1408,7 +1820,16 @@ function ChocloProject() {
                 alt='before-after-choclowebsite'
               />
             </Box>
-            <Text mb='0.8rem' mt={{ base: '1.5rem', md: '1rem' }} pr='5rem'>
+            <Text
+              mb='0.8rem'
+              mt={{ base: '1.5rem', md: '1rem' }}
+              pr='5rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Following the successful completion of our Minimum Viable Product
               (MVP), we embarked on refining the user interface (UI) within the
               platform utilized by our company, <strong>Wix Studio</strong>.
@@ -1423,14 +1844,29 @@ function ChocloProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='1rem'
                 p='1.5rem 1.5rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit prototype
@@ -1440,17 +1876,27 @@ function ChocloProject() {
         </Box>
       </Box>
 
-      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
-          mb='1rem'
-          color='#cccccc'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='35px'
         >
           more projects
         </Text>
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
@@ -1460,7 +1906,15 @@ function ChocloProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Fabrica} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Fabrica Project
               </Text>
             </Box>
@@ -1471,7 +1925,15 @@ function ChocloProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Millennium} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Millennium Project
               </Text>
             </Box>

@@ -1,5 +1,13 @@
 import { useState } from 'react';
-import { Flex, Text, Box, Button, Input } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Button,
+  Input,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { FormLabel } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 
@@ -10,6 +18,9 @@ function Contact() {
     trigger,
     formState: { errors },
   } = useForm();
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const onSubmit = async e => {
     const isValid = await trigger();
@@ -30,10 +41,25 @@ function Contact() {
         mb={{ base: '12rem', md: '10rem' }}
       >
         <Box>
-          <Text fontSize={{ base: '3.8rem', md: '5rem' }} color='#cccccc'>
+          <Text
+            fontSize={{ base: '3.8rem', md: '5rem' }}
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h2
+                : theme.colors.light.h2
+            }
+          >
             say hi :),
           </Text>
-          <Text fontSize={{ base: '2rem', md: '3.8rem' }} fontWeight='600'>
+          <Text
+            fontSize={{ base: '2rem', md: '3.8rem' }}
+            fontWeight='600'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             i'd love to hear from you.
           </Text>
         </Box>
@@ -45,11 +71,24 @@ function Contact() {
             method='POST'
             onSubmit={onSubmit}
           >
-            <FormLabel>Name:</FormLabel>
+            <FormLabel
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
+              Name:
+            </FormLabel>
+
             <Input
               type='text'
               placeholder='Name'
-              borderColor='#0B0B03'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
               {...register('name', { required: true, maxLength: 100 })}
             ></Input>
             {errors.name && (
@@ -60,11 +99,24 @@ function Contact() {
               </p>
             )}
 
-            <FormLabel mt='0.8rem'>Email:</FormLabel>
+            <FormLabel
+              mt='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
+              Email:
+            </FormLabel>
             <Input
               type='email'
               placeholder='Email'
-              borderColor='#0B0B03'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
               {...register('email', {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -77,11 +129,24 @@ function Contact() {
               </p>
             )}
 
-            <FormLabel mt='0.8rem'>Message:</FormLabel>
+            <FormLabel
+              mt='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
+              Message:
+            </FormLabel>
             <Input
               type='text'
               placeholder='Message'
-              borderColor='#0B0B03'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
               {...register('message', {
                 required: true,
                 maxLength: 2000,
@@ -98,15 +163,30 @@ function Contact() {
             <Button
               variant='outline'
               borderWidth='0.1rem'
-              borderColor='black'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+              bgColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg
+              }
               type='submit'
               mt='2rem'
               p='2rem 4rem'
               cursor='pointer'
               mb='1rem'
               _hover={{
-                bgColor: '#101010',
-                color: '#FFFFFF',
+                bgColor:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.h1
+                    : theme.colors.light.h1,
+                color:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg,
               }}
             >
               Submit

@@ -2,13 +2,25 @@ import { useState, useEffect } from 'react';
 import Acervo from '../../assets/webdevprojects/Acervo.png';
 import Agora from '../../assets/webdevprojects/Agora.png';
 import Volleybomb from '../../assets/webdevprojects/Volleybomb.png';
-import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
 
 function AcervoProject() {
   const [activeSection, setActiveSection] = useState('');
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const sections = [
     { id: 'overview', label: 'Overview' },
@@ -42,7 +54,11 @@ function AcervoProject() {
       <Breadcrumb
         fontWeight='medium'
         fontSize='sm'
-        color='#CCCCCC'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
         m='2rem 0 0 2rem'
       >
         <BreadcrumbItem>
@@ -59,11 +75,21 @@ function AcervoProject() {
       <Text
         fontSize={{ base: '2.8rem', md: '3.8rem' }}
         m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+        color={
+          colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+        }
       >
         Acervo Application
       </Text>
 
-      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+      <Text
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
         An educational coffee community.
       </Text>
 
@@ -93,6 +119,11 @@ function AcervoProject() {
             spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h3
+                : theme.colors.light.h3
+            }
           >
             {sections.map(section => (
               <ListItem key={section.id}>
@@ -116,10 +147,27 @@ function AcervoProject() {
           m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
           flex={{ xl: '2' }}
         >
-          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text
+            id='overview'
+            fontSize='2rem'
+            fontWeight='600'
+            mb='1rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Overview
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             For this study case the project needed to have{' '}
             <strong>
               a SPA frontend, built with React, consisting of multiple views and
@@ -143,6 +191,11 @@ function AcervoProject() {
             p={{ base: '0 0 1rem 0', md: '0' }}
             whiteSpace={{ base: 'nowrap', xl: 'normal' }}
             wordWrap='break-word'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
           >
             <Table variant='simple' size='sm'>
               <Tbody>
@@ -171,14 +224,29 @@ function AcervoProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='2rem'
                 p='2rem 2rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit website
@@ -189,14 +257,29 @@ function AcervoProject() {
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
-                borderColor='black'
+                borderColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg
+                }
                 mt='2rem'
                 p='2rem 2rem'
                 cursor='pointer'
                 mb='1rem'
                 _hover={{
-                  bgColor: '#101010',
-                  color: '#FFFFFF',
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
                 }}
               >
                 Visit repo
@@ -209,10 +292,25 @@ function AcervoProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='pitch' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='pitch'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Pitch idea
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           It is an <strong>educational place</strong> designed for coffee
           enthusiasts eager to learn more about the world of coffee. It serves
           as a <strong>collaborative platform</strong> where individuals can
@@ -226,17 +324,48 @@ function AcervoProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='challenge' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='challenge'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Tech Challenge
         </Text>
-        <Text mb='0.8rem'>My technical challenges were:</Text>
-        <UnorderedList mb='1.2rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          My technical challenges were:
+        </Text>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem>Find a Coffee API.</ListItem>
           <ListItem>Visualize the schemas and relations.</ListItem>
           <ListItem>Coffee Recommendation for the Quiz.</ListItem>
           <ListItem>Creating the Wishlist.</ListItem>
         </UnorderedList>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Initially, I struggled to find an{' '}
           <strong>
             API related to coffee that would truly provide meaningful content
@@ -244,7 +373,14 @@ function AcervoProject() {
           for my application. However, with <strong>persistence</strong>, I
           eventually discovered a high-quality API that met my needs.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           When creating the Quiz feature, I encountered an obstacle. I wanted to
           recommend coffee blends created by my community, but these were stored
           in a private database while the Quiz was accessible to the public. To
@@ -259,10 +395,25 @@ function AcervoProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='mistakes' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='mistakes'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Mistakes
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           In the beginning, I found it confusing to determine the{' '}
           <strong>structure of my data</strong>. I spent a significant amount of
           time grappling with this issue before realizing that I needed to move
@@ -270,7 +421,14 @@ function AcervoProject() {
           <strong>I could always refine and improve</strong> it as my project
           progressed and my requirements evolved.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Implementing the Wishlist feature presented its own set of challenges.
           Initially, <strong>I approached it with the wrong mindset</strong>.
           However, after researching <strong>examples online</strong> and
@@ -284,10 +442,25 @@ function AcervoProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='learnings' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='learnings'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Learnings
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I gained several insights and lessons while working on my project. One
           significant realization was that I was investing too much time in
           developing the backend. To address this, I adopted a different
@@ -301,7 +474,14 @@ function AcervoProject() {
             better coordination between the frontend and backend components.
           </strong>
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Before embarking on the project, my teacher advised us to{' '}
           <strong>utilize more branches</strong> than we were accustomed to in
           previous projects. Following this advice, I ended up working with{' '}
@@ -313,7 +493,14 @@ function AcervoProject() {
           </strong>
           .
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Towards the end of the project, I found myself with some extra time on
           hand. I decided to utilize this opportunity to explore and learn
           something new. I delved into <strong>Framer Motion</strong> and
@@ -324,17 +511,27 @@ function AcervoProject() {
         </Text>
       </Box>
 
-      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
-          mb='1rem'
-          color='#cccccc'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='35px'
         >
           more projects
         </Text>
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
@@ -344,8 +541,16 @@ function AcervoProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Agora} />
-              <Text fontWeight='600' mt='0.8rem'>
-                Choclo Project
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
+                Agora Project
               </Text>
             </Box>
           </Link>
@@ -355,8 +560,16 @@ function AcervoProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Volleybomb} />
-              <Text fontWeight='600' mt='0.8rem'>
-                Millennium Project
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
+                VolleyBomb Project
               </Text>
             </Box>
           </Link>

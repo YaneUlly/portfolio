@@ -16,7 +16,6 @@ import {
   Link,
   useColorMode,
   useTheme,
-  requiredChakraThemeKeys,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 

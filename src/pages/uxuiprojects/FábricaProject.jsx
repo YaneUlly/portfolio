@@ -12,13 +12,25 @@ import MockupFabrica from '../../assets/uxuiprojects/MockupFabrica.png';
 import AllScreensFabrica from '../../assets/uxuiprojects/AllScreensFabrica.png';
 import Choclo from '../../assets/uxuiprojects/ChocloWebsite.png';
 import Millennium from '../../assets/uxuiprojects/Millenium.png';
-import { Flex, Text, Box, Image, Button, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
 
 function FábricaProject() {
   const [activeSection, setActiveSection] = useState('');
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const sections = [
     { id: 'overview', label: 'Overview' },
@@ -53,7 +65,11 @@ function FábricaProject() {
       <Breadcrumb
         fontWeight='medium'
         fontSize='sm'
-        color='#CCCCCC'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
         m={{ base: '1rem 0 0 1rem', xl: '2rem 0 0 2rem' }}
       >
         <BreadcrumbItem>
@@ -70,11 +86,21 @@ function FábricaProject() {
       <Text
         fontSize={{ base: '2.8rem', md: '3.8rem' }}
         m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+        color={
+          colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+        }
       >
         Coffee Quiz
       </Text>
 
-      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+      <Text
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
         A Quiz feature for Fábrica Coffee Roasters Ecommerce Landing Page.
       </Text>
 
@@ -104,6 +130,11 @@ function FábricaProject() {
             spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h3
+                : theme.colors.light.h3
+            }
           >
             {sections.map(section => (
               <ListItem key={section.id}>
@@ -127,10 +158,27 @@ function FábricaProject() {
           m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
           flex={{ xl: '2' }}
         >
-          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text
+            id='overview'
+            fontSize='2rem'
+            fontWeight='600'
+            mb='1rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Overview
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             During my work in Fábrica Coffee Roasters, as a{' '}
             <strong>Junior Product Designer</strong>. My primary responsibility
             was to conceptualize and design a feature for their e-commerce
@@ -144,7 +192,14 @@ function FábricaProject() {
             <strong>CEO</strong> and the{' '}
             <strong>head of e-commerce operations</strong>.
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             Fábrica Coffee Roasters holds a distinguished position as a{' '}
             <strong>pioneer in the Specialty Coffee sector</strong> in Portugal,
             with a seven-year experience in the market. Throughout this period,
@@ -158,6 +213,11 @@ function FábricaProject() {
             p={{ base: '0 0 1rem 0', md: '0' }}
             whiteSpace={{ base: 'nowrap', xl: 'normal' }}
             wordWrap='break-word'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
           >
             <Table variant='simple' size='sm'>
               <Tbody>
@@ -185,14 +245,29 @@ function FábricaProject() {
             <Button
               variant='outline'
               borderWidth='0.1rem'
-              borderColor='black'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+              bgColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg
+              }
               mt='2rem'
               p='2rem 2rem'
               cursor='pointer'
               mb='1rem'
               _hover={{
-                bgColor: '#101010',
-                color: '#FFFFFF',
+                bgColor:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.h1
+                    : theme.colors.light.h1,
+                color:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg,
               }}
             >
               Visit website
@@ -204,16 +279,38 @@ function FábricaProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='problem'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Problem
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Fábrica Coffee consistently welcomes new customers, many of whom may
           be <strong>new to specialty coffee</strong>. These customers might not
           be familiar with the distinct characteristics of each coffee, how the
           origin influences taste, and other sensory aspects.{' '}
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Despite Fábrica having numerous physical stores across Portugal, many
           of these new customers rely on knowledgeable baristas to guide them
           and{' '}
@@ -241,16 +338,38 @@ function FábricaProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='objective'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Objective
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           To provide enhanced support to users during their purchase journey, in
           collaboration with the CEO and the head of e-commerce operations, we
           have decided to introduce a new feature on the website in the form of
           a dynamic Quiz.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           As users answer each question in the quiz,{' '}
           <strong>personalized coffee recommendations</strong> will be generated
           based on their taste preferences. This will guide them in choosing the
@@ -277,28 +396,70 @@ function FábricaProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='research'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Research
         </Text>
-        <Text fontSize='1.5rem' mb='0.8rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Intro
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           We faced a tight deadline of less than a month for project delivery.
           Our initial step involved planning our approach to ensure success
           within this timeframe. We opted for a <strong>Lean process</strong>{' '}
           and broke down the construction of the feature into manageable steps.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           We tried to clearly define our objectives for the product by
           visualizing what we wanted to build and the desired outcome. Through a
           structured activity, we articulated our vision for the product,
           establishing both our aspirations and the features we wanted to avoid.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Summarizing the product in three business objectives:
         </Text>
-        <UnorderedList mb='1.2rem'>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem>
             Assist and streamline the shopping experience for novice users;
           </ListItem>
@@ -310,10 +471,23 @@ function FábricaProject() {
           </ListItem>
         </UnorderedList>
 
-        <Text fontSize='1.5rem' mb='0.8rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Primary Guillotine Survey
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           To understand more what our users are looking for at the moment of the
           purchased and their pain points, I chose to conduct a Primary
           Guillotine Survey with the baristas in the physical stores and the
@@ -321,8 +495,24 @@ function FábricaProject() {
           Journey to ensure that we were encompassing all user needs and pain
           points.
         </Text>
-        <Text mb='0.8rem'>The insights that I had from the research were:</Text>
-        <UnorderedList mb='1.2rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          The insights that I had from the research were:
+        </Text>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem>
             Those who are knowledgeable{' '}
             <strong>primarily seek brewing methods</strong> but are unsure about
@@ -356,7 +546,14 @@ function FábricaProject() {
         </UnorderedList>
 
         <div>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             We <strong>could validate the product creation</strong>, as there is
             indeed a need for some form of assistance on the online platform to
             help customers successfully make their coffee purchases and be
@@ -385,10 +582,24 @@ function FábricaProject() {
           </Box>
         </div>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Personas
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           We created two different user profiles, which we validated to be the
           audience that needs the most assistance, and towards whom we will
           direct the creation of the quiz featured on the landing page of
@@ -408,10 +619,24 @@ function FábricaProject() {
           <img src={PersonaTwo} />
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           User Journey
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           We chose to create a user journey to ensure that{' '}
           <strong>all pain points and user needs are addressed</strong> in the
           development of our product features.
@@ -426,12 +651,26 @@ function FábricaProject() {
           <img src={UserJourney} />
         </Box>
 
-        <Text mb='0.8rem'>Pain points:</Text>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          Pain points:
+        </Text>
 
         <Flex
           flexDirection={{ base: 'column', md: 'row' }}
           gap={{ base: '0', xl: '2rem' }}
           margin={{ base: '1rem 0', md: '0', xl: '2rem 5rem' }}
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
         >
           {[
             {
@@ -464,7 +703,11 @@ function FábricaProject() {
               }}
               borderBottom={{ base: '1px', md: 'none' }}
               borderLeft={{ md: index !== 0 ? '1px' : 'none' }}
-              borderColor='#cccccc'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
               borderRadius={{ md: '5px' }}
               p={{ base: '0 0 1rem 0', md: '1rem' }}
               flex='1'
@@ -482,13 +725,35 @@ function FábricaProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='design'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Design
         </Text>
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           MVP
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           To identify the features to include in our product, I initiated{' '}
           <strong>Benchmarking</strong> by studying three companies that have a
           Coffee Quiz feature. The objective was to{' '}
@@ -497,28 +762,63 @@ function FábricaProject() {
           customers experience, and <strong>identify aspects to avoid</strong>{' '}
           that may not align with our target audience.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           With the creation of Personas, User Journeys, and the conducted
           Benchmarking, we can now explore which features our quiz should
           include, addressing the necessary subjects in a more playful,
           familiar, and intuitive manner for our users.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           With a pull of questions based on what we had learned, we were able to{' '}
           <strong>validate</strong> the extremely necessary functionalities that
           we need to know from the customer and that must be included in our
           quiz:
         </Text>
-        <UnorderedList mb='1.2rem'>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem>Brewing method;</ListItem>
           <ListItem>Flavors they identify with the most;</ListItem>
           <ListItem>How they like to consume their coffee at home.</ListItem>
         </UnorderedList>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Canvas MVP
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           To align our product with business expectations, we opted to create an
           MVP Canvas before commencing the actual MVP development process.
         </Text>
@@ -532,10 +832,24 @@ function FábricaProject() {
           <img src={CanvaMVP} />
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           MVP
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           After identifying all the coffees based on their origins, flavors, and
           methods, we began planning the questions, steps, and options for our
           quiz. Several changes were made in the MVP construction, such as
@@ -558,7 +872,14 @@ function FábricaProject() {
           <img src={MVPBuild} />
         </Box>
 
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <strong>
             We utilized the Quiz application available on WordPress to build the
             MVP
@@ -568,7 +889,14 @@ function FábricaProject() {
           to a specific product recommendation based on the accumulated score.
         </Text>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Final UI
         </Text>
         <Box maxWidth={{ base: '90%', md: '80%', xl: '100%' }}>
@@ -580,10 +908,25 @@ function FábricaProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Results
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Following the deployment of the Quiz Feature, we conducted an analysis
           using the built-in metrics system provided by the application. Our
           observations revealed that:
@@ -593,6 +936,11 @@ function FábricaProject() {
           flexDirection={{ base: 'column', md: 'row' }}
           gap={{ base: '0', xl: '2' }}
           margin={{ base: '1rem 0', xl: '2rem 5rem' }}
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
         >
           {[
             { percentage: '90%', description: 'Of completion rate.' },
@@ -612,7 +960,11 @@ function FábricaProject() {
               margin={{ base: '1rem', xl: '4rem 1rem 2rem 2rem' }}
               borderBottom={{ base: '1px', md: 'none' }}
               borderLeft={{ md: index !== 0 ? '1px' : 'none' }}
-              borderColor='#cccccc'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
               p={{ base: '0 0 1rem 0', md: '0 1rem 0 1rem' }}
               flex='1'
               textAlign='left'
@@ -626,17 +978,27 @@ function FábricaProject() {
         </Flex>
       </Box>
 
-      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
           mb='1rem'
-          color='#cccccc'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
         >
           more projects
         </Text>
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
@@ -646,7 +1008,15 @@ function FábricaProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Choclo} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Choclo Project
               </Text>
             </Box>
@@ -657,7 +1027,15 @@ function FábricaProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Millennium} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Millennium Project
               </Text>
             </Box>

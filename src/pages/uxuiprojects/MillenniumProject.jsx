@@ -11,13 +11,26 @@ import StyleGuideMillennium from '../../assets/uxuiprojects/StyleGuideMillennium
 import MillenniumFinalUI from '../../assets/uxuiprojects/MillenniumFinalUI.png';
 import Choclo from '../../assets/uxuiprojects/ChocloWebsite.png';
 import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
-import { Flex, Text, Box, Image, Button, Link, Thead } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  Thead,
+  useColorMode,
+  useTheme,
+} from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, Th, TableContainer } from '@chakra-ui/react';
 
 function MillenniumProject() {
   const [activeSection, setActiveSection] = useState('');
+
+  const { colorMode } = useColorMode();
+  const theme = useTheme();
 
   const sections = [
     { id: 'overview', label: 'Overview' },
@@ -51,7 +64,11 @@ function MillenniumProject() {
       <Breadcrumb
         fontWeight='medium'
         fontSize='sm'
-        color='#CCCCCC'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
         m='2rem 0 0 2rem'
       >
         <BreadcrumbItem>
@@ -68,11 +85,21 @@ function MillenniumProject() {
       <Text
         fontSize={{ base: '2.8rem', md: '3.8rem' }}
         m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+        color={
+          colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+        }
       >
         Investment Feature
       </Text>
 
-      <Text m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}>
+      <Text
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
         An investiment feature for education resources.
       </Text>
 
@@ -102,6 +129,11 @@ function MillenniumProject() {
             spacing={{ xl: '3' }}
             fontWeight='600'
             fontSize='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h3
+                : theme.colors.light.h3
+            }
           >
             {sections.map(section => (
               <ListItem key={section.id}>
@@ -125,10 +157,27 @@ function MillenniumProject() {
           m={{ base: '2.2rem 1rem 1.5rem 1rem', xl: '2rem 12rem 1.5rem 0' }}
           flex={{ xl: '2' }}
         >
-          <Text id='overview' fontSize='2rem' fontWeight='600' mb='1rem'>
+          <Text
+            id='overview'
+            fontSize='2rem'
+            fontWeight='600'
+            mb='1rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.h1
+                : theme.colors.light.h1
+            }
+          >
             Overview
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             This is a case study, which the <strong>objective</strong> was to
             suggest a design modification or a new feature for an existing
             product or website. The <strong>challenge</strong> at hand was to
@@ -139,13 +188,30 @@ function MillenniumProject() {
             education resources, such as articles, webinars, and tutorials, to
             help them improve their investment knowledge and skills.
           </Text>
-          <Text mb='0.8rem'>
+          <Text
+            mb='0.8rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             Banco Comercial Português, S.A. (BCP), known as Millennium BCP from
             2004, <strong>is the second largest Portuguese private bank</strong>
             .
           </Text>
 
-          <TableContainer m='1.5rem 0 1rem 0'>
+          <TableContainer
+            m={{ xl: '1.5rem 0 1rem 0' }}
+            p={{ base: '0 0 1rem 0', md: '0' }}
+            whiteSpace={{ base: 'nowrap', xl: 'normal' }}
+            wordWrap='break-word'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             <Table variant='simple' size='sm'>
               <Tbody>
                 <Tr>
@@ -178,14 +244,29 @@ function MillenniumProject() {
             <Button
               variant='outline'
               borderWidth='0.1rem'
-              borderColor='black'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+              bgColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.bg
+                  : theme.colors.light.bg
+              }
               mt='2rem'
               p='2rem 2rem'
               cursor='pointer'
               mb='1rem'
               _hover={{
-                bgColor: '#101010',
-                color: '#FFFFFF',
+                bgColor:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.h1
+                    : theme.colors.light.h1,
+                color:
+                  colorMode === 'dark'
+                    ? theme.colors.dark.bg
+                    : theme.colors.light.bg,
               }}
             >
               Visit prototype
@@ -197,10 +278,25 @@ function MillenniumProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='problem' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='problem'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Problem
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Before diving into research, I wanted to ensure that{' '}
           <strong>my proposal addresses a genuine problem</strong> and{' '}
           <strong>
@@ -210,7 +306,14 @@ function MillenniumProject() {
           . By validating my proposal upfront, I can ensure that I provide a
           solution that truly meets the needs of my target audience.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I came across an insightful article made by a student from Instituto
           Universitário de Lisboa, presenting a research study conducted in
           February until June of 2022.{' '}
@@ -220,7 +323,15 @@ function MillenniumProject() {
           </strong>
           .
         </Text>
-        <Text fontWeight='500' mb='0.5rem'>
+        <Text
+          fontWeight='500'
+          mb='0.5rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Problem Statement:
         </Text>
         <Box bg='rgba(220, 90, 53, 0.7)' w='100%' p={4}>
@@ -240,10 +351,27 @@ function MillenniumProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='objective' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='objective'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Objective
         </Text>
-        <Text fontWeight='500' mb='0.5rem' mt='1rem'>
+        <Text
+          fontWeight='500'
+          mb='0.5rem'
+          mt='1rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Value Proposition:
         </Text>
         <Box bg='rgba(145, 187, 148, 0.7)' w='100%' p={4}>
@@ -262,13 +390,34 @@ function MillenniumProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='research' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='research'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Research
         </Text>
-        <Text fontSize='1.5rem' mb='0.8rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Provisional Personas
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Creating provisional personas based on my assumptions.
         </Text>
         <Box
@@ -290,20 +439,49 @@ function MillenniumProject() {
           gap='2rem'
         >
           <Box display='flex' flexDirection='column'>
-            <Text fontSize='1.5rem' mb='0.8rem'>
+            <Text
+              fontSize='1.5rem'
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.h3
+                  : theme.colors.light.h3
+              }
+            >
               User Interviews
             </Text>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               After developing my provisional personas, and before proceeding to
               the next research steps, I crafted a script interview, with a
               screener to ensure that I only engaged with individuals meeting my
               research criteria and subsequently, I conducted{' '}
               <strong>street interviews</strong>.
             </Text>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <strong>Interview Insights:</strong>
             </Text>
-            <UnorderedList mb='1.2rem'>
+            <UnorderedList
+              mb='1.2rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               <ListItem>
                 <strong> My assumption was validated.</strong> Many of the
                 people try to study by themselves and consume a lot of materials
@@ -328,7 +506,14 @@ function MillenniumProject() {
               </ListItem>
             </UnorderedList>
 
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               With that I saw the need of one more persona that corresponds with
               the additional intelligence that I gain during the interviews.
             </Text>
@@ -345,7 +530,14 @@ function MillenniumProject() {
           </Box>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Competitive Research
         </Text>
         <Box bg='rgba(145, 187, 148, 0.7)' w='100%' p={4}>
@@ -362,12 +554,25 @@ function MillenniumProject() {
           </Text>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Benchmarking Analysis Results
         </Text>
 
         <Box overflowX='auto' mt='1.5rem'>
-          <TableContainer>
+          <TableContainer
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             <Table variant='simple' size='sm'>
               <Thead>
                 <Tr>
@@ -544,10 +749,24 @@ function MillenniumProject() {
           </TableContainer>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           SWOT Analysis
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I also conduct an SWOT analysis with my direct competitors{' '}
           <strong>
             to evaluate them, and understand their market position compared to
@@ -561,10 +780,25 @@ function MillenniumProject() {
           gap={{ base: '1rem', md: '5rem' }}
         >
           <Box>
-            <Text mb='0.8rem' fontWeight='700'>
+            <Text
+              mb='0.8rem'
+              fontWeight='700'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Santander
             </Text>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Santander has the advantage of having high name recognition and
               its platform offers a plethora of investment-related materials.
               The platform is designed in a way that encourages users to become
@@ -576,10 +810,25 @@ function MillenniumProject() {
           </Box>
 
           <Box>
-            <Text mb='0.8rem' fontWeight='700'>
+            <Text
+              mb='0.8rem'
+              fontWeight='700'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Novobanco
             </Text>
-            <Text mb='0.8rem'>
+            <Text
+              mb='0.8rem'
+              color={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
+            >
               Novo Banco provides a wealth of detailed information on
               investments, presented in a well-organized manner that covers a
               broad range of topics aimed at assisting a wide audience.
@@ -590,10 +839,24 @@ function MillenniumProject() {
           </Box>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Identify Key Features
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           I have chosen to utilize the insightful questions posed in{' '}
           <strong>UX Strategy by Jaime Levy</strong> to guide my exploration and
           uncover the essential features necessary for my project. By leveraging
@@ -607,7 +870,13 @@ function MillenniumProject() {
         </Text>
 
         <Box overflowX='auto' mt='1.5rem'>
-          <TableContainer>
+          <TableContainer
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             <Table variant='simple' size='sm'>
               <Thead>
                 <Tr>
@@ -867,12 +1136,26 @@ function MillenniumProject() {
           </TableContainer>
         </Box>
 
-        <Text fontSize='1.5rem' mb='1.5rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='1.5rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Millennium for Investors - Key Features
         </Text>
 
         <Box maxWidth='800px'>
-          <UnorderedList mb='1.2rem'>
+          <UnorderedList
+            mb='1.2rem'
+            color={
+              colorMode === 'dark'
+                ? theme.colors.dark.text
+                : theme.colors.light.text
+            }
+          >
             <ListItem mb='0.8rem'>
               A <strong>Quiz</strong> as a first step so you can know what type
               investor you are, learn more about your taste for investing and
@@ -891,10 +1174,24 @@ function MillenniumProject() {
           </UnorderedList>
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Storyboard
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           At that phase, I utilized the{' '}
           <strong>key features to construct a narrative</strong>
           from the user point of view in my storyboard. This effectively
@@ -910,10 +1207,24 @@ function MillenniumProject() {
           <img src={StoryboardMillennium} alt='storyboard' />
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           User Journey
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Describing the User Journey through the website, with that in mind, I
           had a clear understanding that I could focous on the landing page
           screen to create and prototype, so I started my wireframe process.
@@ -923,6 +1234,11 @@ function MillenniumProject() {
           flexDirection={{ base: 'column', md: 'row' }}
           gap={{ base: '0', xl: '2rem' }}
           margin={{ base: '1rem 0', md: '0', xl: '2rem 5rem' }}
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
         >
           {[
             {
@@ -931,12 +1247,12 @@ function MillenniumProject() {
                 'User opens the Millennium webpage, looks for the investments options and find the CTA for beginners.',
             },
             {
-              number: '2.Landing Page Overview:',
+              number: '2.Landing Page Overview',
               description:
                 ' User opens the landing page for Millennium investment community, he finds the types of investments on the menu, the quiz option, the materials, search tool, registration option, FAQ and Prompt Assistance.',
             },
             {
-              number: '3.Subscription:',
+              number: '3.Subscription',
               description:
                 'He decides to subscribe and be part of the community, he puts his database and have new investor area. Now he have access to more materials, he can consolidate all his investments in one place, now the status of his investment, real time alerts, community forum and study list.',
             },
@@ -950,7 +1266,11 @@ function MillenniumProject() {
               }}
               borderBottom={{ base: '1px', md: 'none' }}
               borderLeft={{ md: index !== 0 ? '1px' : 'none' }}
-              borderColor='#cccccc'
+              borderColor={
+                colorMode === 'dark'
+                  ? theme.colors.dark.text
+                  : theme.colors.light.text
+              }
               borderRadius={{ md: '5px' }}
               p={{ base: '0 0 1rem 0', md: '1rem' }}
               flex='1'
@@ -968,23 +1288,59 @@ function MillenniumProject() {
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
-        <Text id='design' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='design'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           Design
         </Text>
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Wireframe
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           Before beginning the wireframe creation process, I made the decision
           to sketch out the layout. This approach allowed me to visualize how we
           can effectively separate and organize the different subjects, placing
           each of them in their appropriate positions.
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           This is the <strong>first three blocks</strong> for our landing page,
           I decided to organize the content in this way:
         </Text>
-        <UnorderedList mb='1.2rem'>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem mb='0.8rem'>
             <strong>Quiz:</strong> when the user arrive in our page and also
             still dont know how to start, he can take the quiz and have a little
@@ -1012,8 +1368,24 @@ function MillenniumProject() {
           <img src={WireframeMillennium} alt='wireframe-millennium' />
         </Box>
 
-        <Text mb='0.8rem'>For the rest of the Lading Page we have:</Text>
-        <UnorderedList mb='1.2rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          For the rest of the Lading Page we have:
+        </Text>
+        <UnorderedList
+          mb='1.2rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           <ListItem>The newest content.</ListItem>
           <ListItem>
             The CTA for signing to our community and have more advantages of our
@@ -1025,10 +1397,24 @@ function MillenniumProject() {
           </ListItem>
         </UnorderedList>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Style Guide
         </Text>
-        <Text mb='0.8rem'>
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
           In this project, I strategically employed the visual components listed
           below. I employed the brand designated colors while striving for a
           faithful representation of its visual design.
@@ -1045,7 +1431,14 @@ function MillenniumProject() {
           <img src={StyleGuideMillennium} alt='styleguide' />
         </Box>
 
-        <Text fontSize='1.5rem' mb='0.8rem' mt='2rem'>
+        <Text
+          fontSize='1.5rem'
+          mb='0.8rem'
+          mt='2rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+          }
+        >
           Final UI
         </Text>
 
@@ -1061,17 +1454,27 @@ function MillenniumProject() {
         </Box>
       </Box>
 
-      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}>
+      <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
-          mb='1rem'
-          color='#cccccc'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
+          }
+          height='35px'
         >
           more projects
         </Text>
-        <Text id='results' fontSize='2rem' fontWeight='600' mb='1rem'>
+        <Text
+          id='results'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
@@ -1081,7 +1484,15 @@ function MillenniumProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Choclo} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Choclo Project
               </Text>
             </Box>
@@ -1092,7 +1503,15 @@ function MillenniumProject() {
               maxWidth={{ base: '90%', xl: '80%' }}
             >
               <img src={Fabrica} />
-              <Text fontWeight='600' mt='0.8rem'>
+              <Text
+                fontWeight='600'
+                mt='0.8rem'
+                color={
+                  colorMode === 'dark'
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+              >
                 Fábrica Project
               </Text>
             </Box>
