@@ -217,6 +217,7 @@ function About() {
                       ? theme.colors.dark.h2
                       : theme.colors.light.h2
                   }
+                  height='50px'
                 >
                   Hey there,
                 </Text>
@@ -272,8 +273,8 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              Ever since I can remember, Ive been fueled by{' '}
-              <strong>curiosity</strong>. It's what drove me from test tubes to
+              Ever since I can remember, I have been fueled by{' '}
+              <strong>curiosity</strong>. It is what drove me from test tubes to
               lines of code, always seeking to{' '}
               <strong>understand and improve</strong>.
             </Text>
@@ -303,9 +304,9 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              When I'm not lost in the digital wilderness, youll find me chasing
-              sunsets with my camera, plotting world domination over a board
-              game, or sipping espresso at the latest hipster café.
+              When I'm not lost in the digital wilderness, you will find me
+              chasing sunsets with my camera, plotting world domination over a
+              board game, or sipping espresso at the latest hipster café.
             </Text>
 
             <Text
@@ -433,7 +434,7 @@ function About() {
               }
             >
               I make designs that balance the funtionallity and aesthetic to
-              build iintuitive interfaces for our users.
+              build intuitive interfaces for our users.
             </Text>
           </Box>
         </Box>
@@ -475,8 +476,8 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              I can bring your visuals to life through developing highlt
-              functional web solutions for an amazing web experience
+              I can bring your visuals to life by developing highly functional
+              web solutions for an amazing web experience.
             </Text>
           </Box>
         </Box>
@@ -533,6 +534,7 @@ function About() {
         color={
           colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
         }
+        height='30px'
       >
         come take a look at
       </Text>

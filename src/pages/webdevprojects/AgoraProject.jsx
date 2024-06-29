@@ -59,15 +59,19 @@ function AgoraProject() {
             ? theme.colors.dark.text
             : theme.colors.light.text
         }
-        m='2rem 0 0 2rem'
+        m='2rem 0 0 1rem'
       >
         <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
+          <BreadcrumbLink>
+            <Link to='/portfolio'>Portfolio</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href='/portfolio/webdevelopment/volleybombproject'>
-            Agora Project
+          <BreadcrumbLink>
+            <Link to='/portfolio/webdevelopment/volleybombproject'>
+              Agora Project
+            </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
@@ -195,7 +199,7 @@ function AgoraProject() {
                 : theme.colors.light.text
             }
           >
-            <Table variant='simple' size='sm'>
+            <Table variant='simple' size='sm' mt='1rem'>
               <Tbody>
                 <Tr>
                   <Td>Type of Work</Td>

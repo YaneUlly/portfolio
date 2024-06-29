@@ -72,12 +72,16 @@ function MillenniumProject() {
         m='2rem 0 0 2rem'
       >
         <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
+          <BreadcrumbLink>
+            <Link to='/portfolio'>Portfolio</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href='/portfolio/uxuidesign/fabricaproject'>
-            Millennium Project
+          <BreadcrumbLink>
+            <Link to='/portfolio/uxuidesign/fabricaproject'>
+              Millennium Project
+            </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
@@ -212,7 +216,7 @@ function MillenniumProject() {
                 : theme.colors.light.text
             }
           >
-            <Table variant='simple' size='sm'>
+            <Table variant='simple' size='sm' mt='1rem'>
               <Tbody>
                 <Tr>
                   <Td>Client</Td>

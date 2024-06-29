@@ -32,7 +32,7 @@ function Footer() {
         mb={{ md: '1rem' }}
       >
         <Text
-          marginLeft='1rem'
+          marginLeft={{ md: '1rem' }}
           fontSize='0.8rem'
           color={
             colorMode === 'dark'

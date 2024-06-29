@@ -59,15 +59,19 @@ function AcervoProject() {
             ? theme.colors.dark.text
             : theme.colors.light.text
         }
-        m='2rem 0 0 2rem'
+        m='2rem 0 0 1rem'
       >
         <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
+          <BreadcrumbLink>
+            <Link to='/portfolio'>Portfolio</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href='/portfolio/webdevelopment/acervoproject'>
-            Acervo Project
+          <BreadcrumbLink>
+            <Link to='/portfolio/webdevelopment/acervoproject'>
+              Acervo Project
+            </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
@@ -197,7 +201,7 @@ function AcervoProject() {
                 : theme.colors.light.text
             }
           >
-            <Table variant='simple' size='sm'>
+            <Table variant='simple' size='sm' mt='1rem'>
               <Tbody>
                 <Tr>
                   <Td>Type of Work</Td>

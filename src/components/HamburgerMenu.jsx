@@ -7,7 +7,7 @@ import 'boxicons';
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -171,7 +171,7 @@ const HamburgerMenu = () => {
                 >
                   <Link to='/' onClick={() => handleMenuClick('/')}>
                     <Text
-                      fontSize='5rem'
+                      fontSize={{ base: '4rem', md: '5rem' }}
                       padding='0.1rem'
                       color={
                         colorMode === 'dark'
@@ -201,7 +201,7 @@ const HamburgerMenu = () => {
                   <Link to='/about' onClick={() => handleMenuClick('/about')}>
                     <Box
                       as='li'
-                      fontSize='5rem'
+                      fontSize={{ base: '4rem', md: '5rem' }}
                       padding='0.1rem'
                       color={
                         colorMode === 'dark'
@@ -234,7 +234,7 @@ const HamburgerMenu = () => {
                   >
                     <Box
                       as='li'
-                      fontSize='5rem'
+                      fontSize={{ base: '4rem', md: '5rem' }}
                       padding='0.1rem'
                       color={
                         colorMode === 'dark'
@@ -267,7 +267,7 @@ const HamburgerMenu = () => {
                   >
                     <Box
                       as='li'
-                      fontSize='5rem'
+                      fontSize={{ base: '4rem', md: '5rem' }}
                       padding='0.1rem'
                       color={
                         colorMode === 'dark'

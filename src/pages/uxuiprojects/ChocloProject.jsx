@@ -85,12 +85,14 @@ function ChocloProject() {
         m='2rem 0 0 2rem'
       >
         <BreadcrumbItem>
-          <BreadcrumbLink href='/portfolio'>Portfolio</BreadcrumbLink>
+          <BreadcrumbLink>
+            <Link to='/portfolio'>Portfolio</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href='/portfolio/uxuidesign/chocloproject'>
-            Choclo Project
+          <BreadcrumbLink>
+            <Link to='/portfolio/uxuidesign/chocloproject'>Choclo Project</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
@@ -226,7 +228,7 @@ function ChocloProject() {
                 : theme.colors.light.text
             }
           >
-            <Table variant='simple' size='sm'>
+            <Table variant='simple' size='sm' mt='1rem'>
               <Tbody>
                 <Tr>
                   <Td>Client</Td>
@@ -300,7 +302,7 @@ function ChocloProject() {
         >
           Problem
         </Text>
-        .
+
         <Box bg='rgba(220, 90, 53, 0.7)' w='100%' p={4}>
           <Text color='black'>
             <strong>

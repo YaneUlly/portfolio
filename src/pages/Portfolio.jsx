@@ -281,7 +281,7 @@ function Portfolio() {
           color={
             colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
           }
-          height='55px'
+          height='34px'
         >
           come take a look into
         </Text>
@@ -370,7 +370,7 @@ function Portfolio() {
           color={
             colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
           }
-          height='25px'
+          height='35px'
         >
           inspired by my work?
         </Text>
