@@ -20,7 +20,7 @@ function LandingPage() {
       minHeight={{ md: '50vh', lg: '80vh' }}
       width='100%'
       mt={{ md: '8rem', lg: '0' }}
-      marginBottom={{ base: '8rem', md: '16rem', lg: '2rem' }}
+      marginBottom={{ base: '8rem', md: '16rem', lg: '1rem' }}
       display='flex'
       flexDirection={{ base: 'column', lg: 'row' }}
       alignItems='center'
