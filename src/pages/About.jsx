@@ -334,36 +334,38 @@ function About() {
               Lets make some magic happen!
             </Text>
 
-            <Button
-              variant='outline'
-              borderWidth='0.1rem'
-              borderColor={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-              bgColor={
-                colorMode === 'dark'
-                  ? theme.colors.dark.bg
-                  : theme.colors.light.bg
-              }
-              mt='2rem'
-              p='2rem 2rem'
-              cursor='pointer'
-              mb='1rem'
-              _hover={{
-                bgColor:
+            <Link href='/contact'>
+              <Button
+                variant='outline'
+                borderWidth='0.1rem'
+                borderColor={
                   colorMode === 'dark'
-                    ? theme.colors.dark.h1
-                    : theme.colors.light.h1,
-                color:
+                    ? theme.colors.dark.text
+                    : theme.colors.light.text
+                }
+                bgColor={
                   colorMode === 'dark'
                     ? theme.colors.dark.bg
-                    : theme.colors.light.bg,
-              }}
-            >
-              Download resume
-            </Button>
+                    : theme.colors.light.bg
+                }
+                mt='2rem'
+                p='2rem 2rem'
+                cursor='pointer'
+                mb='1rem'
+                _hover={{
+                  bgColor:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.h1
+                      : theme.colors.light.h1,
+                  color:
+                    colorMode === 'dark'
+                      ? theme.colors.dark.bg
+                      : theme.colors.light.bg,
+                }}
+              >
+                Contact me
+              </Button>
+            </Link>
           </Box>
         </Box>
         <Box
