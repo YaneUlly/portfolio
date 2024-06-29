@@ -8,13 +8,13 @@ import {
   Box,
   Image,
   Button,
-  Link,
   useColorMode,
   useTheme,
 } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function AgoraProject() {
   const [activeSection, setActiveSection] = useState('');
@@ -128,7 +128,7 @@ function AgoraProject() {
             {sections.map(section => (
               <ListItem key={section.id}>
                 <Link
-                  href={`#${section.id}`}
+                  to={`#${section.id}`}
                   _hover={{ color: '#E7CE35' }}
                   style={{
                     color: activeSection === section.id ? '#E7CE35' : '',
@@ -218,7 +218,7 @@ function AgoraProject() {
           </TableContainer>
 
           <Box display='flex' flexDirection='row' gap='1.5rem'>
-            <Link href='https://agoragigs.netlify.app/' isExternal>
+            <Link to='https://agoragigs.netlify.app/' isExternal>
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
@@ -251,7 +251,7 @@ function AgoraProject() {
               </Button>
             </Link>
 
-            <Link href='https://github.com/JuanRassa/Gig-Hub-Groove' isExternal>
+            <Link to='https://github.com/JuanRassa/Gig-Hub-Groove' isExternal>
               <Button
                 variant='outline'
                 borderWidth='0.1rem'
@@ -496,7 +496,7 @@ function AgoraProject() {
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
-          <Link href='/portfolio/webdevelopment/acervoproject'>
+          <Link to='/portfolio/webdevelopment/acervoproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}
@@ -515,7 +515,7 @@ function AgoraProject() {
               </Text>
             </Box>
           </Link>
-          <Link href='/portfolio/webdevelopment/volleybombproject'>
+          <Link to='/portfolio/webdevelopment/volleybombproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}

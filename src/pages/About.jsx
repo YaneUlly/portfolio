@@ -13,10 +13,10 @@ import {
   Box,
   Button,
   Image,
-  Link,
   useColorMode,
   useTheme,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 function About() {
@@ -38,7 +38,7 @@ function About() {
             gap='2rem'
             width={{ lg: '60rem' }}
           >
-            <Link href='/portfolio/uxuidesign/chocloproject'>
+            <Link to='/portfolio/uxuidesign/chocloproject'>
               <Box>
                 <Image src={Choclo} alt='Choclo Project' />
                 <Text
@@ -55,7 +55,7 @@ function About() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/uxuidesign/millenniumproject'>
+            <Link to='/portfolio/uxuidesign/millenniumproject'>
               <Box>
                 <Image src={Millennium} alt='Millennium Project' />
                 <Text
@@ -81,7 +81,7 @@ function About() {
             gap='2rem'
             width='60rem'
           >
-            <Link href='/portfolio/webdevelopment/acervoproject'>
+            <Link to='/portfolio/webdevelopment/acervoproject'>
               <Box>
                 <Image src={Acervo} alt='Acervo Project' />
                 <Text
@@ -98,7 +98,7 @@ function About() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/webdevelopment/volleybombproject'>
+            <Link to='/portfolio/webdevelopment/volleybombproject'>
               <Box>
                 <Image src={VolleyBomb} alt='Volleybomb Project' />
                 <Text
@@ -124,7 +124,7 @@ function About() {
             gap='2rem'
             width='60rem'
           >
-            <Link href='/portfolio/webdevelopment/agoraproject'>
+            <Link to='/portfolio/webdevelopment/agoraproject'>
               <Box>
                 <Image src={Agora} alt='Agora Project' />
                 <Text
@@ -141,7 +141,7 @@ function About() {
               </Box>
             </Link>
 
-            <Link href='/portfolio/uxuidesing/fabricaproject'>
+            <Link to='/portfolio/uxuidesing/fabricaproject'>
               <Box>
                 <Image src={Fabrica} alt='Fabrica Project' />
                 <Text
@@ -334,7 +334,7 @@ function About() {
               Lets make some magic happen!
             </Text>
 
-            <Link href='/contact'>
+            <Link to='/contact'>
               <Button
                 variant='outline'
                 borderWidth='0.1rem'

@@ -18,13 +18,13 @@ import {
   Box,
   Image,
   Button,
-  Link,
   useColorMode,
   useTheme,
 } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, TableContainer } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function FábricaProject() {
   const [activeSection, setActiveSection] = useState('');
@@ -139,7 +139,7 @@ function FábricaProject() {
             {sections.map(section => (
               <ListItem key={section.id}>
                 <Link
-                  href={`#${section.id}`}
+                  to={`#${section.id}`}
                   _hover={{ color: '#E7CE35' }}
                   style={{
                     color: activeSection === section.id ? '#E7CE35' : '',
@@ -241,7 +241,7 @@ function FábricaProject() {
             </Table>
           </TableContainer>
 
-          <Link href='https://fabricacoffeeroasters.com/' isExternal>
+          <Link to='https://fabricacoffeeroasters.com/' isExternal>
             <Button
               variant='outline'
               borderWidth='0.1rem'
@@ -1002,7 +1002,7 @@ function FábricaProject() {
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
-          <Link href='/portfolio/uxuidesign/chocloproject'>
+          <Link to='/portfolio/uxuidesign/chocloproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}
@@ -1021,7 +1021,7 @@ function FábricaProject() {
               </Text>
             </Box>
           </Link>
-          <Link href='/portfolio/uxuidesign/millenniumproject'>
+          <Link to='/portfolio/uxuidesign/millenniumproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}

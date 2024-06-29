@@ -22,7 +22,6 @@ import {
   Box,
   Image,
   Button,
-  Link,
   useColorMode,
   useTheme,
 } from '@chakra-ui/react';
@@ -37,6 +36,7 @@ import {
   Thead,
   TableContainer,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function ChocloProject() {
   const [activeSection, setActiveSection] = useState('');
@@ -151,7 +151,7 @@ function ChocloProject() {
             {sections.map(section => (
               <ListItem key={section.id}>
                 <Link
-                  href={`#${section.id}`}
+                  to={`#${section.id}`}
                   _hover={{ color: '#E7CE35' }}
                   style={{
                     color: activeSection === section.id ? '#E7CE35' : '',
@@ -251,7 +251,7 @@ function ChocloProject() {
             </Table>
           </TableContainer>
 
-          <Link href='https://www.choclolisboa.com' isExternal>
+          <Link to='https://www.choclolisboa.com' isExternal>
             <Button
               variant='outline'
               borderWidth='0.1rem'
@@ -1838,7 +1838,7 @@ function ChocloProject() {
               for our users.
             </Text>
             <Link
-              href='https://www.figma.com/proto/f1kR3sihs8aU4eb6neKrYs/Choclo-Website?type=design&node-id=0-1&viewport=321%2C164%2C0.04&t=T0RCpkVVPIPs3wRx-0&scaling=scale-down&starting-point-node-id=54%3A200'
+              to='https://www.figma.com/proto/f1kR3sihs8aU4eb6neKrYs/Choclo-Website?type=design&node-id=0-1&viewport=321%2C164%2C0.04&t=T0RCpkVVPIPs3wRx-0&scaling=scale-down&starting-point-node-id=54%3A200'
               isExternal
             >
               <Button
@@ -1900,7 +1900,7 @@ function ChocloProject() {
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
-          <Link href='/portfolio/uxuidesign/fabricaproject'>
+          <Link to='/portfolio/uxuidesign/fabricaproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}
@@ -1919,7 +1919,7 @@ function ChocloProject() {
               </Text>
             </Box>
           </Link>
-          <Link href='/portfolio/uxuidesign/millenniumproject'>
+          <Link to='/portfolio/uxuidesign/millenniumproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}

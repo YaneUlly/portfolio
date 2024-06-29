@@ -17,7 +17,6 @@ import {
   Box,
   Image,
   Button,
-  Link,
   Thead,
   useColorMode,
   useTheme,
@@ -25,6 +24,7 @@ import {
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import { Table, Tbody, Tr, Td, Th, TableContainer } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function MillenniumProject() {
   const [activeSection, setActiveSection] = useState('');
@@ -138,7 +138,7 @@ function MillenniumProject() {
             {sections.map(section => (
               <ListItem key={section.id}>
                 <Link
-                  href={`#${section.id}`}
+                  to={`#${section.id}`}
                   _hover={{ color: '#E7CE35' }}
                   style={{
                     color: activeSection === section.id ? '#E7CE35' : '',
@@ -238,7 +238,7 @@ function MillenniumProject() {
           </TableContainer>
 
           <Link
-            href='https://www.figma.com/proto/A9ixyQT8eUtR65pHODXOJS/Millennium-LP?page-id=0%3A1&type=design&node-id=19-17&viewport=260%2C-585%2C0.09&t=AVRuyqfSTDwgy7iX-1&scaling=scale-down&starting-point-node-id=19%3A17&mode=design'
+            to='https://www.figma.com/proto/A9ixyQT8eUtR65pHODXOJS/Millennium-LP?page-id=0%3A1&type=design&node-id=19-17&viewport=260%2C-585%2C0.09&t=AVRuyqfSTDwgy7iX-1&scaling=scale-down&starting-point-node-id=19%3A17&mode=design'
             isExternal
           >
             <Button
@@ -1478,7 +1478,7 @@ function MillenniumProject() {
           while you are here?
         </Text>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
-          <Link href='/portfolio/uxuidesign/chocloproject'>
+          <Link to='/portfolio/uxuidesign/chocloproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}
@@ -1497,7 +1497,7 @@ function MillenniumProject() {
               </Text>
             </Box>
           </Link>
-          <Link href='/portfolio/uxuidesign/fabricaproject'>
+          <Link to='/portfolio/uxuidesign/fabricaproject'>
             <Box
               m={{ base: '1rem', xl: '2rem 0 1rem 6rem' }}
               maxWidth={{ base: '90%', xl: '80%' }}
