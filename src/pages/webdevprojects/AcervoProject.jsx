@@ -59,7 +59,7 @@ function AcervoProject() {
             ? theme.colors.dark.text
             : theme.colors.light.text
         }
-        m='2rem 0 0 1rem'
+        m={{ base: '2rem 0 0 1rem', xl: '2rem 0 0 1.2rem' }}
       >
         <BreadcrumbItem>
           <BreadcrumbLink>
@@ -78,7 +78,7 @@ function AcervoProject() {
 
       <Text
         fontSize={{ base: '2.8rem', md: '3.8rem' }}
-        m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 2rem' }}
+        m={{ base: '2rem 0 0 1rem', xl: '3rem 0 0 1.2rem' }}
         color={
           colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
         }
@@ -87,7 +87,7 @@ function AcervoProject() {
       </Text>
 
       <Text
-        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 2rem' }}
+        m={{ base: '0 1rem 2rem 1rem', xl: '0 0 4rem 1.2rem' }}
         color={
           colorMode === 'dark'
             ? theme.colors.dark.text
@@ -131,9 +131,8 @@ function AcervoProject() {
           >
             {sections.map(section => (
               <ListItem key={section.id}>
-                <Link
-                  to={`#${section.id}`}
-                  _hover={{ color: '#E7CE35' }}
+                <a
+                  href={`#${section.id}`}
                   style={{
                     color: activeSection === section.id ? '#E7CE35' : '',
                     textDecoration:
@@ -141,7 +140,7 @@ function AcervoProject() {
                   }}
                 >
                   {section.label}
-                </Link>
+                </a>
               </ListItem>
             ))}
           </UnorderedList>

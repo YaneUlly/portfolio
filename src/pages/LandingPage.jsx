@@ -19,8 +19,8 @@ function LandingPage() {
     <Box
       minHeight={{ md: '50vh', lg: '80vh' }}
       width='100%'
-      mt={{ md: '8rem', lg: '0' }}
-      marginBottom={{ base: '5rem', md: '16rem', lg: '1rem' }}
+      mt={{ md: '5rem', lg: '0' }}
+      marginBottom={{ base: '3rem', md: '10rem', lg: '1rem' }}
       display='flex'
       flexDirection={{ base: 'column', lg: 'row' }}
       alignItems='center'

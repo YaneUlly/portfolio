@@ -217,7 +217,7 @@ function About() {
                       ? theme.colors.dark.h2
                       : theme.colors.light.h2
                   }
-                  height='50px'
+                  height={{ base: '50px', md: '92px' }}
                 >
                   Hey there,
                 </Text>
