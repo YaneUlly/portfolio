@@ -534,7 +534,7 @@ function About() {
         color={
           colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
         }
-        height='30px'
+        height={{ base: '30px', xl: '50px' }}
       >
         come take a look at
       </Text>

@@ -986,10 +986,10 @@ function FábricaProject() {
           id='results'
           fontSize='1.8rem'
           fontWeight='600'
-          mb='1rem'
           color={
             colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
           }
+          height='35px'
         >
           more projects
         </Text>

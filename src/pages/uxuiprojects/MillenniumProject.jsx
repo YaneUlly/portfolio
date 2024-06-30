@@ -1279,7 +1279,7 @@ function MillenniumProject() {
               flex='1'
               textAlign='left'
             >
-              <Text fontSize='1.5rem' fontWeight='500'>
+              <Text fontSize='1rem' fontWeight='700' pb='0.4rem'>
                 {item.number}
               </Text>
               <Text>{item.description}</Text>

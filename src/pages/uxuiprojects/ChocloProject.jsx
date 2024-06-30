@@ -1061,7 +1061,7 @@ function ChocloProject() {
           Personas
         </Text>
         <Box
-          maxWidth={{ base: '90%', md: '70%', xl: '90%' }}
+          maxWidth={{ base: '90%', md: '70%', xl: '100%' }}
           display='flex'
           flexDirection='row'
           gap='2rem'
