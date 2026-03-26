@@ -40,7 +40,7 @@ function Footer() {
               : theme.colors.light.text
           }
         >
-          © 2024 Design and Developed by <strong>Yane Ully</strong>
+          © 2026 Design and Developed by <strong>Yane Ully</strong>
         </Text>
 
         <Box p='0 1rem 1rem 0'>

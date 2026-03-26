@@ -8,12 +8,47 @@ import {
   useTheme,
 } from '@chakra-ui/react';
 import SocialIcons from '../components/SocialIcons';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 function LandingPage() {
   const { colorMode } = useColorMode();
   const theme = useTheme();
+
+  const roles = ['product owner.', 'ui developer.', 'ux researcher.'];
+  const [text, setText] = useState('');
+const [roleIndex, setRoleIndex] = useState(0);
+const [isDeleting, setIsDeleting] = useState(false);
+
+useEffect(() => {
+  const currentRole = roles[roleIndex];
+  const typingSpeed = isDeleting ? 60 : 100;
+  const pauseTime = 1200;
+
+  const timeout = setTimeout(() => {
+    if (!isDeleting) {
+      const nextText = currentRole.substring(0, text.length + 1);
+      setText(nextText);
+
+      if (nextText === currentRole) {
+        setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseTime);
+      }
+    } else {
+      const nextText = currentRole.substring(0, text.length - 1);
+      setText(nextText);
+
+      if (nextText === '') {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }
+    }
+  }, typingSpeed);
+
+  return () => clearTimeout(timeout);
+}, [text, isDeleting, roleIndex]);
 
   return (
     <Box
@@ -64,18 +99,22 @@ function LandingPage() {
           }}
         >
           <Text
-            as='h3'
-            fontSize={{ base: '3rem', md: '3.5rem' }}
-            pl='1rem'
-            color={
-              colorMode === 'dark'
-                ? theme.colors.dark.h2
-                : theme.colors.light.h2
-            }
-            mb='1rem'
-          >
-            ui developer.
-          </Text>
+  as='h3'
+  fontSize={{ base: '3rem', md: '3.5rem' }}
+  pl='1rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.h2
+      : theme.colors.light.h2
+  }
+  mb='1rem'
+  minH={{ base: '4.5rem', md: '5rem' }}
+>
+  {text}
+  <Box as='span' animation='blink 1s step-end infinite'>
+    |
+  </Box>
+</Text>
         </motion.div>
         <motion.div
           initial='hidden'
