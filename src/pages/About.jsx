@@ -257,11 +257,7 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              A <strong>UI Developer</strong> chilling in Lisbon, where the sun
-              is warm and the pastéis de nata are unbeatable. With a quirky
-              blend of <strong>development</strong> and{' '}
-              <strong>product design</strong> tucked under my belt, I bring a
-              fresh perspective to the table.
+              A <strong>Product Owner</strong> based in Lisbon, where the sun is warm and the pastéis de nata are still unbeatable. With a unique blend of <strong>software engineering</strong>, <strong>UI development</strong>, and <strong>product design</strong>, I bridge the gap between technology and user experience, turning ideas into meaningful, scalable products.
             </Text>
 
             <Text
@@ -273,10 +269,7 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              Ever since I can remember, I have been fueled by{' '}
-              <strong>curiosity</strong>. It is what drove me from test tubes to
-              lines of code, always seeking to{' '}
-              <strong>understand and improve</strong>.
+             <strong>Curiosity</strong> has always been my driving force. It took me from experimenting with test tubes to building digital solutions, <strong>constantly learning, iterating, and improving along the way.</strong>
             </Text>
 
             <Text
@@ -288,11 +281,7 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              I've got a knack for turning ideas into reality, whether I'm
-              tweaking code or crafting pixel-perfect designs. It's like being a
-              mad scientist in a digital lab,{' '}
-              <strong>mixing creativity with logic</strong> to cook up something
-              truly magical.
+              Today, I thrive at the intersection of product, design, and engineering, <strong>aligning teams, shaping product vision, and delivering experiences that truly make a difference</strong>. I love transforming complex problems into simple, intuitive solutions that people actually enjoy using.
             </Text>
 
             <Text
@@ -304,9 +293,7 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              When I'm not lost in the digital wilderness, you will find me
-              chasing sunsets with my camera, plotting world domination over a
-              board game, or sipping espresso at the latest hipster café.
+             When I step away from the screen, you’ll probably find me swimming to clear my mind, getting competitive over a board game, or visiting the best coffee spot in Lisbon: Coé Café.
             </Text>
 
             <Text
@@ -318,8 +305,7 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              I'm here to make a difference, to shake things up, and to{' '}
-              <strong>create experiences that leave a lasting impact</strong>.
+              I’m here to build impactful products and create things <strong>that matter.</strong>
             </Text>
 
             <Text
@@ -332,7 +318,7 @@ function About() {
               }
             >
               {' '}
-              Lets make some magic happen!
+              Let’s build something meaningful together.
             </Text>
 
             <Link to='/contact'>
@@ -494,7 +480,7 @@ function About() {
           <Box margin='4rem 2rem 2rem 2rem'>
             <box-icon
               type='solid'
-              name='devices'
+              name='brain'
               color={
                 colorMode === 'dark'
                   ? theme.colors.dark.text
@@ -511,7 +497,7 @@ function About() {
                   : theme.colors.light.h3
               }
             >
-              The Full Package
+              Product Strategy
             </Text>
             <Text
               color={
@@ -520,8 +506,7 @@ function About() {
                   : theme.colors.light.text
               }
             >
-              Get the best of both worlds for your product, capture your best
-              ideas and get fully functional features.
+              I define product vision, prioritize what matters, and align teams to build impactful and user-centered solutions.
             </Text>
           </Box>
         </Box>
