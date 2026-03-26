@@ -12,6 +12,7 @@ import Acervo from '../assets/webdevprojects/Acervo.png';
 import Agora from '../assets/webdevprojects/Agora.png';
 import VolleyBomb from '../assets/webdevprojects/Volleybomb.png';
 import Choclo from '../assets/uxuiprojects/ChocloWebsite.png';
+import Remynd from '../assets/uxuiprojects/remynd-hero.png';
 import Millennium from '../assets/uxuiprojects/Millenium.png';
 import Fabrica from '../assets/uxuiprojects/Fabrica.png';
 import { Link } from 'react-router-dom';
@@ -30,62 +31,79 @@ function Portfolio() {
       case 'Ux/Ui Design':
         return (
           <Box
-            display='flex'
-            flexDirection={{ base: 'column', xl: 'row' }}
-            gap='2rem'
-            width='80rem'
-          >
-            <Link to='/portfolio/uxuidesign/chocloproject'>
-              <Box>
-                <Image src={Choclo} alt='Choclo Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Choclo Project
-                </Text>
-              </Box>
-            </Link>
+  display='grid'
+  gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
+  gap='2rem'
+  width='80rem'
+>
+  <Link to='/portfolio/uxuidesign/remyndfoundations'>
+    <Box>
+      <Image src={Remynd} alt='Remynd Project' />
+      <Text
+        mt='1rem'
+        fontWeight='600'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        Remynd
+      </Text>
+    </Box>
+  </Link>
 
-            <Link to='/portfolio/uxuidesign/millenniumproject'>
-              <Box>
-                <Image src={Millennium} alt='Millennium Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Millennium Project
-                </Text>
-              </Box>
-            </Link>
+  <Link to='/portfolio/uxuidesign/chocloproject'>
+    <Box>
+      <Image src={Choclo} alt='Choclo Project' />
+      <Text
+        mt='1rem'
+        fontWeight='600'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        Choclo Project
+      </Text>
+    </Box>
+  </Link>
 
-            <Link to='/portfolio/uxuidesign/fabricaproject'>
-              <Box>
-                <Image src={Fabrica} alt='Fabrica Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Fabrica Project
-                </Text>
-              </Box>
-            </Link>
-          </Box>
+  <Link to='/portfolio/uxuidesign/fabricaproject'>
+    <Box>
+      <Image src={Fabrica} alt='Fabrica Project' />
+      <Text
+        mt='1rem'
+        fontWeight='600'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        Fabrica Project
+      </Text>
+    </Box>
+  </Link>
+
+  <Link to='/portfolio/uxuidesign/millenniumproject'>
+    <Box>
+      <Image src={Millennium} alt='Millennium Project' />
+      <Text
+        mt='1rem'
+        fontWeight='600'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        Millennium Project
+      </Text>
+    </Box>
+  </Link>
+</Box>
         );
       case 'Web Development':
         return (
@@ -262,6 +280,24 @@ function Portfolio() {
                   </Text>
                 </Box>
               </Link>
+            </Flex>
+            <Flex flexDirection='row' gap='2rem'>
+               <Link to='/portfolio/uxuidesign/remyndfoundations'>
+              <Box>
+                <Image src={Remynd} alt='Remynd Project' />
+                <Text
+                  mt='1rem'
+                  fontWeight='600'
+                  color={
+                    colorMode === 'dark'
+                      ? theme.colors.dark.text
+                      : theme.colors.light.text
+                  }
+                >
+                  Remynd
+                </Text>
+              </Box>
+            </Link>
             </Flex>
           </Box>
         );
