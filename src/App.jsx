@@ -10,7 +10,7 @@ import ChocloProject from './pages/uxuiprojects/ChocloProject';
 import VolleyBombProject from './pages/webdevprojects/VolleyBombProject';
 import AgoraProject from './pages/webdevprojects/AgoraProject';
 import AcervoProject from './pages/webdevprojects/AcervoProject';
-import RemyndFoundations from './pages/uxuiprojects/RemyndFoundations';
+import RemyndProduct from './pages/productowner/RemyndProduct';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -49,10 +49,6 @@ function App() {
             path='/portfolio/uxuidesign/chocloproject'
             element={<ChocloProject />}
           />
-           <Route
-            path='/portfolio/uxuidesign/remyndfoundations'
-            element={<RemyndFoundations />}
-          />
           <Route
             path='/portfolio/webdevelopment/volleybombproject'
             element={<VolleyBombProject />}
@@ -64,6 +60,10 @@ function App() {
           <Route
             path='/portfolio/webdevelopment/acervoproject'
             element={<AcervoProject />}
+          />
+          <Route
+            path='/portfolio/productowner/remyndproduct'
+            element={<RemyndProduct />}
           />
           <Route path='/contact' element={<Contact />} />
         </Routes>

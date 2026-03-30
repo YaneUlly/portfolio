@@ -7,304 +7,84 @@ import {
   Image,
   useColorMode,
   useTheme,
+  SimpleGrid,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+
 import Acervo from '../assets/webdevprojects/Acervo.png';
 import Agora from '../assets/webdevprojects/Agora.png';
 import VolleyBomb from '../assets/webdevprojects/Volleybomb.png';
 import Choclo from '../assets/uxuiprojects/ChocloWebsite.png';
-import Remynd from '../assets/uxuiprojects/remynd-hero.png';
+import Remynd from '../assets/productowner/hero-photos.png';
 import Millennium from '../assets/uxuiprojects/Millenium.png';
 import Fabrica from '../assets/uxuiprojects/Fabrica.png';
-import { Link } from 'react-router-dom';
 
 function Portfolio() {
   const [selectedOption, setSelectedOption] = useState('All');
   const { colorMode } = useColorMode();
   const theme = useTheme();
 
-  const handleOptionClick = option => {
-    setSelectedOption(option);
-  };
+  const textColor =
+    colorMode === 'dark' ? theme.colors.dark.text : theme.colors.light.text;
 
-  const renderProjects = () => {
-    switch (selectedOption) {
-      case 'Ux/Ui Design':
-        return (
-          <Box
-  display='grid'
-  gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
-  gap='2rem'
-  width='80rem'
->
-  <Link to='/portfolio/uxuidesign/remyndfoundations'>
-    <Box>
-      <Image src={Remynd} alt='Remynd Project' />
-      <Text
-        mt='1rem'
-        fontWeight='600'
-        color={
-          colorMode === 'dark'
-            ? theme.colors.dark.text
-            : theme.colors.light.text
-        }
-      >
-        Remynd
-      </Text>
-    </Box>
-  </Link>
+  const h1Color =
+    colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1;
 
-  <Link to='/portfolio/uxuidesign/chocloproject'>
-    <Box>
-      <Image src={Choclo} alt='Choclo Project' />
-      <Text
-        mt='1rem'
-        fontWeight='600'
-        color={
-          colorMode === 'dark'
-            ? theme.colors.dark.text
-            : theme.colors.light.text
-        }
-      >
-        Choclo Project
-      </Text>
-    </Box>
-  </Link>
+  const h2Color =
+    colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2;
 
-  <Link to='/portfolio/uxuidesign/fabricaproject'>
-    <Box>
-      <Image src={Fabrica} alt='Fabrica Project' />
-      <Text
-        mt='1rem'
-        fontWeight='600'
-        color={
-          colorMode === 'dark'
-            ? theme.colors.dark.text
-            : theme.colors.light.text
-        }
-      >
-        Fabrica Project
-      </Text>
-    </Box>
-  </Link>
+  const projects = [
+    {
+      title: 'Acervo Project',
+      image: Acervo,
+      link: '/portfolio/webdevelopment/acervoproject',
+      category: 'Web Development',
+    },
+    {
+      title: 'Agora Project',
+      image: Agora,
+      link: '/portfolio/webdevelopment/agoraproject',
+      category: 'Web Development',
+    },
+    {
+      title: 'Volleybomb Project',
+      image: VolleyBomb,
+      link: '/portfolio/webdevelopment/volleybombproject',
+      category: 'Web Development',
+    },
+    {
+      title: 'Choclo Project',
+      image: Choclo,
+      link: '/portfolio/uxuidesign/chocloproject',
+      category: 'Ux/Ui Design',
+    },
+    {
+      title: 'Fabrica Project',
+      image: Fabrica,
+      link: '/portfolio/uxuidesign/fabricaproject',
+      category: 'Ux/Ui Design',
+    },
+    {
+      title: 'Millennium Project',
+      image: Millennium,
+      link: '/portfolio/uxuidesign/millenniumproject',
+      category: 'Ux/Ui Design',
+    },
+    {
+      title: 'Remynd',
+      image: Remynd,
+      link: '/portfolio/productowner/remyndproduct',
+      category: 'Product Owner',
+    },
+  ];
 
-  <Link to='/portfolio/uxuidesign/millenniumproject'>
-    <Box>
-      <Image src={Millennium} alt='Millennium Project' />
-      <Text
-        mt='1rem'
-        fontWeight='600'
-        color={
-          colorMode === 'dark'
-            ? theme.colors.dark.text
-            : theme.colors.light.text
-        }
-      >
-        Millennium Project
-      </Text>
-    </Box>
-  </Link>
-</Box>
-        );
-      case 'Web Development':
-        return (
-          <Box
-            display='flex'
-            flexDirection={{ base: 'column', xl: 'row' }}
-            gap='2rem'
-            width='80rem'
-          >
-            <Link to='/portfolio/webdevelopment/acervoproject'>
-              <Box>
-                <Image src={Acervo} alt='Acervo Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Acervo Project
-                </Text>
-              </Box>
-            </Link>
+  const filteredProjects =
+    selectedOption === 'All'
+      ? projects
+      : projects.filter(project => project.category === selectedOption);
 
-            <Link to='/portfolio/webdevelopment/agoraproject'>
-              <Box>
-                <Image src={Agora} alt='Agora Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Agora Project
-                </Text>
-              </Box>
-            </Link>
-
-            <Link to='/portfolio/webdevelopment/volleybombproject'>
-              <Box>
-                <Image src={VolleyBomb} alt='Volleybomb Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Volleybomb Project
-                </Text>
-              </Box>
-            </Link>
-          </Box>
-        );
-      default:
-        return (
-          <Box
-            display='flex'
-            flexDirection={{ base: 'column', xl: 'row' }}
-            flexWrap={{ xl: 'wrap' }}
-            gap='2rem'
-            width='60rem'
-          >
-            <Flex flexDirection='row' gap='2rem'>
-              <Link to='/portfolio/webdevelopment/acervoproject'>
-                <Box>
-                  <Image src={Acervo} alt='Acervo Project' />
-                  <Text
-                    mt='1rem'
-                    fontWeight='600'
-                    color={
-                      colorMode === 'dark'
-                        ? theme.colors.dark.text
-                        : theme.colors.light.text
-                    }
-                  >
-                    Acervo Project
-                  </Text>
-                </Box>
-              </Link>
-
-              <Link to='/portfolio/uxuidesign/chocloproject'>
-                <Box>
-                  <Image src={Choclo} alt='Choclo Project' />
-                  <Text
-                    mt='1rem'
-                    fontWeight='600'
-                    color={
-                      colorMode === 'dark'
-                        ? theme.colors.dark.text
-                        : theme.colors.light.text
-                    }
-                  >
-                    Choclo Project
-                  </Text>
-                </Box>
-              </Link>
-            </Flex>
-
-            <Flex flexDirection='row' gap='2rem'>
-              <Link to='/portfolio/webdevelopment/agoraproject'>
-                <Box>
-                  <Image src={Agora} alt='Agora Project' />
-                  <Text
-                    mt='1rem'
-                    fontWeight='600'
-                    color={
-                      colorMode === 'dark'
-                        ? theme.colors.dark.text
-                        : theme.colors.light.text
-                    }
-                  >
-                    Agora Project
-                  </Text>
-                </Box>
-              </Link>
-
-              <Link to='/portfolio/uxuidesign/millenniumproject'>
-                <Box>
-                  <Image src={Millennium} alt='Millennium Project' />
-                  <Text
-                    mt='1rem'
-                    fontWeight='600'
-                    color={
-                      colorMode === 'dark'
-                        ? theme.colors.dark.text
-                        : theme.colors.light.text
-                    }
-                  >
-                    Millennium Project
-                  </Text>
-                </Box>
-              </Link>
-            </Flex>
-
-            <Flex flexDirection='row' gap='2rem'>
-              <Link to='/portfolio/webdevelopment/volleybombproject'>
-                <Box>
-                  <Image src={VolleyBomb} alt='Volleybomb Project' />
-                  <Text
-                    mt='1rem'
-                    fontWeight='600'
-                    color={
-                      colorMode === 'dark'
-                        ? theme.colors.dark.text
-                        : theme.colors.light.text
-                    }
-                  >
-                    Volleybomb Project
-                  </Text>
-                </Box>
-              </Link>
-
-              <Link to='/portfolio/uxuidesign/fabricaproject'>
-                <Box>
-                  <Image src={Fabrica} alt='Fabrica Project' />
-                  <Text
-                    mt='1rem'
-                    fontWeight='600'
-                    color={
-                      colorMode === 'dark'
-                        ? theme.colors.dark.text
-                        : theme.colors.light.text
-                    }
-                  >
-                    Fabrica Project
-                  </Text>
-                </Box>
-              </Link>
-            </Flex>
-            <Flex flexDirection='row' gap='2rem'>
-               <Link to='/portfolio/uxuidesign/remyndfoundations'>
-              <Box>
-                <Image src={Remynd} alt='Remynd Project' />
-                <Text
-                  mt='1rem'
-                  fontWeight='600'
-                  color={
-                    colorMode === 'dark'
-                      ? theme.colors.dark.text
-                      : theme.colors.light.text
-                  }
-                >
-                  Remynd
-                </Text>
-              </Box>
-            </Link>
-            </Flex>
-          </Box>
-        );
-    }
-  };
   return (
-    <div>
+    <Box>
       <Box
         margin={{
           base: '3rem 1rem 3rem 1rem',
@@ -312,32 +92,18 @@ function Portfolio() {
           xl: '5rem 8rem 5rem 5rem',
         }}
       >
-        <Text
-          fontSize={{ base: '1.8rem', lg: '3.8rem' }}
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
-          }
-          height={{ base: '34px', md: '54px' }}
-        >
+        <Text fontSize={{ base: '1.8rem', lg: '3.8rem' }} color={h2Color}>
           come take a look into
         </Text>
-        <Text
-          fontSize={{ base: '2.2rem', md: '5rem' }}
-          fontWeight='600'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-        >
+
+        <Text fontSize={{ base: '2.2rem', md: '5rem' }} fontWeight='600' color={h1Color}>
           my work here...
         </Text>
+
         <Text
           mt={{ base: '1rem', lg: '0' }}
           paddingRight={{ base: '0', lg: '37rem' }}
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
+          color={textColor}
         >
           Below, you will find a selection of my projects and experiences,
           including commissioned work and some projects completed during my
@@ -347,52 +113,49 @@ function Portfolio() {
 
       <Flex
         justifyContent='center'
+        flexWrap='wrap'
         gap={{ base: '4', lg: '8' }}
-        m={{
-          base: '2rem 0 2rem 0',
-          lg: '8rem 0 4rem 0',
-        }}
+        m={{ base: '2rem 0', lg: '8rem 0 4rem 0' }}
       >
-        {['All', 'Ux/Ui Design', 'Web Development'].map(option => (
+        {['All', 'Ux/Ui Design', 'Web Development', 'Product Owner'].map(option => (
           <Text
             key={option}
             fontSize='1.2rem'
-            color={
-              selectedOption === option
-                ? colorMode === 'dark'
-                  ? theme.colors.dark.h1
-                  : theme.colors.light.h1
-                : colorMode === 'dark'
-                ? theme.colors.dark.h2
-                : theme.colors.light.h2
-            }
-            borderBottom={
-              selectedOption === option
-                ? `2px solid ${
-                    colorMode === 'dark'
-                      ? theme.colors.dark.h1
-                      : theme.colors.light.h1
-                  }`
-                : 'none'
-            }
+            color={selectedOption === option ? h1Color : h2Color}
+            borderBottom={selectedOption === option ? `2px solid ${h1Color}` : 'none'}
             cursor='pointer'
-            onClick={() => handleOptionClick(option)}
+            onClick={() => setSelectedOption(option)}
           >
             {option}
           </Text>
         ))}
       </Flex>
-      <Flex
-        justifyContent='center'
-        gap='8'
+
+      <Box
         m={{
           base: '3rem 1rem 3rem 1rem',
           lg: '3rem 2rem 4rem 2rem',
-          xl: '3rem 0 8rem 0',
+          xl: '3rem 5rem 8rem 5rem',
         }}
       >
-        {renderProjects()}
-      </Flex>
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} spacing='2rem'>
+          {filteredProjects.map(project => (
+            <Link key={project.title} to={project.link}>
+              <Box>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  w='100%'
+                  borderRadius='0.5rem'
+                />
+                <Text mt='1rem' fontWeight='600' color={textColor}>
+                  {project.title}
+                </Text>
+              </Box>
+            </Link>
+          ))}
+        </SimpleGrid>
+      </Box>
 
       <Box
         margin={{
@@ -401,32 +164,18 @@ function Portfolio() {
           xl: '5rem 8rem 5rem 5rem',
         }}
       >
-        <Text
-          fontSize={{ base: '1.8rem', lg: '2rem' }}
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h2 : theme.colors.light.h2
-          }
-          height={{ base: '35px', md: '25px' }}
-        >
+        <Text fontSize={{ base: '1.8rem', lg: '2rem' }} color={h2Color}>
           inspired by my work?
         </Text>
-        <Text
-          fontSize={{ base: '2.2rem', md: '3.8rem' }}
-          fontWeight='600'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-        >
+
+        <Text fontSize={{ base: '2.2rem', md: '3.8rem' }} fontWeight='600' color={h1Color}>
           come say hi :)
         </Text>
+
         <Text
           mt={{ base: '1rem', lg: '0' }}
           paddingRight={{ base: '0', lg: '37rem' }}
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
+          color={textColor}
         >
           If you think my skills and projects align with what you are looking
           for, I would love to hear from you. Let's connect and discuss how I
@@ -437,21 +186,9 @@ function Portfolio() {
           <Button
             variant='outline'
             borderWidth='0.1rem'
-            borderColor={
-              colorMode === 'dark'
-                ? theme.colors.dark.h1
-                : theme.colors.light.h1
-            }
-            bgColor={
-              colorMode === 'dark'
-                ? theme.colors.dark.h1
-                : theme.colors.light.h1
-            }
-            color={
-              colorMode === 'dark'
-                ? theme.colors.dark.bg
-                : theme.colors.light.bg
-            }
+            borderColor={h1Color}
+            bgColor={h1Color}
+            color={colorMode === 'dark' ? theme.colors.dark.bg : theme.colors.light.bg}
             mt='1rem'
             p='1rem 2rem'
             cursor='pointer'
@@ -461,17 +198,14 @@ function Portfolio() {
                 colorMode === 'dark'
                   ? theme.colors.dark.bg
                   : theme.colors.light.bg,
-              color:
-                colorMode === 'dark'
-                  ? theme.colors.dark.h1
-                  : theme.colors.light.h1,
+              color: h1Color,
             }}
           >
             Contact
           </Button>
         </Link>
       </Box>
-    </div>
+    </Box>
   );
 }
 
