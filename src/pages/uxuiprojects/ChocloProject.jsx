@@ -235,7 +235,7 @@ function ChocloProject() {
                 </Tr>
                 <Tr>
                   <Td>Year</Td>
-                  <Td>2024</Td>
+                  <Td>2023 - 2024</Td>
                 </Tr>
                 <Tr>
                   <Td>Scope of Work</Td>

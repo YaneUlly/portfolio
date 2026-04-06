@@ -16,7 +16,7 @@ function LandingPage() {
   const { colorMode } = useColorMode();
   const theme = useTheme();
 
-  const roles = ['product owner.', 'ui developer.', 'ux researcher.'];
+  const roles = ['product designer', 'ui developer', 'product owner'];
   const [text, setText] = useState('');
 const [roleIndex, setRoleIndex] = useState(0);
 const [isDeleting, setIsDeleting] = useState(false);
@@ -59,22 +59,24 @@ useEffect(() => {
       display='flex'
       flexDirection={{ base: 'column', lg: 'row' }}
       alignItems='center'
-      justifyContent={'space-evenly'}
+       justifyContent='center'
+  gap={{ base: '2rem', lg: '8rem' }}
     >
       <Flex
         flexDirection='column'
-        marginTop={{ base: '6rem', md: '0' }}
-        mb={{ base: '1rem', md: '0' }}
+  marginTop={{ base: '6rem', md: '0' }}
+  mb={{ base: '1rem', md: '0' }}
+  minW={{ base: '100%', lg: '34rem' }}
       >
         <motion.div
           initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
+      whileInView='visible'
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ delay: 0.6, duration: 0.5 }}
+      variants={{
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+      }}
         >
           <Heading
             fontSize={{ base: '4.8rem', lg: '6rem' }}
@@ -109,6 +111,8 @@ useEffect(() => {
   }
   mb='1rem'
   minH={{ base: '4.5rem', md: '5rem' }}
+  minW='18ch'
+  whiteSpace='nowrap'
 >
   {text}
   <Box as='span' animation='blink 1s step-end infinite'>

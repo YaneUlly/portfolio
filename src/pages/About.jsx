@@ -191,24 +191,19 @@ function About() {
 
           <Box mt='2rem'>
             <Text paddingRight='2rem' color={textColor}>
-              A <strong>Product Owner</strong> based in Lisbon, where the sun is
-              warm and the pastéis de nata are still unbeatable. With a unique
-              blend of <strong>software engineering</strong>,{' '}
-              <strong>UI development</strong>, and{' '}
-              <strong>product design</strong>, I bridge the gap between
-              technology and user experience, turning ideas into meaningful,
-              scalable products.
+              A <strong>Product Designer</strong> based in Lisbon, where the sun is
+              warm and the pastéis de nata are still unbeatable. With a multidisciplinary background in <strong>product ownership</strong>, and {' '}
+              <strong>UI development</strong>, I bring a product-driven approach to design, connecting user needs, business goals, and technical feasibility to build meaningful digital experiences.
             </Text>
 
             <Text mt='1rem' paddingRight='2rem' color={textColor}>
               <strong>Curiosity</strong> has always been my driving force. It
-              took me from experimenting with test tubes to building digital
-              solutions, <strong>constantly learning, iterating, and improving along the way.</strong>
+              took me from scientific research to building digital products, shaping how I approach problems: <strong>with analytical thinking, empathy, and a continuous focus on learning and improvement.</strong>
             </Text>
 
             <Text mt='1rem' paddingRight='2rem' color={textColor}>
               Today, I thrive at the intersection of product, design, and
-              engineering, <strong>aligning teams, shaping product vision, and delivering experiences that truly make a difference</strong>.
+              engineering, <strong>contributing across discovery, UX/UI design, and delivery</strong>.
               I love transforming complex problems into simple, intuitive
               solutions that people actually enjoy using.
             </Text>
@@ -220,8 +215,8 @@ function About() {
             </Text>
 
             <Text mt='1rem' paddingRight='2rem' color={textColor}>
-              I’m here to build impactful products and create things{' '}
-              <strong>that matter.</strong>
+             I’m here to design products that{' '}
+              <strong>create real impact.</strong>
             </Text>
 
             <Text mt='1rem' paddingRight='2rem' color={textColor}>
