@@ -1,7 +1,5 @@
 import ChocloWebsite from '../../assets/uxuiprojects/ChocloWebsite.png';
-import PersonaChocloOne from '../../assets/uxuiprojects/PersonaChocloOne.jpg';
-import PersonaChocloTwo from '../../assets/uxuiprojects/PersonaChocloTwo.jpg';
-import PersonaChocloThree from '../../assets/uxuiprojects/PersonaChocloThree.jpg';
+import Personas from '../../assets/uxuiprojects/personas-choclo.png';
 import UserJourneyChocloOne from '../../assets/uxuiprojects/UserJourneyChocloOne.jpg';
 import UserJourneyChocloTwo from '../../assets/uxuiprojects/UserJourneyChocloTwo.jpg';
 import UserJourneyChocloThree from '../../assets/uxuiprojects/UserJourneyChocloThree.jpg';
@@ -13,6 +11,7 @@ import StyleGuideChoclo from '../../assets/uxuiprojects/StyleGuideChoclo.png';
 import BeforeAfterChocloOne from '../../assets/uxuiprojects/BeforeAfterChocloOne.png';
 import BeforeAfterChocloTwo from '../../assets/uxuiprojects/BeforeAfterChocloTwo.png';
 import BeforeAfterChocloThree from '../../assets/uxuiprojects/BeforeAfterChocloThree.png';
+import mockup from '../../assets/uxuiprojects/mockup-choclo.png';
 import Millennium from '../../assets/uxuiprojects/Millenium.png';
 import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
 import { useState, useEffect } from 'react';
@@ -24,6 +23,7 @@ import {
   Button,
   useColorMode,
   useTheme,
+  Center,
 } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -192,16 +192,7 @@ function ChocloProject() {
                 : theme.colors.light.text
             }
           >
-            <strong>
-              The main purpose of this project was to enhance the quality of
-              Choclo website
-            </strong>
-            . The central focus was on creating a platform that brings together
-            all the essential content for the{' '}
-            <strong>efficient promotion and marketing</strong> of the company
-            services. The website was developed in a standard web format,
-            ensuring a responsive and user-friendly experience for mobile
-            devices as well.
+          Choclo is a Peruvian restaurant in Lisbon that needed a <strong>website redesign</strong> to better support both <strong>customer decision-making</strong> and <strong>business goals</strong>.
           </Text>
           <Text
             mb='0.8rem'
@@ -211,10 +202,7 @@ function ChocloProject() {
                 : theme.colors.light.text
             }
           >
-            Choclo Ceviche is a <strong>Peruvian restaurant</strong> that opened
-            in September 2022 in Lisbon. One of the founders came to me as{' '}
-            <strong>Freelancer Product Designer</strong>, to help her improve
-            their website company and also create an e-commerce platform.
+            As a <strong>freelance Product Designer</strong>, I was brought in to <strong>improve the website experience</strong> and <strong>define the foundation for a future e-commerce platform</strong>. The project focused on making key information easier to access, reducing user friction, and creating a more consistent and responsive experience across devices.
           </Text>
 
           <TableContainer
@@ -238,10 +226,13 @@ function ChocloProject() {
                   <Td>2023 - 2024</Td>
                 </Tr>
                 <Tr>
+                  <Td>Role</Td>
+                  <Td>Freelance Product Designer</Td>
+                </Tr>
+                <Tr>
                   <Td>Scope of Work</Td>
                   <Td>
-                    Ux Research, Ui Design, Responsive Design, Wix Development,
-                    Prototyping, Wireframe
+                    UX Research, Information Architecture, UI Design, Responsive Design, Prototyping, Wix Development
                   </Td>
                 </Tr>
                 <Tr>
@@ -302,44 +293,64 @@ function ChocloProject() {
           Problem
         </Text>
 
-        <Box bg='rgba(220, 90, 53, 0.7)' w='100%' p={4}>
+        <Box w='100%' >
           <Text color='black'>
-            <strong>
-              Choclo website lacks precise information about their services,
-              which is crucial for users. Additionally, the design of the page
-              lacks intuitiveness and cleanliness, both of which are important
-              for a user-friendly experience.
-            </strong>
+            The existing website was not <strong>effectively supporting users in their decision-making journey</strong>. Important service information, such as menu details, booking guidance, opening hours, delivery options, and voucher usage, was either unclear or difficult to find. This created friction for users and <strong>increased the volume of repeated questions handled by the team</strong>. On top of that, the interface lacked consistency, readability, and visual hierarchy, which reduced clarity and trust.
           </Text>
         </Box>
       </Box>
 
-      <Box
-        p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
-      >
-        <Text
-          id='objective'
-          fontSize='2rem'
-          fontWeight='600'
-          mb='1rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-        >
-          Objective
-        </Text>
-        <Box bg='rgba(145, 187, 148, 0.7)' w='100%' p={4}>
-          <Text color='black'>
-            <strong>
-              Our objective is to enhance Choclo website, enabling users to
-              effortlessly discover comprehensive solutions to their inquiries,
-              which may not be readily available on other Choclo pages and also
-              reduce the amount of work that both our clients and Choclo needs,
-              to help them solve their queries.
-            </strong>
-          </Text>
-        </Box>
-      </Box>
+     <Flex
+  direction={{ base: 'column', md: 'row' }}
+  gap={6}
+>
+  <Box
+    flex="1"
+    p={{ base: '1.5rem 1rem', xl: '2rem 2rem 1.5rem 8rem' }}
+  >
+    <Text
+      id='objective'
+      fontSize='2rem'
+      fontWeight='600'
+      mb='1rem'
+      color={
+        colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+      }
+    >
+      Goal
+    </Text>
+
+    <Box w='100%'>
+      <Text color='black'>
+        Design a <strong>clearer</strong> and <strong>more effective website experience</strong> that improves access to <strong>key service information</strong>, <strong>supports customer intent</strong>, and <strong>reduces friction</strong> for both users and the business.
+      </Text>
+    </Box>
+  </Box>
+
+  <Box
+    flex="1"
+    p={{ base: '1.5rem 1rem', xl: '2rem 10rem 1.5rem 2rem' }}
+  >
+    <Text
+      id='role'
+      fontSize='2rem'
+      fontWeight='600'
+      mb='1rem'
+      color={
+        colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+      }
+    >
+      My role
+    </Text>
+
+    <Box w='100%'>
+      <Text color='black'>
+        As a Freelance Product Designer, <strong>I led the redesign of Choclo’s website from discovery to implementation</strong>. I conducted research, defined the information architecture, prioritized key features, designed the responsive user interface, and built the final experience in Wix Studio.
+      </Text>
+    </Box>
+   
+  </Box>
+</Flex>
 
       <Box
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
@@ -353,23 +364,8 @@ function ChocloProject() {
             colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
           }
         >
-          Research
+          Discovery
         </Text>
-        <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
-          }
-        >
-          Intro
-        </Text>
-
-        <Box
-          display='flex'
-          flexDirection={{ base: 'column', md: 'row' }}
-          gap={{ base: '1.5rem', md: '2rem' }}
-        >
           <Box>
             <Text
               mb='0.8rem'
@@ -379,768 +375,305 @@ function ChocloProject() {
                   : theme.colors.light.text
               }
             >
-              I started the research by analyzing a variety of sources,
-              including <strong>customer reviews</strong>,{' '}
-              <strong>comments</strong>, and the{' '}
-              <strong>submission forms available on their website</strong>,{' '}
-              <strong>
-                with the goal of identifying any potential Pain Points{' '}
-              </strong>
-              that we could address to enhance the website.
+             To better understand the problem, I <strong>analyzed both business and user perspectives</strong>. I reviewed customer reviews, website submission forms, and the existing landing page, then complemented this with <strong>benchmarking</strong> and <strong>two rounds of discovery interviews</strong>: one with Choclo staff and another with people who frequently dine out.
             </Text>
-            <Text
-              mb='0.8rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              A closer examination of their service-related reviews and comments
-              has revealed the following insights:
-            </Text>
-            <UnorderedList
-              mb='1.2rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              <ListItem mb='0.8rem'>
-                Their <strong>customer base is notably diverse</strong>,
-                encompassing individuals who communicate primarily in Spanish,
-                English, and Portuguese.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                Some{' '}
-                <strong>
-                  customers encounter challenges when seeking specific details
-                </strong>{' '}
-                related to reservations, operating hours, delivery options, and
-                voucher usage.
-              </ListItem>
-            </UnorderedList>
           </Box>
 
-          <Box>
-            <Text
-              mb='0.8rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              After analyzing the comments, the next step was to analyze the
-              Choclo current Landing Page, this enabled me to{' '}
-              <strong>harmonize the company visual identity</strong> while also{' '}
-              <strong>identifying any additional Pain Points</strong> that
-              require attention and resolution.
-            </Text>
-            <Text
-              mb='0.8rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              In conclusion:
-            </Text>
-            <UnorderedList
-              mb='1.2rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              <ListItem mb='0.8rem'>
-                The page lacks <strong>Consistency</strong> (buttons with
-                different colors, backgrounds, text styles, etc.).
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                Minimize <strong>user cognitive load</strong>: excessive use of
-                visual elements, strong colors, bold text, etc.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                This brings us to <strong>Visual Hierarchy</strong> and{' '}
-                <strong>Information Architecture</strong>: the importance of
-                contrast and arrangement of elements on the page.
-              </ListItem>
-              <ListItem mb='0.8rem'>Spelling errors.</ListItem>
-            </UnorderedList>
-          </Box>
-        </Box>
 
-        <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          mt='2rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
-          }
-        >
-          Benchmarking
-        </Text>
-        <Text
-          mb='0.8rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          I conducted thorough research within the catering market of Lisbon,
-          targeting restaurants that:
-        </Text>
-        <UnorderedList
-          mb='1.2rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          <ListItem mb='0.8rem'>
-            Operate within <strong>the same segment as Choclo </strong>
-            (restaurants specializing in Peruvian cuisine)
-          </ListItem>
-          <ListItem mb='0.8rem'>
-            <strong>Esteemed restaurants in Lisbon.</strong> While they might
-            not operate within the same field or directly compete with Choclo,
-            they can serve as valuable examples due to their high conversion
-            rates and positive customer feedback.
-          </ListItem>
-        </UnorderedList>
-        <Text
-          mb='0.8rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          I studied{' '}
-          <strong>
-            how they crafted their landing pages to achieve favorable outcomes
-            and extract valuable insights
-          </strong>{' '}
-          to inform the development of Choclo own Landing Page.
-        </Text>
+       <Flex
+  direction={{ base: 'column', md: 'row' }}
+  gap={10}
+  align="flex-start"
+>
+  {/* BLOCO 1 */}
+  <Box flex="1">
+    <Text
+      fontSize='1.5rem'
+      mb='0.8rem'
+      mt='2rem'
+      color={
+        colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+      }
+    >
+      Research methods
+    </Text>
 
-        <Box
-          overflowX='auto'
-          mt='1.5rem'
-          mb='2rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          <TableContainer>
-            <Table variant='simple' size='sm'>
-              <Thead>
-                <Tr>
-                  <Th
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Explore
-                  </Th>
-                  <Th
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Avoid
-                  </Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Medals or other prizes highlights.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Use of Uppercase texts
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Visible actions.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    No CTA or CTA without contrast.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Homepage with only essentials options to choose from.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Not so much info about the company.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Contact and info are easily found.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Open new tab or browser when someone click on a content.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Breadcrumbs.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Ask unnecessary and complex questions in a form.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Scannable texts.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Repeated Information.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Use of real people images for more credibility.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Use of unrelated image and no real people images.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Consistent Navigation.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Dont use FAQ.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Transparent Pricing.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Not responsive website.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Provide value for users registering in a form.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Bugs and Errors.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Use of Icons.
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Place all the content in just one page.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    {''}
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Use a lot whitespace.
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
-        </Box>
+    <UnorderedList
+      mb='1.2rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.text
+          : theme.colors.light.text
+      }
+    >
+      <ListItem mb='0.8rem'>
+        Review analysis (customer reviews, comments, and website forms)
+      </ListItem>
+      <ListItem mb='0.8rem'>Existing website audit</ListItem>
+      <ListItem mb='0.8rem'>Competitive benchmark</ListItem>
+      <ListItem mb='0.8rem'>Staff interview</ListItem>
+      <ListItem mb='0.8rem'>
+        Public interview with target users
+      </ListItem>
+    </UnorderedList>
+  </Box>
 
-        <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          mt='2rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
-          }
-        >
-          Customer Discovery
-        </Text>
-        <Text
-          mb='0.8rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          I have elected to conduct a pair of <strong>interviews</strong> to
-          validate our problem statement, contribute to persona creation, and
-          kickstart our ideation process.
-        </Text>
-        <Text
-          mb='0.8rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          The initial interview will involve <strong>Choclo staff</strong>,
-          while the second will be directed towards our target audience:{' '}
-          <strong>individuals who dine out.</strong>
-        </Text>
+  {/* BLOCO 2 */}
+  <Box flex="1">
+    <Text
+      fontSize='1.5rem'
+      mb='0.8rem'
+      mt='2rem'
+      color={
+        colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+      }
+    >
+      What I wanted to understand
+    </Text>
 
+    <UnorderedList
+      mb='1.2rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.text
+          : theme.colors.light.text
+      }
+    >
+      <ListItem mb='0.8rem'>
+        What information users look for when deciding where to eat
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        What questions or frustrations they had when trying to find restaurant-related information
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Which channels they used before visiting the website
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        What the business team perceived as recurring customer pain points
+      </ListItem>
+    </UnorderedList>
+  </Box>
+</Flex>
+
+<Box>
         <Text
-          mb='0.8rem'
+          id='research'
+          fontSize='2rem'
           fontWeight='600'
+          mb='1rem'
+          paddingTop='1.5rem'
           color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
           }
         >
-          What it is our goal?
+          Key insights
         </Text>
-        <Box
-          bg='rgba(145, 187, 148, 0.7)'
-          w='100%'
-          p={4}
-          display='flex'
-          flexDirection='row'
-          gap='1rem'
-        >
-          <box-icon name='bulb' size='md'></box-icon>
-          <Text color='black'>
-            We aim to learn more about our customers and gain an understanding
-            of the information that holds significance for them when deciding on
-            a dining destination. Furthermore, we are interested in identifying
-            any challenges they may have encountered while seeking
-            restaurant-related information.
-          </Text>
-        </Box>
-
-        <Box
-          display='flex'
-          flexDirection={{ base: 'column', md: 'row' }}
-          gap={{ base: '1.5rem', md: '3rem' }}
-          mt='2rem'
-          mb='2rem'
-        >
           <Box>
-            <Text
-              mb='0.8rem'
-              fontWeight='600'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              Staff Interview insights:
-            </Text>
-            <UnorderedList
-              mb='1.2rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              <ListItem mb='0.8rem'>
-                Social media plays a significant role in raising awareness about
-                Choclo, along with the influence of reviews, recommendations,
-                and various online groups.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                The majority of Choclo clientele consists of Latin customers,
-                with a substantial community of English speakers and individuals
-                from diverse nationalities following suit.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                A significant portion of their customer base has specific
-                requests regarding allergens and other food preferences.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                Online photos and the content people post have a profound
-                influence on their decision-making process.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                There are no recurring complaints or concerns about the public,
-                the only one that they have noticed its about the reservations.
-              </ListItem>
-              <ListItem>
-                Also the feedback and suggestions are not relevant.
-              </ListItem>
-            </UnorderedList>
+           <UnorderedList
+      mb='1.2rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.text
+          : theme.colors.light.text
+      }
+    >
+      <ListItem mb='0.8rem'>
+        Users often turned to the website only after failing to find the information they needed on Instagram or Google, which meant <strong>the website had to act as a reliable source of clarity rather than just a brand presence</strong>.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Menu, prices, reviews, food photos, and location were some of <strong>the most important factors influencing users’ decision-making</strong> when choosing a restaurant.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Reservation-related information was one of <strong>the main recurring friction points</strong>, both for users trying to find answers and for the team handling repeated questions.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Choclo’s audience was diverse, with Spanish, English, and Portuguese speakers, which reinforced the need for clear, scannable communication and intuitive information architecture.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        The existing website lacked visual consistency, readability, and clear hierarchy, making it harder for users to quickly <strong>understand the content</strong> and <strong>find essential information</strong>.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Benchmarking showed that high-performing restaurant websites made core actions highly visible, used concise and scannable content, and built trust through real photography, reviews, and clear service information.
+      </ListItem>
+    </UnorderedList>
+          </Box>
           </Box>
 
-          <Box>
-            <Text
-              mb='0.8rem'
-              fontWeight='600'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              Public answers analysis:
-            </Text>
-            <UnorderedList
-              mb='1.2rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              <ListItem mb='0.8rem'>
-                The most utilized platform by our users to discover new places
-                is Instagram, and they also make use of Google Reviews for the
-                same purpose.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                The most important information includes the menu, prices,
-                reviews, dish photos, and location.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                We can also see that conveying the restaurant history and its
-                cuisine adds value to the location and also influences the user
-                decision-making process.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                Despite a large portion of the audience stating that they dont
-                often leave reviews, virtually all of them also rely on reviews
-                to make decisions.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                We observed that many users turn to the website when they cant
-                find the necessary information on Instagram or Google.
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                We observed that many users turn to the website when they cant
-                find the necessary information on Instagram or Google.
-              </ListItem>
-            </UnorderedList>
-          </Box>
-        </Box>
+ <Flex
+  direction={{ base: 'column', md: 'row' }}
+  gap={10}
+  align="flex-start"
+>
+  {/* BLOCO 2 */}
+  <Box flex="1">
+    <Text
+      fontSize='1.5rem'
+      mb='0.8rem'
+      mt='2rem'
+      color={
+        colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+      }
+    >
+      User archetypes
+    </Text>
+    <Text
+  mb='0.8rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  From the research, three recurring user patterns emerged:
+</Text>
 
-        <Text
-          mb='0.8rem'
-          color={
-            colorMode === 'dark'
-              ? theme.colors.dark.text
-              : theme.colors.light.text
-          }
-        >
-          This can serve as a useful guide for structuring the{' '}
-          <strong>website information architecture</strong> and prioritizing the
-          information that holds the most relevance for users when making
-          decisions. Adding some reviews in Choclo Landing Page, will bring more
-          reasons to the public rely on them. Using the website as a backup
-          resource that provides greater credibility to users. This emphasizes
-          the significance of an intuitive and comprehensive design to better
-          cater to user needs.
-        </Text>
+    <Box
+      mt='1.5rem'
+      w="100%" 
+    >
+      <img
+        src={Personas}
+        alt='persona-choclo'
+        style={{ width: '100%', height: 'auto' }}
+      />
+    </Box>
+  </Box>
 
-        <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          mt='2rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
-          }
-        >
-          Personas
-        </Text>
-        <Box
-          maxWidth={{ base: '90%', md: '70%', xl: '100%' }}
-          display='flex'
-          flexDirection='row'
-          gap='2rem'
-          overflowX='auto'
-          marginTop='1.5rem'
-        >
-          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
-            <img
-              src={PersonaChocloOne}
-              alt='persona-choclo'
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
-            <img
-              src={PersonaChocloTwo}
-              alt='persona-choclo'
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-          <Box flex='0 0 auto' width={{ base: '300px', md: '500px' }}>
-            <img
-              src={PersonaChocloThree}
-              alt='persona-choclo'
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-        </Box>
+  {/* BLOCO 1 */}
+  <Box flex="1">
+    <Text
+      fontSize='1.5rem'
+      mb='0.8rem'
+      mt='2rem'
+      color={
+        colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+      }
+    >
+      Benchmark takeaways
+    </Text>
+
+    <Text
+      mb='0.8rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.text
+          : theme.colors.light.text
+      }
+    >
+      To complement these findings, I also reviewed restaurant websites in Lisbon, including both direct competitors and well-established local brands. A few recurring patterns stood out:
+    </Text>
+
+    <UnorderedList
+      mb='1.2rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.text
+          : theme.colors.light.text
+      }
+    >
+      <ListItem mb='0.8rem'>
+        High-performing websites made core actions such as menu, reservations, and contact information visible early in the experience.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Concise, scannable content improved clarity and reduced friction.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Real photography, reviews, and storytelling helped build credibility.
+      </ListItem>
+      <ListItem mb='0.8rem'>
+        Clear navigation and responsive layouts made practical information easier to access.
+      </ListItem>
+    </UnorderedList>
+  </Box>
+</Flex>
+
 
         <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          mt='2rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
-          }
-        >
-          User Journey
-        </Text>
-        <Box
-          maxWidth={{ base: '90%', md: '70%', xl: '90%' }}
-          display='flex'
-          flexDirection='row'
-          gap='2rem'
-          overflowX='auto'
-          marginTop='1.5rem'
-        >
-          <Box flex='0 0 auto' width={{ base: '600px', md: '800px' }}>
-            <img
-              alt='user-journey-choclo'
-              src={UserJourneyChocloOne}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-          <Box flex='0 0 auto' width={{ base: '600px', md: '800px' }}>
-            <img
-              alt='user-journey-choclo'
-              src={UserJourneyChocloTwo}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-          <Box flex='0 0 auto' width={{ base: '600px', md: '800px' }}>
-            <img
-              alt='user-journey-choclo'
-              src={UserJourneyChocloThree}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-        </Box>
+  fontSize='1.5rem'
+  mb='0.8rem'
+  mt='2rem'
+  color={
+    colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+  }
+>
+  Primary journey
+</Text>
+
+<Text
+  mb='0.8rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  One of the clearest patterns came from high-intent users. In Ricardo’s journey, interest was built through food discovery platforms, social media, and visual content, but friction appeared when he tried to confirm whether it was possible to make a reservation. Since that information was not easy to find, he had to rely on other channels to continue his search.
+</Text>
+
+<Text
+  mb='0.8rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  This revealed an important gap: <strong>the website was not effectively supporting users at a high-intent moment, when clarity, trust, and actionability mattered most</strong>.
+</Text>
+
+<Box
+  maxW={{ base: '600px', md: '800px' }}
+  mx="auto"
+  my="2.5rem"
+>
+  <img
+    alt='user-journey-choclo'
+    src={UserJourneyChocloThree}
+    style={{ width: '100%', height: 'auto' }}
+  />
+</Box>
+
+<Text
+  mb='0.8rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  This journey helped define three design priorities:
+</Text>
+
+<UnorderedList
+  mb='1.2rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  <ListItem mb='0.8rem'>
+    Make key actions, such as reservations, easier to find.
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    Surface practical service information earlier in the experience.
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    Reduce reliance on external channels for decision-making
+  </ListItem>
+</UnorderedList>
 
         <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          mt='2rem'
+          id='research'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          paddingTop='1.5rem'
           color={
-            colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
           }
         >
-          Definition
+          Design strategy
         </Text>
         <Text
           mb='0.8rem'
@@ -1150,27 +683,38 @@ function ChocloProject() {
               : theme.colors.light.text
           }
         >
-          As we begin to outline our key features and architectural information,
-          it is time to reframe our primary objective in a more robust manner,
-          taking into account all the insights we have gathered through our
-          discovery process.
+          Based on the research, the redesign needed to do more than improve the visual interface — it had to support decision-making, reduce uncertainty, and make Choclo’s services easier to understand.
         </Text>
-        <Box
-          bg='rgba(145, 187, 148, 0.7)'
-          w='100%'
-          p={4}
-          display='flex'
-          flexDirection='row'
-          gap='1rem'
+
+          <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
         >
-          <Text color='black'>
-            We aim to redo Choclo Landing Page in a manner that offers our
-            customers comprehensive information to assist them in making the
-            decision to visit Choclo. This redesign will also serve as a
-            reliable resource to address any issues people may encounter while
-            seeking the information they need.
-          </Text>
-        </Box>
+       To achieve this, I focused on three priorities:
+        </Text>
+  <UnorderedList
+  mb='1.2rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  <ListItem mb='0.8rem'>
+    Making essential information easier to find;
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    Supporting high-intent actions such as reservations;
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    Strengthening trust through clearer communication, storytelling, and social proof.
+  </ListItem>
+</UnorderedList>
+
 
         <Text
           fontSize='1.5rem'
@@ -1180,7 +724,7 @@ function ChocloProject() {
             colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
           }
         >
-          Feature List
+          Prioritized features
         </Text>
         <Text
           color={
@@ -1189,344 +733,48 @@ function ChocloProject() {
               : theme.colors.light.text
           }
         >
-          Based on the discovery that I made, we compiled a{' '}
-          <strong>feature list</strong> for Choclo Landing Page.
+          From the discovery phase, I identified the features that would have the greatest impact on both user clarity and business needs:
         </Text>
-
-        <Box overflowX='auto' mt='1.5rem'>
-          <TableContainer
-            color={
-              colorMode === 'dark'
-                ? theme.colors.dark.text
-                : theme.colors.light.text
-            }
-          >
-            <Table variant='simple' size='sm'>
-              <Thead>
-                <Tr>
-                  <Th
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    #
-                  </Th>
-                  <Th
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Feature Name
-                  </Th>
-                  <Th
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Functionality Details
-                  </Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    1
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Menu
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    A detailed menu and their range of prices.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    2
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    About
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    A good storytelling about the history of Choclo, with some
-                    photos from the place, the owners, and staff.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    3
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Reservations
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    A specific page where the user could create their
-                    reservations.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    4
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Shop
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Choclo new e-commerce
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    5
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    FAQ
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    A FAQ with the most asked questions, and also option to get
-                    in touch with Choclo.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    6
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Contact
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Contact, Location, timetable.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    7
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Newsletter
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    A form to be part of Choclo newsletter.
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '200px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    8
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Reviews
-                  </Td>
-                  <Td
-                    sx={{
-                      p: 3,
-                      maxWidth: '80px',
-                      whiteSpace: 'normal',
-                      wordWrap: 'break-word',
-                      borderColor: 'gray.300',
-                    }}
-                  >
-                    Some of the reviews from customers.
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
-        </Box>
+<UnorderedList
+  mb='1.2rem'
+  mt='1.2rem'
+  color={
+    colorMode === 'dark'
+      ? theme.colors.dark.text
+      : theme.colors.light.text
+  }
+>
+  <ListItem mb='0.8rem'>
+    <strong>Menu and pricing:</strong> to support decision-making with practical and highly requested information
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    <strong>Reservations:</strong> to reduce friction for high-intent users looking to take action
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    <strong>About / brand story:</strong> to communicate Choclo’s identity and increase emotional connection
+  </ListItem>
+   <ListItem mb='0.8rem'>
+    <strong>FAQ:</strong> to address recurring questions and reduce repetitive support effort
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    <strong>Contact, location, and opening hours:</strong> to make key operational information easy to access
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    <strong>Reviews</strong>: to reinforce trust and credibility through social proof
+  </ListItem>
+  <ListItem mb='0.8rem'>
+    <strong>Shop</strong>: to support the business goal of introducing a future e-commerce experience
+  </ListItem>
+</UnorderedList>
+     <Text
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          Secondary features such as newsletter sign-up were considered, but the main focus remained on improving clarity, trust, and access to essential service information.
+        </Text>
 
         <Box
           display='flex'
@@ -1544,7 +792,7 @@ function ChocloProject() {
                   : theme.colors.light.h3
               }
             >
-              Card Sorting
+              Information architecture
             </Text>
             <Text
               mb='0.8rem'
@@ -1554,21 +802,9 @@ function ChocloProject() {
                   : theme.colors.light.text
               }
             >
-              I have chosen to conduct a card sorting exercise, this will{' '}
-              <strong>
-                help us determine the optimal placement for each feature on our
-                website
-              </strong>
-              , making it easier for users to navigate and aligning with their
-              expected feature-finding patterns. Additionally,{' '}
-              <strong>
-                it will allow us to organize these features in a more logical
-                manner
-              </strong>
-              .
+             To validate how content should be grouped and surfaced, I used a <strong>card sorting exercise</strong> to understand where users expected to find key information.
             </Text>
-
-            <Text
+             <Text
               mb='0.8rem'
               color={
                 colorMode === 'dark'
@@ -1576,27 +812,9 @@ function ChocloProject() {
                   : theme.colors.light.text
               }
             >
-              What we want to discover?
+This helped confirm that practical information such as contact details, opening hours, and reservations needed clearer visibility, while features like vouchers and additional content could be positioned more intentionally within the navigation structure.
             </Text>
-            <UnorderedList
-              mb='1.2rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              <ListItem mb='0.8rem'>
-                Where should we display some features?
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                Should we create a new category just for location?
-              </ListItem>
-              <ListItem mb='0.8rem'>
-                There is a need of a new category, besides the ones we offer?
-              </ListItem>
-            </UnorderedList>
-            <Text
+ <Text
               mb='0.8rem'
               color={
                 colorMode === 'dark'
@@ -1604,7 +822,7 @@ function ChocloProject() {
                   : theme.colors.light.text
               }
             >
-              So our categories and features would be like this:
+The exercise also reinforced the importance of <strong>keeping the architecture simple</strong>, making it easier for users to scan the website and find what they needed without relying on external channels.
             </Text>
           </Box>
 
@@ -1619,33 +837,39 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Box
-          bg='rgba(145, 187, 148, 0.7)'
-          w='100%'
-          p={4}
-          display='flex'
-          flexDirection='row'
-          gap='1rem'
-          mt='2rem'
-        >
-          <Text color='black'>
-            When we compared the final result with our initial hypothesis, we
-            observed that the newsletter form, press releases, and timetable
-            could be more appropriately categorized elsewhere. On the other
-            hand, our assumption about the vouchers feature was confirmed as
-            accurate.
-          </Text>
-        </Box>
 
+ <Text
+          id='design'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          mt='1.5rem'
+          color={
+            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+          }
+        >
+          User flow & Wireframes
+        </Text>
         <Text
           fontSize='1.5rem'
-          mb='1.5rem'
+          mb='0.8rem'
           mt='2rem'
           color={
             colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
           }
         >
-          User Flow
+          User flow
+        </Text>
+      
+        <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          With the priorities defined, I mapped the user flow to ensure the website would guide visitors from discovery to action with as little friction as possible.
         </Text>
         <Text
           mb='0.8rem'
@@ -1655,9 +879,7 @@ function ChocloProject() {
               : theme.colors.light.text
           }
         >
-          This will serve as our user flow, guiding them seamlessly from their
-          initial entry point through a series of well-defined steps, ultimately
-          leading to a successful outcome and their final action.
+          The flow focused on helping users quickly access the information that mattered most, such as menu, reservations, contact details, and service-related questiions, while also reinforcing trust through reviews, storytelling, and visual content.
         </Text>
 
         <Box maxWidth='100%' marginTop='2rem'>
@@ -1669,25 +891,14 @@ function ChocloProject() {
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
         <Text
-          id='design'
-          fontSize='2rem'
-          fontWeight='600'
-          mb='1rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-        >
-          Final UI
-        </Text>
-        <Text
           fontSize='1.5rem'
           mb='0.8rem'
-          mt='2rem'
+          mt='1.5rem'
           color={
             colorMode === 'dark' ? theme.colors.dark.h3 : theme.colors.light.h3
           }
         >
-          Sketches and Style Guide
+          Wireframes
         </Text>
         <Text
           mb='0.8rem'
@@ -1697,10 +908,17 @@ function ChocloProject() {
               : theme.colors.light.text
           }
         >
-          Since Choclo uses Wix Studio for their website, we adhered to their
-          design options in building the site. With a predefined vision, we
-          created initial sketches and proceeded to develop the final user
-          interface accordingly.
+          Before moving into the final interface, I explored the page structure through sketches and mid-fidelity wireframes. This helped define content hierarchy, validate the placement of high-priority sections, and ensure the experience remained clear and scannable across devices.
+        </Text>
+         <Text
+          mb='0.8rem'
+          color={
+            colorMode === 'dark'
+              ? theme.colors.dark.text
+              : theme.colors.light.text
+          }
+        >
+          The goal at this stage was not only to improve aesthetics, but to organize information in a way that supported user intent and reduced uncertainty.
         </Text>
 
         <Box
@@ -1735,15 +953,17 @@ function ChocloProject() {
           </Box>
         </Box>
 
-        <Text
-          fontSize='1.5rem'
-          mb='0.8rem'
-          mt={{ base: '1rem', md: '2rem' }}
+ <Text
+          id='design'
+          fontSize='2rem'
+          fontWeight='600'
+          mb='1rem'
+          mt='1.5rem'
           color={
             colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
           }
         >
-          Final MVP
+          From structure to interface
         </Text>
         <Text
           mb='0.8rem'
@@ -1753,10 +973,7 @@ function ChocloProject() {
               : theme.colors.light.text
           }
         >
-          Since I was tasked with creating the pages on the Wix platform
-          independently, I opted for a mid-level prototype. This allowed me to
-          present Choclo CEO with a preview of the styles and layouts planned
-          for the pages.
+         With the information architecture and priorities defined, I translated the experience into a responsive interface in Wix Studio. The final UI focused on improving clarity, visual consistency, and content hierarchy, while making key actions such as reservations, contact, and menu exploration easier to access.
         </Text>
 
         <Box
@@ -1765,79 +982,7 @@ function ChocloProject() {
           gap={{ base: 'none', md: '2rem' }}
           mb='2rem'
         >
-          <Box display='flex' flexDirection='column'>
-            <Text
-              mt='1.5rem'
-              fontWeight='600'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              1. Better call to action and more informations about Choclo
-            </Text>
-            <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
-              <img
-                src={BeforeAfterChocloOne}
-                alt='before-after-choclowebsite'
-              />
-            </Box>
-
-            <Text
-              mt='1.5rem'
-              fontWeight='600'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              2. More consistent and cleaner interface
-            </Text>
-            <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
-              <img
-                src={BeforeAfterChocloTwo}
-                alt='before-after-choclowebsite'
-              />
-            </Box>
-          </Box>
-
-          <Box display='flex' flexDirection='column'>
-            <Text
-              mt='1.5rem'
-              fontWeight='600'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              3. Texts easier to read and informations easy to find
-            </Text>
-            <Box maxWidth='80%' gap='2rem' marginTop='0.8rem'>
-              <img
-                src={BeforeAfterChocloThree}
-                alt='before-after-choclowebsite'
-              />
-            </Box>
-            <Text
-              mb='0.8rem'
-              mt={{ base: '1.5rem', md: '1rem' }}
-              pr='5rem'
-              color={
-                colorMode === 'dark'
-                  ? theme.colors.dark.text
-                  : theme.colors.light.text
-              }
-            >
-              Following the successful completion of our Minimum Viable Product
-              (MVP), we embarked on refining the user interface (UI) within the
-              platform utilized by our company, <strong>Wix Studio</strong>.
-              This endeavor allowed us to enhance the overall design of the
-              final UI, ensuring a seamless and visually compelling experience
-              for our users.
-            </Text>
+        
             <Link
               to='https://www.figma.com/proto/f1kR3sihs8aU4eb6neKrYs/Choclo-Website?type=design&node-id=0-1&viewport=321%2C164%2C0.04&t=T0RCpkVVPIPs3wRx-0&scaling=scale-down&starting-point-node-id=54%3A200'
               isExternal
@@ -1870,11 +1015,16 @@ function ChocloProject() {
                       : theme.colors.light.bg,
                 }}
               >
-                Visit prototype
+                Visit live website
               </Button>
             </Link>
-          </Box>
         </Box>
+
+        <img
+              src={mockup}
+              style={{ width: '100%', height: 'auto' }}
+              alt='choclo-ui-screen'
+            />
       </Box>
 
       <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
