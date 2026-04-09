@@ -1,17 +1,15 @@
 import ChocloWebsite from '../../assets/uxuiprojects/ChocloWebsite.png';
 import Personas from '../../assets/uxuiprojects/personas-choclo.png';
-import UserJourneyChocloOne from '../../assets/uxuiprojects/UserJourneyChocloOne.jpg';
-import UserJourneyChocloTwo from '../../assets/uxuiprojects/UserJourneyChocloTwo.jpg';
 import UserJourneyChocloThree from '../../assets/uxuiprojects/UserJourneyChocloThree.jpg';
 import CardSortingChoclo from '../../assets/uxuiprojects/CardSortingChoclo.jpg';
 import UserFlowChoclo from '../../assets/uxuiprojects/UserFlowChoclo.jpg';
 import ChocloSketchOne from '../../assets/uxuiprojects/ChocloSketchOne.jpg';
 import ChocloSketchTwo from '../../assets/uxuiprojects/ChocloSketchTwo.jpg';
 import StyleGuideChoclo from '../../assets/uxuiprojects/StyleGuideChoclo.png';
-import BeforeAfterChocloOne from '../../assets/uxuiprojects/BeforeAfterChocloOne.png';
-import BeforeAfterChocloTwo from '../../assets/uxuiprojects/BeforeAfterChocloTwo.png';
-import BeforeAfterChocloThree from '../../assets/uxuiprojects/BeforeAfterChocloThree.png';
 import mockup from '../../assets/uxuiprojects/mockup-choclo.png';
+import mockuptwo from '../../assets/uxuiprojects/mockup-choclo-one.png';
+import mockupthree from '../../assets/uxuiprojects/mockup-choclo-two.png';
+import mockupfour from '../../assets/uxuiprojects/mockup-choclo-three.png';
 import Millennium from '../../assets/uxuiprojects/Millenium.png';
 import Fabrica from '../../assets/uxuiprojects/Fabrica.png';
 import { useState, useEffect } from 'react';
@@ -23,7 +21,6 @@ import {
   Button,
   useColorMode,
   useTheme,
-  Center,
 } from '@chakra-ui/react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { ListItem, UnorderedList } from '@chakra-ui/react';
@@ -32,8 +29,6 @@ import {
   Tbody,
   Tr,
   Td,
-  Th,
-  Thead,
   TableContainer,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
@@ -47,10 +42,14 @@ function ChocloProject() {
   const sections = [
     { id: 'overview', label: 'Overview' },
     { id: 'problem', label: 'Problem' },
-    { id: 'objective', label: 'Objective' },
-    { id: 'research', label: 'Research' },
-    { id: 'design', label: 'Design' },
-    { id: 'results', label: 'Results' },
+    { id: 'goal', label: 'Goal' },
+    { id: 'myrole', label: 'My role' },
+    { id: 'discovery', label: 'Discovery' },
+    { id: 'keyinsights', label: 'Key insights' },
+    { id: 'designstrategy', label: 'Design strategy' },
+    { id: 'userflow', label: 'User flow & Wireframes' },
+    { id: 'finalsolution', label: 'Final solution' },
+    { id: 'outcome', label: 'Outcome' },
   ];
 
   const handleScroll = () => {
@@ -309,7 +308,7 @@ function ChocloProject() {
     p={{ base: '1.5rem 1rem', xl: '2rem 2rem 1.5rem 8rem' }}
   >
     <Text
-      id='objective'
+      id='goal'
       fontSize='2rem'
       fontWeight='600'
       mb='1rem'
@@ -332,7 +331,7 @@ function ChocloProject() {
     p={{ base: '1.5rem 1rem', xl: '2rem 10rem 1.5rem 2rem' }}
   >
     <Text
-      id='role'
+      id='myrole'
       fontSize='2rem'
       fontWeight='600'
       mb='1rem'
@@ -356,7 +355,7 @@ function ChocloProject() {
         p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
       >
         <Text
-          id='research'
+          id='discovery'
           fontSize='2rem'
           fontWeight='600'
           mb='1rem'
@@ -457,7 +456,7 @@ function ChocloProject() {
 
 <Box>
         <Text
-          id='research'
+          id='keyinsights'
           fontSize='2rem'
           fontWeight='600'
           mb='1rem'
@@ -664,7 +663,7 @@ function ChocloProject() {
 </UnorderedList>
 
         <Text
-          id='research'
+          id='designstrategy'
           fontSize='2rem'
           fontWeight='600'
           mb='1rem'
@@ -839,7 +838,7 @@ The exercise also reinforced the importance of <strong>keeping the architecture 
 
 
  <Text
-          id='design'
+          id='userflow'
           fontSize='2rem'
           fontWeight='600'
           mb='1rem'
@@ -954,17 +953,17 @@ The exercise also reinforced the importance of <strong>keeping the architecture 
         </Box>
 
  <Text
-          id='design'
-          fontSize='2rem'
-          fontWeight='600'
-          mb='1rem'
-          mt='1.5rem'
-          color={
-            colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
-          }
-        >
-          From structure to interface
-        </Text>
+        fontSize='1.5rem'
+        mb='0.8rem'
+        mt='1.5rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.h3
+            : theme.colors.light.h3
+        }
+      >
+        From structure to interface
+      </Text>
         <Text
           mb='0.8rem'
           color={
@@ -1026,6 +1025,220 @@ The exercise also reinforced the importance of <strong>keeping the architecture 
               alt='choclo-ui-screen'
             />
       </Box>
+
+<Box
+  p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+>
+  <Text
+    id='finalsolution'
+    fontSize='2rem'
+    fontWeight='600'
+    mb='1rem'
+    mt='1.5rem'
+    color={
+      colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+    }
+  >
+    Final solution
+  </Text>
+
+  {/* PRIMEIRA LINHA (2 COLUNAS) */}
+  <Flex
+    direction={{ base: 'column', md: 'row' }}
+    gap={10}
+    align="flex-start"
+  >
+    {/* BLOCO 1 */}
+    <Box flex="1">
+      <Text
+        fontSize='1.5rem'
+        mb='0.8rem'
+        mt='1.5rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.h3
+            : theme.colors.light.h3
+        }
+      >
+        Making essential information easier to find
+      </Text>
+
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        The redesign surfaced key content such as menu details, reservations, opening hours, and contact information more clearly, helping users find what they needed with less friction.
+      </Text>
+
+      <Box maxW="500px" mx="auto" mt="1rem">
+        <img
+          src={mockuptwo}
+          style={{ width: '100%', height: 'auto' }}
+          alt='choclo-ui-screen'
+        />
+      </Box>
+    </Box>
+
+    {/* BLOCO 2 */}
+    <Box flex="1">
+      <Text
+        fontSize='1.5rem'
+        mb='0.8rem'
+        mt='1.5rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.h3
+            : theme.colors.light.h3
+        }
+      >
+        Designing for action and trust
+      </Text>
+
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        The new experience gave more visibility to high-intent actions while also reinforcing credibility through storytelling, real photography, and customer reviews.
+      </Text>
+
+      <Box maxW="500px" mx="auto" mt="1rem">
+        <img
+          src={mockupthree}
+          style={{ width: '100%', height: 'auto' }}
+          alt='choclo-ui-screen'
+        />
+      </Box>
+    </Box>
+  </Flex>
+
+  {/* SEGUNDA LINHA (1 COLUNA) */}
+  <Box mt="3rem">
+    <Text
+      fontSize='1.5rem'
+      mb='0.8rem'
+      mt='1.5rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.h3
+          : theme.colors.light.h3
+      }
+    >
+      Creating a clearer and more consistent experience
+    </Text>
+
+    <Text
+      mb='0.8rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.text
+          : theme.colors.light.text
+      }
+    >
+      The interface was redesigned to improve hierarchy, readability, and consistency across devices, making the website easier to scan, understand, and use.
+    </Text>
+
+    <Box maxW="600px" mx="auto" mt="1.5rem">
+      <img
+        src={mockupfour}
+        style={{ width: '100%', height: 'auto' }}
+        alt='choclo-ui-screen'
+      />
+    </Box>
+  </Box>
+</Box>
+
+<Box
+  p={{ base: '1.5rem 1rem 1.5rem 1rem', xl: '2rem 10rem 1.5rem 8rem' }}
+>
+  <Text
+    id='outcome'
+    fontSize='2rem'
+    fontWeight='600'
+    mb='1rem'
+    mt='1.5rem'
+    color={
+      colorMode === 'dark' ? theme.colors.dark.h1 : theme.colors.light.h1
+    }
+  >
+    Outcome
+  </Text>
+
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        The redesign resulted in a clearer and more structured website experience, making essential information easier to find and reducing friction in the user journey.
+      </Text>
+
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+By improving content hierarchy, surfacing key actions more clearly, and strengthening credibility through storytelling and reviews, the website became a more effective support channel for both customer decision-making and business communication.
+      </Text>
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+The final outcome was a responsive website experience that better reflected Choclo’s brand, improved access to service information, and created a stronger foundation for future e-commerce initiatives.
+      </Text>
+
+
+<Text
+      fontSize='1.5rem'
+      mb='0.8rem'
+      mt='1.5rem'
+      color={
+        colorMode === 'dark'
+          ? theme.colors.dark.h3
+          : theme.colors.light.h3
+      }
+    >
+        Reflection
+    </Text>
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+        This project reinforced how important it is for a website to go beyond visual presence and actively support decision-making. It also showed me how research and information architecture can directly shape a more useful, trustworthy, and business-aligned experience.
+      </Text>
+
+      <Text
+        mb='0.8rem'
+        color={
+          colorMode === 'dark'
+            ? theme.colors.dark.text
+            : theme.colors.light.text
+        }
+      >
+Looking back, one of the most valuable lessons was balancing user clarity with business goals, creating a website that was not only more intuitive, but also more effective as a communication and conversion tool.
+      </Text>
+</Box>
+
 
       <Box p={{ base: '1.5rem 1rem 2rem 1rem', xl: '2rem 10rem 3.5rem 8rem' }}>
         <Text
